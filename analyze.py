@@ -203,7 +203,6 @@ def update_results_history(history):
     updated_count = 0
 
     dates_to_check = [
-        TODAY - timedelta(days=2),
         TODAY - timedelta(days=1)
     ]
 
@@ -211,14 +210,17 @@ def update_results_history(history):
 
     for match_date in dates_to_check:
         print("Résultats recherchés pour :", match_date.isoformat())
-
-        result_data = api_get(
-            "fixtures",
-            {
-                "date": match_date.isoformat(),
-                "timezone": "Europe/Paris"
-            }
-        )
+try:
+    result_data = api_get(
+        "fixtures",
+        {
+            "date": match_date.isoformat(),
+            "timezone": "Europe/Paris"
+        }
+    )
+except RuntimeError as error:
+    print("Date ignorée par la limite API :", error)
+    continue
 
         for item in result_data.get("response", []):
             fixture = item.get("fixture") or {}
