@@ -15,7 +15,6 @@ PARIS = ZoneInfo("Europe/Paris")
 NOW = datetime.now(PARIS)
 TODAY = NOW.date()
 TOMORROW = TODAY + timedelta(days=1)
-YESTERDAY = TODAY - timedelta(days=1)
 
 OUTPUT_FILE = "predictions.json"
 HISTORY_FILE = "predictions_history.json"
@@ -23,8 +22,8 @@ HISTORY_FILE = "predictions_history.json"
 LINEUP_WINDOW_MINUTES = 75
 LINEUP_RECHECK_MINUTES = 25
 REFRESH_INTERVAL_HOURS = 6
-HISTORY_REFRESH_HOURS = 24
-MAX_HISTORY_MATCHES = 5000
+
+FINISHED_STATUSES = {"FT", "AET", "PEN"}
 
 
 def normalize(value):
@@ -51,34 +50,20 @@ def parse_datetime(value):
         return None
 
 
-def read_json_file(path, default):
+def read_json(path, default):
     if not os.path.exists(path):
         return default
 
     try:
         with open(path, "r", encoding="utf-8") as file:
-            return json.load(file)
+            data = json.load(file)
+        return data
     except (json.JSONDecodeError, OSError):
+        print("Attention : lecture impossible de", path)
         return default
 
 
-def read_previous_data():
-    data = read_json_file(OUTPUT_FILE, {})
-    return data if isinstance(data, dict) else {}
-
-
-def read_history():
-    data = read_json_file(HISTORY_FILE, {})
-    if not isinstance(data, dict):
-        data = {}
-
-    if not isinstance(data.get("matches"), dict):
-        data["matches"] = {}
-
-    return data
-
-
-def save_json_file(path, data):
+def save_json(path, data):
     temporary_file = path + ".tmp"
 
     with open(temporary_file, "w", encoding="utf-8") as file:
@@ -90,6 +75,23 @@ def save_json_file(path, data):
         )
 
     os.replace(temporary_file, path)
+
+
+def read_previous_data():
+    data = read_json(OUTPUT_FILE, {})
+    return data if isinstance(data, dict) else {}
+
+
+def read_history():
+    data = read_json(HISTORY_FILE, {})
+
+    if not isinstance(data, dict):
+        data = {}
+
+    if not isinstance(data.get("matches"), dict):
+        data["matches"] = {}
+
+    return data
 
 
 def api_get(endpoint, params=None):
@@ -107,7 +109,7 @@ def api_get(endpoint, params=None):
         }
     )
 
-    # Limite volontaire : maximum environ 9 requêtes par minute.
+    # Limite volontaire : environ 9 requêtes maximum par minute.
     time.sleep(6.2)
 
     with urllib.request.urlopen(request, timeout=30) as response:
@@ -137,6 +139,7 @@ def extract_injuries(records):
         player = item.get("player") or {}
 
         fixture_id = fixture.get("id")
+
         if not fixture_id:
             continue
 
@@ -190,6 +193,96 @@ def is_refresh_due(previous_time, hours):
     return NOW - parsed >= timedelta(hours=hours)
 
 
+def update_results_history(history):
+    """
+    Récupère les résultats des deux derniers jours.
+    Met à jour les matchs déjà connus sans supprimer l'ancien historique.
+    """
+
+    saved_matches = history.setdefault("matches", {})
+    updated_count = 0
+
+    dates_to_check = [
+        TODAY - timedelta(days=2),
+        TODAY - timedelta(days=1)
+    ]
+
+    print("Actualisation de l'historique des résultats...")
+
+    for match_date in dates_to_check:
+        print("Résultats recherchés pour :", match_date.isoformat())
+
+        result_data = api_get(
+            "fixtures",
+            {
+                "date": match_date.isoformat(),
+                "timezone": "Europe/Paris"
+            }
+        )
+
+        for item in result_data.get("response", []):
+            fixture = item.get("fixture") or {}
+            teams = item.get("teams") or {}
+            goals = item.get("goals") or {}
+            league = item.get("league") or {}
+            status = fixture.get("status") or {}
+
+            fixture_id = fixture.get("id")
+            status_short = status.get("short")
+
+            if not fixture_id:
+                continue
+
+            if status_short not in FINISHED_STATUSES:
+                continue
+
+            home = teams.get("home") or {}
+            away = teams.get("away") or {}
+
+            home_goals = goals.get("home")
+            away_goals = goals.get("away")
+
+            if home_goals is None or away_goals is None:
+                continue
+
+            record = {
+                "fixture_id": str(fixture_id),
+                "date": (fixture.get("date") or "")[:10],
+                "kickoff": fixture.get("date"),
+                "league": league.get("name"),
+                "country": league.get("country"),
+                "home": team_info(home),
+                "away": team_info(away),
+                "score": {
+                    "home": home_goals,
+                    "away": away_goals
+                },
+                "status": status.get("long"),
+                "status_short": status_short,
+                "winner": (
+                    "home" if home_goals > away_goals
+                    else "away" if away_goals > home_goals
+                    else "draw"
+                ),
+                "collected_at": NOW.isoformat()
+            }
+
+            saved_matches[str(fixture_id)] = record
+            updated_count += 1
+
+    history["matches"] = saved_matches
+    history["generated_at"] = NOW.isoformat()
+    history["results_updated_at"] = NOW.isoformat()
+    history["source"] = "API-Football"
+
+    save_json(HISTORY_FILE, history)
+
+    print("Résultats actualisés :", updated_count)
+    print("Total de matchs archivés :", len(saved_matches))
+
+    return history
+
+
 def build_match(item, previous, injuries_by_id, refresh_injuries):
     fixture = item.get("fixture") or {}
     teams = item.get("teams") or {}
@@ -230,100 +323,6 @@ def make_match_key(match):
     )
 
 
-def save_finished_results(history):
-    """
-    Récupère les résultats de la veille une fois par jour.
-    Les résultats restent archivés dans predictions_history.json.
-    """
-
-    if not is_refresh_due(
-        history.get("results_updated_at"),
-        HISTORY_REFRESH_HOURS
-    ):
-        print("Historique des résultats déjà actualisé.")
-        return history
-
-    print("Récupération des résultats terminés de la veille...")
-
-    result_data = api_get(
-        "fixtures",
-        {
-            "date": YESTERDAY.isoformat(),
-            "timezone": "Europe/Paris"
-        }
-    )
-
-    saved_matches = history.setdefault("matches", {})
-    added_or_updated = 0
-
-    finished_statuses = {"FT", "AET", "PEN"}
-
-    for item in result_data.get("response", []):
-        fixture = item.get("fixture") or {}
-        teams = item.get("teams") or {}
-        goals = item.get("goals") or {}
-        status = fixture.get("status") or {}
-
-        fixture_id = fixture.get("id")
-        status_short = status.get("short")
-
-        if not fixture_id or status_short not in finished_statuses:
-            continue
-
-        home = teams.get("home") or {}
-        away = teams.get("away") or {}
-
-        home_goals = goals.get("home")
-        away_goals = goals.get("away")
-
-        if home_goals is None or away_goals is None:
-            continue
-
-        record = {
-            "fixture_id": str(fixture_id),
-            "date": (fixture.get("date") or "")[:10],
-            "kickoff": fixture.get("date"),
-            "league": (item.get("league") or {}).get("name"),
-            "country": (item.get("league") or {}).get("country"),
-            "home": team_info(home),
-            "away": team_info(away),
-            "score": {
-                "home": home_goals,
-                "away": away_goals
-            },
-            "status": status.get("long"),
-            "status_short": status_short,
-            "winner": (
-                "home" if home_goals > away_goals
-                else "away" if away_goals > home_goals
-                else "draw"
-            ),
-            "collected_at": NOW.isoformat()
-        }
-
-        saved_matches[str(fixture_id)] = record
-        added_or_updated += 1
-
-    # Limiter la taille de l'historique tout en gardant les matchs récents.
-    ordered = sorted(
-        saved_matches.items(),
-        key=lambda entry: entry[1].get("date") or "",
-        reverse=True
-    )
-
-    history["matches"] = dict(ordered[:MAX_HISTORY_MATCHES])
-    history["results_updated_at"] = NOW.isoformat()
-    history["generated_at"] = NOW.isoformat()
-    history["source"] = "API-Football"
-
-    save_json_file(HISTORY_FILE, history)
-
-    print("Résultats ajoutés ou actualisés :", added_or_updated)
-    print("Matchs conservés dans l'historique :", len(history["matches"]))
-
-    return history
-
-
 def main():
     print("FOOT PREDICT AI - Collecte intelligente")
     print("Heure locale :", NOW.isoformat())
@@ -334,17 +333,21 @@ def main():
     previous_data = read_previous_data()
     history = read_history()
 
-    # 1. Archiver les résultats terminés de la veille.
-    history = save_finished_results(history)
+    # 1. Mise à jour des résultats réels.
+    # Les anciennes entrées de l'historique sont conservées.
+    update_results_history(history)
 
     previous_matches = previous_data.get("matches", {})
+
     previous_by_id = {
         str(match.get("fixture_id")): match
         for match in previous_matches.values()
         if match.get("fixture_id")
     }
 
-    lineup_check_times = previous_data.get("lineup_check_times", {})
+    lineup_check_times = previous_data.get(
+        "lineup_check_times", {}
+    )
 
     # 2. Actualisation des matchs du jour.
     refresh_today = NOW.minute < 30 or not any(
@@ -373,7 +376,7 @@ def main():
     else:
         print("Matchs du jour conservés depuis la dernière collecte.")
 
-    # 3. Matchs de demain : actualisation toutes les 6 heures.
+    # 3. Actualisation des matchs de demain.
     refresh_tomorrow = (
         is_refresh_due(
             previous_data.get("tomorrow_updated_at"),
@@ -404,9 +407,11 @@ def main():
 
         tomorrow_updated_at = NOW.isoformat()
     else:
-        tomorrow_updated_at = previous_data.get("tomorrow_updated_at")
+        tomorrow_updated_at = previous_data.get(
+            "tomorrow_updated_at"
+        )
 
-    # 4. Blessures : actualisation toutes les 6 heures.
+    # 4. Actualisation des blessures.
     refresh_injuries = is_refresh_due(
         previous_data.get("injuries_updated_at"),
         REFRESH_INTERVAL_HOURS
@@ -433,9 +438,11 @@ def main():
         injuries_updated_at = NOW.isoformat()
     else:
         print("Blessures conservées depuis la dernière collecte.")
-        injuries_updated_at = previous_data.get("injuries_updated_at")
+        injuries_updated_at = previous_data.get(
+            "injuries_updated_at"
+        )
 
-    # 5. Construire les matchs en conservant les données précédentes.
+    # 5. Construire les matchs en conservant les anciennes données.
     matches = {}
 
     for old_match in previous_matches.values():
@@ -459,7 +466,7 @@ def main():
 
         matches[make_match_key(match)] = match
 
-    # 6. Vérifier une composition par exécution au maximum.
+    # 6. Vérification des compositions proches du coup d'envoi.
     candidates = []
 
     for match in matches.values():
@@ -481,6 +488,7 @@ def main():
             continue
 
         fixture_id = str(match["fixture_id"])
+
         last_check = parse_datetime(
             lineup_check_times.get(fixture_id)
         )
@@ -529,7 +537,7 @@ def main():
     else:
         print("Aucun match imminent à vérifier pour les compositions.")
 
-    # 7. Nettoyer les anciennes vérifications de compositions.
+    # 7. Nettoyage des vérifications de compositions.
     active_ids = {
         str(match["fixture_id"])
         for match in matches.values()
@@ -551,7 +559,7 @@ def main():
         if match.get("lineups_checked")
     )
 
-    # 8. Enregistrer les données actuelles.
+    # 8. Enregistrement des données des matchs.
     result = {
         "generated_at": NOW.isoformat(),
         "source": "API-Football",
@@ -566,7 +574,7 @@ def main():
         "matches": matches
     }
 
-    save_json_file(OUTPUT_FILE, result)
+    save_json(OUTPUT_FILE, result)
 
     print("-----------------------------------")
     print("Matchs enregistrés :", len(matches))
@@ -576,9 +584,9 @@ def main():
         "Vérifications de compositions durant cette exécution :",
         lineups_checked_this_run
     )
-    print("Historique des résultats :", len(history["matches"]))
     print("Fichier créé :", OUTPUT_FILE)
-    print("Historique créé :", HISTORY_FILE)
+    print("Historique des résultats :", len(history["matches"]))
+    print("Fichier historique :", HISTORY_FILE)
     print("-----------------------------------")
 
 
