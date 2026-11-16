@@ -45,3 +45,5 @@ jobs:
             git commit -m "Update daily football data"
             git push
           fi
+
+          
