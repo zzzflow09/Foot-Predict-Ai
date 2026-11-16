@@ -1,2527 +1,18 @@
 {
-  "generated_at": "2026-11-16T12:52:03.439992+01:00",
+  "generated_at": "2026-11-16T13:07:12.111692+01:00",
   "source": "API-Football",
   "period_days": 2,
   "fixtures_count": 282,
-  "lineups_checked_count": 21,
+  "lineups_checked_count": 22,
   "lineups_available_count": 4,
   "lineups_checked_this_run": 1,
   "injuries_updated_at": "2026-11-16T12:52:03.439992+01:00",
   "tomorrow_updated_at": "2026-11-16T12:52:03.439992+01:00",
   "lineup_check_times": {
-    "1554220": "2026-11-16T12:52:03.439992+01:00"
+    "1554220": "2026-11-16T12:52:03.439992+01:00",
+    "1647889": "2026-11-16T13:07:12.111692+01:00"
   },
   "matches": {
-    "incaaruba|aguila|2026-11-16": {
-      "fixture_id": "1600664",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T00:00:00+01:00",
-      "home": {
-        "id": 28019,
-        "name": "Inca Aruba"
-      },
-      "away": {
-        "id": 4310,
-        "name": "Águila"
-      },
-      "status": "Match Finished",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": true,
-      "lineups_available": false
-    },
-    "panama|curacao|2026-11-16": {
-      "fixture_id": "1644696",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T00:00:00+01:00",
-      "home": {
-        "id": 11,
-        "name": "Panama"
-      },
-      "away": {
-        "id": 5530,
-        "name": "Curaçao"
-      },
-      "status": "Match Finished",
-      "injuries": [],
-      "lineups": {
-        "Panama": {
-          "formation": "5-4-1",
-          "coach": "Thomas Christiansen",
-          "starting_xi": [
-            {
-              "name": "O. Mosquera",
-              "number": 22,
-              "position": "G"
-            },
-            {
-              "name": "A. Murillo",
-              "number": 23,
-              "position": "D"
-            },
-            {
-              "name": "J. Ramos",
-              "number": 13,
-              "position": "D"
-            },
-            {
-              "name": "J. Córdoba",
-              "number": 3,
-              "position": "D"
-            },
-            {
-              "name": "A. Andrade",
-              "number": 16,
-              "position": "D"
-            },
-            {
-              "name": "J. Gutiérrez",
-              "number": 15,
-              "position": "D"
-            },
-            {
-              "name": "Cristian Jesús Martínez",
-              "number": 6,
-              "position": "M"
-            },
-            {
-              "name": "C. Harvey",
-              "number": 14,
-              "position": "M"
-            },
-            {
-              "name": "A. Carrasquilla",
-              "number": 8,
-              "position": "M"
-            },
-            {
-              "name": "I. Díaz",
-              "number": 10,
-              "position": "M"
-            },
-            {
-              "name": "K. Barria",
-              "number": 21,
-              "position": "F"
-            }
-          ],
-          "substitutes": [
-            {
-              "name": "Y. Bárcenas",
-              "number": 11,
-              "position": "M"
-            },
-            {
-              "name": "J. Y. Vergara Ortega",
-              "number": 18,
-              "position": "F"
-            },
-            {
-              "name": "C. Blackman",
-              "number": 2,
-              "position": "D"
-            },
-            {
-              "name": "M. De Leon",
-              "number": 1,
-              "position": "G"
-            },
-            {
-              "name": "J. Fajardo",
-              "number": 17,
-              "position": "F"
-            },
-            {
-              "name": "V. Griffith",
-              "number": 5,
-              "position": "M"
-            },
-            {
-              "name": "M. Krug",
-              "number": 4,
-              "position": "D"
-            },
-            {
-              "name": "A. Londoño",
-              "number": 9,
-              "position": "F"
-            },
-            {
-              "name": "M. Morán",
-              "number": 19,
-              "position": "F"
-            },
-            {
-              "name": "E. Roberts",
-              "number": 12,
-              "position": "G"
-            },
-            {
-              "name": "J. Rodríguez",
-              "number": 7,
-              "position": "M"
-            },
-            {
-              "name": "O. Valencia",
-              "number": 20,
-              "position": "D"
-            }
-          ]
-        },
-        "Curaçao": {
-          "formation": "4-2-3-1",
-          "coach": "D. Advocaat",
-          "starting_xi": [
-            {
-              "name": "E. Room",
-              "number": 1,
-              "position": "G"
-            },
-            {
-              "name": "S. Sambo",
-              "number": 2,
-              "position": "D"
-            },
-            {
-              "name": "J. Gaari",
-              "number": 3,
-              "position": "D"
-            },
-            {
-              "name": "J. Carolina",
-              "number": 19,
-              "position": "D"
-            },
-            {
-              "name": "J. Brenet",
-              "number": 20,
-              "position": "D"
-            },
-            {
-              "name": "L. Comenencia",
-              "number": 8,
-              "position": "M"
-            },
-            {
-              "name": "L. Bacuna",
-              "number": 10,
-              "position": "M"
-            },
-            {
-              "name": "T. Chong",
-              "number": 21,
-              "position": "M"
-            },
-            {
-              "name": "J. Bacuna",
-              "number": 7,
-              "position": "M"
-            },
-            {
-              "name": "K. Gorré",
-              "number": 14,
-              "position": "M"
-            },
-            {
-              "name": "Jerolldino Bergraaf",
-              "number": 9,
-              "position": "F"
-            }
-          ],
-          "substitutes": [
-            {
-              "name": "K. Zeggen",
-              "number": 23,
-              "position": "G"
-            },
-            {
-              "name": "R. van Eijma",
-              "number": 4,
-              "position": "D"
-            },
-            {
-              "name": "N. Thomas",
-              "number": 11,
-              "position": "F"
-            },
-            {
-              "name": "N. Souren",
-              "number": 12,
-              "position": "M"
-            },
-            {
-              "name": "G. Roemeratoe",
-              "number": 6,
-              "position": "M"
-            },
-            {
-              "name": "A. Obispo",
-              "number": 18,
-              "position": "D"
-            },
-            {
-              "name": "A. Martha",
-              "number": 15,
-              "position": "F"
-            },
-            {
-              "name": "J. Margaritha",
-              "number": 16,
-              "position": "F"
-            },
-            {
-              "name": "Deveron Fonville",
-              "number": 17,
-              "position": "D"
-            },
-            {
-              "name": "T. Bodak",
-              "number": 22,
-              "position": "G"
-            }
-          ]
-        }
-      },
-      "lineups_checked": true,
-      "lineups_available": true
-    },
-    "defensorsporting|penarol|2026-11-16": {
-      "fixture_id": "1649062",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T00:00:00+01:00",
-      "home": {
-        "id": 2350,
-        "name": "Defensor Sporting"
-      },
-      "away": {
-        "id": 2348,
-        "name": "Penarol"
-      },
-      "status": "Match Finished",
-      "injuries": [],
-      "lineups": {
-        "Defensor Sporting": {
-          "formation": "4-2-3-1",
-          "coach": "A. Rodríguez",
-          "starting_xi": [
-            {
-              "name": "K. Dawson",
-              "number": 12,
-              "position": "G"
-            },
-            {
-              "name": "G. Rodriguez",
-              "number": 4,
-              "position": "D"
-            },
-            {
-              "name": "G. de los Santos",
-              "number": 3,
-              "position": "D"
-            },
-            {
-              "name": "Mateo Caballero",
-              "number": 20,
-              "position": "D"
-            },
-            {
-              "name": "A. Frugone",
-              "number": 15,
-              "position": "D"
-            },
-            {
-              "name": "G. Barrios",
-              "number": 5,
-              "position": "M"
-            },
-            {
-              "name": "E. Cuello",
-              "number": 30,
-              "position": "M"
-            },
-            {
-              "name": "L. Agazzi",
-              "number": 11,
-              "position": "D"
-            },
-            {
-              "name": "Nicolás Andrés Wunsch Tomás",
-              "number": 8,
-              "position": "M"
-            },
-            {
-              "name": "A. Torterolo",
-              "number": 22,
-              "position": "F"
-            },
-            {
-              "name": "Lautaro Navarro",
-              "number": 99,
-              "position": "F"
-            }
-          ],
-          "substitutes": [
-            {
-              "name": "Diego Abella",
-              "number": 25,
-              "position": "M"
-            },
-            {
-              "name": "Xavier biscayzacu",
-              "number": 10,
-              "position": "M"
-            },
-            {
-              "name": "Lorenzo Cafaro",
-              "number": 18,
-              "position": "M"
-            },
-            {
-              "name": "L. de los Santos",
-              "number": 24,
-              "position": "M"
-            },
-            {
-              "name": "J. Diaz",
-              "number": 19,
-              "position": "F"
-            },
-            {
-              "name": "L. Machado",
-              "number": 1,
-              "position": "G"
-            },
-            {
-              "name": "B. Montenegro",
-              "number": 26,
-              "position": "F"
-            },
-            {
-              "name": "A. Perdomo",
-              "number": 16,
-              "position": "M"
-            },
-            {
-              "name": "Bruno Pereira",
-              "number": 6,
-              "position": "M"
-            },
-            {
-              "name": "T. Pozzo",
-              "number": 29,
-              "position": "M"
-            }
-          ]
-        },
-        "Penarol": {
-          "formation": "4-4-2",
-          "coach": "D. Aguirre",
-          "starting_xi": [
-            {
-              "name": "S. Britos",
-              "number": 1,
-              "position": "G"
-            },
-            {
-              "name": "I. Alegre",
-              "number": 28,
-              "position": "D"
-            },
-            {
-              "name": "G. Pezzella",
-              "number": 2,
-              "position": "D"
-            },
-            {
-              "name": "L. Ferreira",
-              "number": 6,
-              "position": "D"
-            },
-            {
-              "name": "M. Olivera",
-              "number": 15,
-              "position": "D"
-            },
-            {
-              "name": "J. Cabrera",
-              "number": 7,
-              "position": "F"
-            },
-            {
-              "name": "N. Fernández",
-              "number": 8,
-              "position": "M"
-            },
-            {
-              "name": "E. Darias",
-              "number": 13,
-              "position": "M"
-            },
-            {
-              "name": "L. Umpiérrez",
-              "number": 32,
-              "position": "F"
-            },
-            {
-              "name": "M. Arezo",
-              "number": 19,
-              "position": "F"
-            },
-            {
-              "name": "A. Hernández",
-              "number": 99,
-              "position": "F"
-            }
-          ],
-          "substitutes": [
-            {
-              "name": "B. Barboza",
-              "number": 36,
-              "position": "D"
-            },
-            {
-              "name": "S. Mülhethaler",
-              "number": 30,
-              "position": "F"
-            },
-            {
-              "name": "L. Hernández",
-              "number": 27,
-              "position": "D"
-            },
-            {
-              "name": "M. Lemos",
-              "number": 3,
-              "position": "D"
-            },
-            {
-              "name": "J. Trindade",
-              "number": 21,
-              "position": "M"
-            },
-            {
-              "name": "C. Jaime",
-              "number": 11,
-              "position": "F"
-            },
-            {
-              "name": "F. González",
-              "number": 80,
-              "position": "M"
-            },
-            {
-              "name": "Thiago Nahuel Espinosa Dovat",
-              "number": 26,
-              "position": "D"
-            },
-            {
-              "name": "F. Batista",
-              "number": 9,
-              "position": "F"
-            },
-            {
-              "name": "L. Diaz",
-              "number": 31,
-              "position": "G"
-            }
-          ]
-        }
-      },
-      "lineups_checked": true,
-      "lineups_available": true
-    },
-    "potterstigers|greencity|2026-11-16": {
-      "fixture_id": "1649701",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T00:00:00+01:00",
-      "home": {
-        "id": 25288,
-        "name": "Potters Tigers"
-      },
-      "away": {
-        "id": 22794,
-        "name": "Green City"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": true,
-      "lineups_available": false
-    },
-    "suchitepequez|antiguagfc|2026-11-16": {
-      "fixture_id": "1559707",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T00:05:00+01:00",
-      "home": {
-        "id": 3653,
-        "name": "Suchitepéquez"
-      },
-      "away": {
-        "id": 3656,
-        "name": "Antigua GFC"
-      },
-      "status": "Match Finished",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": true,
-      "lineups_available": false
-    },
-    "tigresfc|realcundinamarca|2026-11-16": {
-      "fixture_id": "1647452",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T00:05:00+01:00",
-      "home": {
-        "id": 1145,
-        "name": "Tigres FC"
-      },
-      "away": {
-        "id": 22099,
-        "name": "Real Cundinamarca"
-      },
-      "status": "Match Finished",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": true,
-      "lineups_available": false
-    },
-    "recoleta|deportesiquique|2026-11-16": {
-      "fixture_id": "1511725",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T00:30:00+01:00",
-      "home": {
-        "id": 5644,
-        "name": "Recoleta"
-      },
-      "away": {
-        "id": 2319,
-        "name": "Deportes Iquique"
-      },
-      "status": "Match Finished",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": true,
-      "lineups_available": false
-    },
-    "ferrocarriloeste|gimnasiaytiro|2026-11-16": {
-      "fixture_id": "1648404",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T00:30:00+01:00",
-      "home": {
-        "id": 470,
-        "name": "Ferro Carril Oeste"
-      },
-      "away": {
-        "id": 1928,
-        "name": "Gimnasia Y Tiro"
-      },
-      "status": "Match Finished",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": true,
-      "lineups_available": false
-    },
-    "oriental|colon|2026-11-16": {
-      "fixture_id": "1650155",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T00:30:00+01:00",
-      "home": {
-        "id": 2376,
-        "name": "Oriental"
-      },
-      "away": {
-        "id": 15628,
-        "name": "Colón"
-      },
-      "status": "Match Finished",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": true,
-      "lineups_available": false
-    },
-    "estrella|sporting|2026-11-16": {
-      "fixture_id": "1647126",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T01:00:00+01:00",
-      "home": {
-        "id": 8238,
-        "name": "Estrella"
-      },
-      "away": {
-        "id": 26895,
-        "name": "Sporting"
-      },
-      "status": "Match Postponed",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": true,
-      "lineups_available": false
-    },
-    "newmexicounited|sacramentorepublic|2026-11-16": {
-      "fixture_id": "1649528",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T01:00:00+01:00",
-      "home": {
-        "id": 4003,
-        "name": "New Mexico United"
-      },
-      "away": {
-        "id": 4015,
-        "name": "Sacramento Republic"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": true,
-      "lineups_available": false
-    },
-    "pigottsbullets|freemansville|2026-11-16": {
-      "fixture_id": "1650010",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T01:00:00+01:00",
-      "home": {
-        "id": 22800,
-        "name": "Pigotts Bullets"
-      },
-      "away": {
-        "id": 28472,
-        "name": "Freemansville"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": true,
-      "lineups_available": false
-    },
-    "monterreyw|pachucaw|2026-11-16": {
-      "fixture_id": "1649469",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T02:00:00+01:00",
-      "home": {
-        "id": 14879,
-        "name": "Monterrey W"
-      },
-      "away": {
-        "id": 14881,
-        "name": "Pachuca W"
-      },
-      "status": "Match Finished",
-      "injuries": [],
-      "lineups": {
-        "Monterrey W": {
-          "formation": null,
-          "coach": "Amandine Miquel",
-          "starting_xi": [
-            {
-              "name": "P. Manrique",
-              "number": 28,
-              "position": null
-            },
-            {
-              "name": "A. Godinez",
-              "number": 5,
-              "position": null
-            },
-            {
-              "name": "V. del Campo",
-              "number": 23,
-              "position": null
-            },
-            {
-              "name": "Daiane",
-              "number": 3,
-              "position": null
-            },
-            {
-              "name": "A. Lua",
-              "number": 14,
-              "position": null
-            },
-            {
-              "name": "M. Restrepo",
-              "number": 24,
-              "position": null
-            },
-            {
-              "name": "D. Garcia",
-              "number": 22,
-              "position": null
-            },
-            {
-              "name": "L. Bosch",
-              "number": 9,
-              "position": null
-            },
-            {
-              "name": "A. Soto",
-              "number": 30,
-              "position": null
-            },
-            {
-              "name": "L. Garcia",
-              "number": 17,
-              "position": null
-            },
-            {
-              "name": "V. Vargas",
-              "number": 11,
-              "position": null
-            }
-          ],
-          "substitutes": [
-            {
-              "name": "A. Godinez",
-              "number": 13,
-              "position": null
-            },
-            {
-              "name": "D. Monroy",
-              "number": 2,
-              "position": null
-            },
-            {
-              "name": "A. Fernandez",
-              "number": 21,
-              "position": null
-            },
-            {
-              "name": "N. Perez",
-              "number": 10,
-              "position": null
-            },
-            {
-              "name": "C. Cazares",
-              "number": 33,
-              "position": null
-            },
-            {
-              "name": "J. Seoposenwe",
-              "number": 12,
-              "position": null
-            },
-            {
-              "name": "L. Thomas",
-              "number": 19,
-              "position": null
-            },
-            {
-              "name": "S. Simental",
-              "number": 15,
-              "position": null
-            },
-            {
-              "name": "S. Martinez",
-              "number": 6,
-              "position": null
-            },
-            {
-              "name": "S. Ortiz",
-              "number": 31,
-              "position": null
-            }
-          ]
-        },
-        "Pachuca W": {
-          "formation": null,
-          "coach": "Tome Montserrat",
-          "starting_xi": [
-            {
-              "name": "E. Barreras",
-              "number": 1,
-              "position": null
-            },
-            {
-              "name": "K. Robles",
-              "number": 2,
-              "position": null
-            },
-            {
-              "name": "Y. Minota",
-              "number": 8,
-              "position": null
-            },
-            {
-              "name": "J. Orejel",
-              "number": 7,
-              "position": null
-            },
-            {
-              "name": "B. Ibarra",
-              "number": 5,
-              "position": null
-            },
-            {
-              "name": "K. Nieto",
-              "number": 6,
-              "position": null
-            },
-            {
-              "name": "A. Veloz",
-              "number": 11,
-              "position": null
-            },
-            {
-              "name": "E. R. Sanchez Stickel",
-              "number": 16,
-              "position": null
-            },
-            {
-              "name": "Eudimilla",
-              "number": 13,
-              "position": null
-            },
-            {
-              "name": "Aline Gomes",
-              "number": 25,
-              "position": null
-            },
-            {
-              "name": "P. Garcia",
-              "number": 26,
-              "position": null
-            }
-          ],
-          "substitutes": [
-            {
-              "name": "C. Lopes",
-              "number": 22,
-              "position": null
-            },
-            {
-              "name": "M. Vance",
-              "number": 21,
-              "position": null
-            },
-            {
-              "name": "J. Valdez Hernandez",
-              "number": 35,
-              "position": null
-            },
-            {
-              "name": "K. Caicedo",
-              "number": 17,
-              "position": null
-            },
-            {
-              "name": "A. A. Fragoso Garcia",
-              "number": 19,
-              "position": null
-            },
-            {
-              "name": "C. Ihezuo",
-              "number": 30,
-              "position": null
-            },
-            {
-              "name": "D. Flores",
-              "number": 23,
-              "position": null
-            },
-            {
-              "name": "V. Corral",
-              "number": 9,
-              "position": null
-            },
-            {
-              "name": "N. Nicosia",
-              "number": 10,
-              "position": null
-            },
-            {
-              "name": "A. Gomez",
-              "number": 79,
-              "position": null
-            }
-          ]
-        }
-      },
-      "lineups_checked": true,
-      "lineups_available": true
-    },
-    "quindio|realcartagena|2026-11-16": {
-      "fixture_id": "1647451",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T02:10:00+01:00",
-      "home": {
-        "id": 1461,
-        "name": "Quindio"
-      },
-      "away": {
-        "id": 1459,
-        "name": "Real Cartagena"
-      },
-      "status": "Match Finished",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": true,
-      "lineups_available": false
-    },
-    "tolucaw|americaw|2026-11-16": {
-      "fixture_id": "1649470",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T04:10:00+01:00",
-      "home": {
-        "id": 14885,
-        "name": "Toluca W"
-      },
-      "away": {
-        "id": 14868,
-        "name": "América W"
-      },
-      "status": "Match Finished",
-      "injuries": [],
-      "lineups": {
-        "Toluca W": {
-          "formation": "4-2-3-1",
-          "coach": "Edgar Duenas",
-          "starting_xi": [
-            {
-              "name": "V. Martinez",
-              "number": 12,
-              "position": "G"
-            },
-            {
-              "name": "K. Martinez",
-              "number": 2,
-              "position": "D"
-            },
-            {
-              "name": "M. Ramirez",
-              "number": 15,
-              "position": "D"
-            },
-            {
-              "name": "L. Fernandez",
-              "number": 16,
-              "position": "D"
-            },
-            {
-              "name": "V. Lopez",
-              "number": 13,
-              "position": "D"
-            },
-            {
-              "name": "S. Vazquez",
-              "number": 22,
-              "position": "M"
-            },
-            {
-              "name": "I. Munoz",
-              "number": 26,
-              "position": "M"
-            },
-            {
-              "name": "F. Robert",
-              "number": 25,
-              "position": "M"
-            },
-            {
-              "name": "B. Cuevas",
-              "number": 10,
-              "position": "M"
-            },
-            {
-              "name": "S. Gonzalez Diaz Barreiro",
-              "number": 28,
-              "position": "M"
-            },
-            {
-              "name": "E. Le Sommer",
-              "number": 9,
-              "position": "F"
-            }
-          ],
-          "substitutes": [
-            {
-              "name": "C. Lozoya",
-              "number": 1,
-              "position": "G"
-            },
-            {
-              "name": "Y. Rodriguez Perez",
-              "number": 4,
-              "position": "D"
-            },
-            {
-              "name": "A. Henry",
-              "number": 6,
-              "position": "M"
-            },
-            {
-              "name": "Y. Franco",
-              "number": 5,
-              "position": "M"
-            },
-            {
-              "name": "E. Garcia",
-              "number": 18,
-              "position": "M"
-            },
-            {
-              "name": "S. Jakobsson",
-              "number": 17,
-              "position": "F"
-            },
-            {
-              "name": "D. Espinosa",
-              "number": 7,
-              "position": "F"
-            },
-            {
-              "name": "D. Guatemala",
-              "number": 11,
-              "position": "D"
-            },
-            {
-              "name": "F. Monroy",
-              "number": 59,
-              "position": "D"
-            }
-          ]
-        },
-        "América W": {
-          "formation": "4-1-4-1",
-          "coach": "Angel Villacampa Carrasco",
-          "starting_xi": [
-            {
-              "name": "I. Velasco",
-              "number": 12,
-              "position": "G"
-            },
-            {
-              "name": "K. Rodriguez",
-              "number": 15,
-              "position": "D"
-            },
-            {
-              "name": "Isa Haas",
-              "number": 2,
-              "position": "D"
-            },
-            {
-              "name": "K. Rodriguez",
-              "number": 3,
-              "position": "D"
-            },
-            {
-              "name": "J. Gutierrez",
-              "number": 25,
-              "position": "D"
-            },
-            {
-              "name": "G. Garcia",
-              "number": 5,
-              "position": "M"
-            },
-            {
-              "name": "M. Saldivar",
-              "number": 19,
-              "position": "M"
-            },
-            {
-              "name": "N. Antonio",
-              "number": 18,
-              "position": "M"
-            },
-            {
-              "name": "I. Guerrero",
-              "number": 8,
-              "position": "M"
-            },
-            {
-              "name": "S. Camberos",
-              "number": 10,
-              "position": "M"
-            },
-            {
-              "name": "Geyse",
-              "number": 17,
-              "position": "F"
-            }
-          ],
-          "substitutes": [
-            {
-              "name": "C. Espino",
-              "number": 1,
-              "position": "G"
-            },
-            {
-              "name": "A. Avilez",
-              "number": 11,
-              "position": "F"
-            },
-            {
-              "name": "A. Cabanillas Soto",
-              "number": 24,
-              "position": "F"
-            },
-            {
-              "name": "S. Luebbert",
-              "number": 22,
-              "position": "M"
-            },
-            {
-              "name": "A. Soto",
-              "number": 14,
-              "position": "M"
-            },
-            {
-              "name": "M. Ramos",
-              "number": 28,
-              "position": "D"
-            },
-            {
-              "name": "X. Pineda",
-              "number": 13,
-              "position": "M"
-            },
-            {
-              "name": "Priscila",
-              "number": 9,
-              "position": "F"
-            },
-            {
-              "name": "G. Riley",
-              "number": 30,
-              "position": "F"
-            }
-          ]
-        }
-      },
-      "lineups_checked": true,
-      "lineups_available": true
-    },
-    "inhulets|probiyhorodenka|2026-11-16": {
-      "fixture_id": "1581970",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T10:00:00+01:00",
-      "home": {
-        "id": 3625,
-        "name": "Inhulets"
-      },
-      "away": {
-        "id": 24568,
-        "name": "Probiy Horodenka"
-      },
-      "status": "Match Interrupted",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": true,
-      "lineups_available": false
-    },
-    "dinazvyshhorod|bratslavvinnytsia|2026-11-16": {
-      "fixture_id": "1593074",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T10:00:00+01:00",
-      "home": {
-        "id": 6487,
-        "name": "Dinaz Vyshhorod"
-      },
-      "away": {
-        "id": 28006,
-        "name": "Bratslav Vinnytsia"
-      },
-      "status": "Match Postponed",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": true,
-      "lineups_available": false
-    },
-    "ucsa|polissyaii|2026-11-16": {
-      "fixture_id": "1581975",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T11:00:00+01:00",
-      "home": {
-        "id": 21957,
-        "name": "UCSA"
-      },
-      "away": {
-        "id": 24589,
-        "name": "Polissya II"
-      },
-      "status": "Match Postponed",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": true,
-      "lineups_available": false
-    },
-    "chernihiv|lokomotivkyiv|2026-11-16": {
-      "fixture_id": "1581969",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T11:30:00+01:00",
-      "home": {
-        "id": 14433,
-        "name": "Chernihiv"
-      },
-      "away": {
-        "id": 21954,
-        "name": "Lokomotiv Kyiv"
-      },
-      "status": "Match Postponed",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": true,
-      "lineups_available": false
-    },
-    "polandu18|czechiau18|2026-11-16": {
-      "fixture_id": "1649021",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T12:00:00+01:00",
-      "home": {
-        "id": 21476,
-        "name": "Poland U18"
-      },
-      "away": {
-        "id": 21465,
-        "name": "Czechia U18"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": true,
-      "lineups_available": false
-    },
-    "arioeslamshahr|saipa|2026-11-16": {
-      "fixture_id": "1647885",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T12:30:00+01:00",
-      "home": {
-        "id": 20801,
-        "name": "Ario Eslamshahr"
-      },
-      "away": {
-        "id": 2736,
-        "name": "Saipa"
-      },
-      "status": "First Half",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "besatkermanshah|messoongoun|2026-11-16": {
-      "fixture_id": "1647886",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T12:30:00+01:00",
-      "home": {
-        "id": 20802,
-        "name": "Be'sat Kermanshah"
-      },
-      "away": {
-        "id": 22236,
-        "name": "Mes Soongoun"
-      },
-      "status": "First Half",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "havadar|meskerman|2026-11-16": {
-      "fixture_id": "1647887",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T12:30:00+01:00",
-      "home": {
-        "id": 15541,
-        "name": "Havadar"
-      },
-      "away": {
-        "id": 2718,
-        "name": "Mes Kerman"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "mesrafsanjan|shahinbandarameri|2026-11-16": {
-      "fixture_id": "1647888",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T12:30:00+01:00",
-      "home": {
-        "id": 2706,
-        "name": "Mes Rafsanjan"
-      },
-      "away": {
-        "id": 16468,
-        "name": "Shahin Bandar Ameri"
-      },
-      "status": "First Half",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "graficar|fkvozdovac|2026-11-16": {
-      "fixture_id": "1554220",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T13:00:00+01:00",
-      "home": {
-        "id": 4252,
-        "name": "Grafičar"
-      },
-      "away": {
-        "id": 2658,
-        "name": "FK Vozdovac"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": true,
-      "lineups_available": false
-    },
-    "ofkbor1919|semendrija1924|2026-11-16": {
-      "fixture_id": "1554326",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T13:00:00+01:00",
-      "home": {
-        "id": 26409,
-        "name": "OFK Bor 1919"
-      },
-      "away": {
-        "id": 4254,
-        "name": "Semendrija 1924"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "marko|zakynthos|2026-11-16": {
-      "fixture_id": "1636985",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T13:00:00+01:00",
-      "home": {
-        "id": 12403,
-        "name": "Marko"
-      },
-      "away": {
-        "id": 6326,
-        "name": "Zakynthos"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "trepcamitrovice|2korriku|2026-11-16": {
-      "fixture_id": "1650044",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T13:00:00+01:00",
-      "home": {
-        "id": 14403,
-        "name": "Trepça Mitrovicë"
-      },
-      "away": {
-        "id": 14398,
-        "name": "2 Korriku"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "naftgachsaran|niroyezamini|2026-11-16": {
-      "fixture_id": "1647889",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T13:15:00+01:00",
-      "home": {
-        "id": 10399,
-        "name": "Naft Gachsaran"
-      },
-      "away": {
-        "id": 7502,
-        "name": "Niroye Zamini"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "paysandupau20|pontenovau20|2026-11-16": {
-      "fixture_id": "1648762",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T13:30:00+01:00",
-      "home": {
-        "id": 25212,
-        "name": "Paysandu PA U20"
-      },
-      "away": {
-        "id": 25213,
-        "name": "Ponte Nova U20"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "vilaricascu20|atleticojm9u20|2026-11-16": {
-      "fixture_id": "1648772",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T13:30:00+01:00",
-      "home": {
-        "id": 25221,
-        "name": "Vila Rica SC U20"
-      },
-      "away": {
-        "id": 25197,
-        "name": "Atletico JM9 U20"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "comercialpau20|esmacu20|2026-11-16": {
-      "fixture_id": "1648773",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T13:30:00+01:00",
-      "home": {
-        "id": 25202,
-        "name": "Comercial PA U20"
-      },
-      "away": {
-        "id": 25206,
-        "name": "ESMAC U20"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "tapajosu20|remou20|2026-11-16": {
-      "fixture_id": "1648774",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T13:30:00+01:00",
-      "home": {
-        "id": 26563,
-        "name": "Tapajos U20"
-      },
-      "away": {
-        "id": 20390,
-        "name": "Remo U20"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "panionios|olympiakospiraeusii|2026-11-16": {
-      "fixture_id": "1636987",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T13:45:00+01:00",
-      "home": {
-        "id": 622,
-        "name": "Panionios"
-      },
-      "away": {
-        "id": 18017,
-        "name": "Olympiakos Piraeus II"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "namibia|cameroon|2026-11-16": {
-      "fixture_id": "1545900",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T14:00:00+01:00",
-      "home": {
-        "id": 1493,
-        "name": "Namibia"
-      },
-      "away": {
-        "id": 1530,
-        "name": "Cameroon"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "sudan|senegal|2026-11-16": {
-      "fixture_id": "1545906",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T14:00:00+01:00",
-      "home": {
-        "id": 1510,
-        "name": "Sudan"
-      },
-      "away": {
-        "id": 13,
-        "name": "Senegal"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "zimbabwe|equatorialguinea|2026-11-16": {
-      "fixture_id": "1545909",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T14:00:00+01:00",
-      "home": {
-        "id": 1522,
-        "name": "Zimbabwe"
-      },
-      "away": {
-        "id": 1521,
-        "name": "Equatorial Guinea"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "nikivolos|pyrgos1968|2026-11-16": {
-      "fixture_id": "1636986",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T14:00:00+01:00",
-      "home": {
-        "id": 5056,
-        "name": "Niki Volos"
-      },
-      "away": {
-        "id": 26587,
-        "name": "Pyrgos 1968"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "maniemaunion|dauphinsnoirs|2026-11-16": {
-      "fixture_id": "1644901",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T14:00:00+01:00",
-      "home": {
-        "id": 8064,
-        "name": "Maniema Union"
-      },
-      "away": {
-        "id": 8574,
-        "name": "Dauphins Noirs"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "saintluc|sangabalende|2026-11-16": {
-      "fixture_id": "1644903",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T14:00:00+01:00",
-      "home": {
-        "id": 27053,
-        "name": "Saint-Luc"
-      },
-      "away": {
-        "id": 8112,
-        "name": "Sanga Balende"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "parsjonoubijam|novinahvaz|2026-11-16": {
-      "fixture_id": "1647890",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T14:00:00+01:00",
-      "home": {
-        "id": 2702,
-        "name": "Pars Jonoubi JAM"
-      },
-      "away": {
-        "id": 28321,
-        "name": "Novin Ahvaz"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "naftmasjedsoleyman|shenavarsaziqeshm|2026-11-16": {
-      "fixture_id": "1647891",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T14:30:00+01:00",
-      "home": {
-        "id": 2707,
-        "name": "Naft Masjed Soleyman"
-      },
-      "away": {
-        "id": 22890,
-        "name": "Shenavarsazi Qeshm"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "naftbandarabbas|fardalborz|2026-11-16": {
-      "fixture_id": "1647892",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T14:45:00+01:00",
-      "home": {
-        "id": 24800,
-        "name": "Naft Bandar Abbas"
-      },
-      "away": {
-        "id": 25364,
-        "name": "Fard Alborz"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "italyu20|switzerlandu20|2026-11-16": {
-      "fixture_id": "1632094",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T15:00:00+01:00",
-      "home": {
-        "id": 10289,
-        "name": "Italy U20"
-      },
-      "away": {
-        "id": 25281,
-        "name": "Switzerland U20"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "czechiau20|germanyu20|2026-11-16": {
-      "fixture_id": "1632096",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T15:00:00+01:00",
-      "home": {
-        "id": 18047,
-        "name": "Czechia U20"
-      },
-      "away": {
-        "id": 10310,
-        "name": "Germany U20"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "chileu20|mexicou20|2026-11-16": {
-      "fixture_id": "1649022",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T15:00:00+01:00",
-      "home": {
-        "id": 16201,
-        "name": "Chile U20"
-      },
-      "away": {
-        "id": 10293,
-        "name": "Mexico U20"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "kazakhstan|slovakia|2026-11-16": {
-      "fixture_id": "1528986",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T16:00:00+01:00",
-      "home": {
-        "id": 1095,
-        "name": "Kazakhstan"
-      },
-      "away": {
-        "id": 773,
-        "name": "Slovakia"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "faroeislands|moldova|2026-11-16": {
-      "fixture_id": "1528987",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T16:00:00+01:00",
-      "home": {
-        "id": 1098,
-        "name": "Faroe Islands"
-      },
-      "away": {
-        "id": 1114,
-        "name": "Moldova"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "somalia|ghana|2026-11-16": {
-      "fixture_id": "1545904",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T16:00:00+01:00",
-      "home": {
-        "id": 8050,
-        "name": "Somalia"
-      },
-      "away": {
-        "id": 1504,
-        "name": "Ghana"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "felgueirasu23|leixoesu23|2026-11-16": {
-      "fixture_id": "1598726",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T16:00:00+01:00",
-      "home": {
-        "id": 28013,
-        "name": "Felgueiras U23"
-      },
-      "away": {
-        "id": 15465,
-        "name": "Leixões U23"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "switzerlandu18|englandu18|2026-11-16": {
-      "fixture_id": "1647642",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T16:00:00+01:00",
-      "home": {
-        "id": 22341,
-        "name": "Switzerland U18"
-      },
-      "away": {
-        "id": 21466,
-        "name": "England U18"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "kosovou21|luxembourgu21|2026-11-16": {
-      "fixture_id": "1649547",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T16:00:00+01:00",
-      "home": {
-        "id": 8203,
-        "name": "Kosovo U21"
-      },
-      "away": {
-        "id": 8207,
-        "name": "Luxembourg U21"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "centralafricanrepublic|benin|2026-11-16": {
-      "fixture_id": "1545888",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T17:00:00+01:00",
-      "home": {
-        "id": 1527,
-        "name": "Central African Republic"
-      },
-      "away": {
-        "id": 1516,
-        "name": "Benin"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "eritrea|guinea|2026-11-16": {
-      "fixture_id": "1545890",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T17:00:00+01:00",
-      "home": {
-        "id": 1498,
-        "name": "Eritrea"
-      },
-      "away": {
-        "id": 1509,
-        "name": "Guinea"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "tatranpresov|lokomotivazvolen|2026-11-16": {
-      "fixture_id": "1561202",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T17:00:00+01:00",
-      "home": {
-        "id": 10550,
-        "name": "Tatran Prešov"
-      },
-      "away": {
-        "id": 10552,
-        "name": "Lokomotíva Zvolen"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "portugalu20|englandu20|2026-11-16": {
-      "fixture_id": "1632095",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T17:00:00+01:00",
-      "home": {
-        "id": 10299,
-        "name": "Portugal U20"
-      },
-      "away": {
-        "id": 10309,
-        "name": "England U20"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "diarra|asko|2026-11-16": {
-      "fixture_id": "1649669",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T17:00:00+01:00",
-      "home": {
-        "id": 25371,
-        "name": "Diarra"
-      },
-      "away": {
-        "id": 12686,
-        "name": "ASKO"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "estonia|bulgaria|2026-11-16": {
-      "fixture_id": "1528988",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T18:00:00+01:00",
-      "home": {
-        "id": 1101,
-        "name": "Estonia"
-      },
-      "away": {
-        "id": 1103,
-        "name": "Bulgaria"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "lithuania|liechtenstein|2026-11-16": {
-      "fixture_id": "1528989",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T18:00:00+01:00",
-      "home": {
-        "id": 1097,
-        "name": "Lithuania"
-      },
-      "away": {
-        "id": 1107,
-        "name": "Liechtenstein"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "iceland|luxembourg|2026-11-16": {
-      "fixture_id": "1545617",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T18:00:00+01:00",
-      "home": {
-        "id": 18,
-        "name": "Iceland"
-      },
-      "away": {
-        "id": 1102,
-        "name": "Luxembourg"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "stuttgartw|bayerleverkusenw|2026-11-16": {
-      "fixture_id": "1593174",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T18:00:00+01:00",
-      "home": {
-        "id": 24130,
-        "name": "Stuttgart W"
-      },
-      "away": {
-        "id": 1859,
-        "name": "Bayer Leverkusen W"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "algeriau23|eswatiniu23|2026-11-16": {
-      "fixture_id": "1644769",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T18:00:00+01:00",
-      "home": {
-        "id": 10186,
-        "name": "Algeria U23"
-      },
-      "away": {
-        "id": 20544,
-        "name": "Eswatini U23"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "greeceu21|icelandu21|2026-11-16": {
-      "fixture_id": "1645403",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T18:00:00+01:00",
-      "home": {
-        "id": 8198,
-        "name": "Greece U21"
-      },
-      "away": {
-        "id": 8199,
-        "name": "Iceland U21"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "italyu21|belgiumu21|2026-11-16": {
-      "fixture_id": "1649548",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T18:15:00+01:00",
-      "home": {
-        "id": 8201,
-        "name": "Italy U21"
-      },
-      "away": {
-        "id": 8183,
-        "name": "Belgium U21"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "utccajamarca|clubdeportivoloschankas|2026-11-16": {
-      "fixture_id": "1549556",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T19:00:00+01:00",
-      "home": {
-        "id": 2539,
-        "name": "UTC Cajamarca"
-      },
-      "away": {
-        "id": 2572,
-        "name": "Club Deportivo Los Chankas"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "andorra|azerbaijan|2026-11-16": {
-      "fixture_id": "1638605",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T19:00:00+01:00",
-      "home": {
-        "id": 1110,
-        "name": "Andorra"
-      },
-      "away": {
-        "id": 1096,
-        "name": "Azerbaijan"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "leonesderosario|sportivobarracas|2026-11-16": {
-      "fixture_id": "1647670",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T19:00:00+01:00",
-      "home": {
-        "id": 27282,
-        "name": "Leones de Rosario"
-      },
-      "away": {
-        "id": 1931,
-        "name": "Sportivo Barracas"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "bakaridjan|derbyacademie|2026-11-16": {
-      "fixture_id": "1649670",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T19:30:00+01:00",
-      "home": {
-        "id": 12668,
-        "name": "Bakaridjan"
-      },
-      "away": {
-        "id": 27223,
-        "name": "Derby Academie"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "norwichcityu21|exeteru21|2026-11-16": {
-      "fixture_id": "1627106",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T20:00:00+01:00",
-      "home": {
-        "id": 7200,
-        "name": "Norwich City U21"
-      },
-      "away": {
-        "id": 24847,
-        "name": "Exeter U21"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "plymouthu21|leicestercityu21|2026-11-16": {
-      "fixture_id": "1627165",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T20:00:00+01:00",
-      "home": {
-        "id": 28226,
-        "name": "Plymouth U21"
-      },
-      "away": {
-        "id": 7195,
-        "name": "Leicester City U21"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "cuba|grenada|2026-11-16": {
-      "fixture_id": "1640009",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T20:00:00+01:00",
-      "home": {
-        "id": 2388,
-        "name": "Cuba"
-      },
-      "away": {
-        "id": 5533,
-        "name": "Grenada"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "guadeloupe|bermuda|2026-11-16": {
-      "fixture_id": "1640013",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T20:00:00+01:00",
-      "home": {
-        "id": 10983,
-        "name": "Guadeloupe"
-      },
-      "away": {
-        "id": 5158,
-        "name": "Bermuda"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "guyana|puertorico|2026-11-16": {
-      "fixture_id": "1640014",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T20:00:00+01:00",
-      "home": {
-        "id": 5162,
-        "name": "Guyana"
-      },
-      "away": {
-        "id": 5539,
-        "name": "Puerto Rico"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "albacete|celtadevigoii|2026-11-16": {
-      "fixture_id": "1570014",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T20:30:00+01:00",
-      "home": {
-        "id": 722,
-        "name": "Albacete"
-      },
-      "away": {
-        "id": 9571,
-        "name": "Celta de Vigo II"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "sorrento|ssmonopoli|2026-11-16": {
-      "fixture_id": "1609130",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T20:30:00+01:00",
-      "home": {
-        "id": 9537,
-        "name": "Sorrento"
-      },
-      "away": {
-        "id": 10138,
-        "name": "SS Monopoli"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "englandu21|franceu21|2026-11-16": {
-      "fixture_id": "1646121",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T20:30:00+01:00",
-      "home": {
-        "id": 8190,
-        "name": "England U21"
-      },
-      "away": {
-        "id": 8194,
-        "name": "France U21"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "araguafc|deportivolara|2026-11-16": {
-      "fixture_id": "1650171",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T20:30:00+01:00",
-      "home": {
-        "id": 2817,
-        "name": "Aragua FC"
-      },
-      "away": {
-        "id": 2812,
-        "name": "Deportivo Lara"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "germany|netherlands|2026-11-16": {
-      "fixture_id": "1528990",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T20:45:00+01:00",
-      "home": {
-        "id": 25,
-        "name": "Germany"
-      },
-      "away": {
-        "id": 1118,
-        "name": "Netherlands"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "greece|serbia|2026-11-16": {
-      "fixture_id": "1528991",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T20:45:00+01:00",
-      "home": {
-        "id": 1117,
-        "name": "Greece"
-      },
-      "away": {
-        "id": 14,
-        "name": "Serbia"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "gibraltar|malta|2026-11-16": {
-      "fixture_id": "1545618",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T20:45:00+01:00",
-      "home": {
-        "id": 1093,
-        "name": "Gibraltar"
-      },
-      "away": {
-        "id": 1112,
-        "name": "Malta"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "switzerland|scotland|2026-11-16": {
-      "fixture_id": "1545652",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T20:45:00+01:00",
-      "home": {
-        "id": 15,
-        "name": "Switzerland"
-      },
-      "away": {
-        "id": 1108,
-        "name": "Scotland"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "fyrmacedonia|slovenia|2026-11-16": {
-      "fixture_id": "1545662",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T20:45:00+01:00",
-      "home": {
-        "id": 1105,
-        "name": "FYR Macedonia"
-      },
-      "away": {
-        "id": 1091,
-        "name": "Slovenia"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "perugia|torres|2026-11-16": {
-      "fixture_id": "1608745",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T20:45:00+01:00",
-      "home": {
-        "id": 524,
-        "name": "Perugia"
-      },
-      "away": {
-        "id": 9534,
-        "name": "Torres"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "desimpedidosgoti|nyvelados|2026-11-16": {
-      "fixture_id": "1646439",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T21:00:00+01:00",
-      "home": {
-        "id": 26898,
-        "name": "Desimpedidos Goti"
-      },
-      "away": {
-        "id": 26904,
-        "name": "Nyvelados"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "cusco|adt|2026-11-16": {
-      "fixture_id": "1549558",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T21:15:00+01:00",
-      "home": {
-        "id": 10013,
-        "name": "Cusco"
-      },
-      "away": {
-        "id": 10492,
-        "name": "ADT"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "ucvmoquegua|atleticograu|2026-11-16": {
-      "fixture_id": "1549560",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T21:15:00+01:00",
-      "home": {
-        "id": 22489,
-        "name": "UCV Moquegua"
-      },
-      "away": {
-        "id": 2564,
-        "name": "Atletico Grau"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "santiagomorning|deportesrengo|2026-11-16": {
-      "fixture_id": "1600697",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T21:30:00+01:00",
-      "home": {
-        "id": 2335,
-        "name": "Santiago Morning"
-      },
-      "away": {
-        "id": 5636,
-        "name": "Deportes Rengo"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "dibradosfc|fluxo|2026-11-16": {
-      "fixture_id": "1646438",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T22:00:00+01:00",
-      "home": {
-        "id": 28555,
-        "name": "Dibrados FC"
-      },
-      "away": {
-        "id": 26899,
-        "name": "Fluxo"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
-    "furia|funkbol|2026-11-16": {
-      "fixture_id": "1646440",
-      "date": "2026-11-16",
-      "kickoff": "2026-11-16T23:00:00+01:00",
-      "home": {
-        "id": 26901,
-        "name": "Furia"
-      },
-      "away": {
-        "id": 26900,
-        "name": "Funkbol"
-      },
-      "status": "Not Started",
-      "injuries": [],
-      "lineups": {},
-      "lineups_checked": false,
-      "lineups_available": false
-    },
     "g3x|capim|2026-11-17": {
       "fixture_id": "1646441",
       "date": "2026-11-17",
@@ -6181,6 +3672,2605 @@
       "away": {
         "id": 12973,
         "name": "São Paulo U20"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "incaaruba|aguila|2026-11-16": {
+      "fixture_id": "1600664",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T00:00:00+01:00",
+      "home": {
+        "id": 28019,
+        "name": "Inca Aruba"
+      },
+      "away": {
+        "id": 4310,
+        "name": "Águila"
+      },
+      "status": "Match Finished",
+      "status_short": "FT",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": true,
+      "lineups_available": false
+    },
+    "panama|curacao|2026-11-16": {
+      "fixture_id": "1644696",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T00:00:00+01:00",
+      "home": {
+        "id": 11,
+        "name": "Panama"
+      },
+      "away": {
+        "id": 5530,
+        "name": "Curaçao"
+      },
+      "status": "Match Finished",
+      "status_short": "FT",
+      "injuries": [],
+      "lineups": {
+        "Panama": {
+          "formation": "5-4-1",
+          "coach": "Thomas Christiansen",
+          "starting_xi": [
+            {
+              "name": "O. Mosquera",
+              "number": 22,
+              "position": "G"
+            },
+            {
+              "name": "A. Murillo",
+              "number": 23,
+              "position": "D"
+            },
+            {
+              "name": "J. Ramos",
+              "number": 13,
+              "position": "D"
+            },
+            {
+              "name": "J. Córdoba",
+              "number": 3,
+              "position": "D"
+            },
+            {
+              "name": "A. Andrade",
+              "number": 16,
+              "position": "D"
+            },
+            {
+              "name": "J. Gutiérrez",
+              "number": 15,
+              "position": "D"
+            },
+            {
+              "name": "Cristian Jesús Martínez",
+              "number": 6,
+              "position": "M"
+            },
+            {
+              "name": "C. Harvey",
+              "number": 14,
+              "position": "M"
+            },
+            {
+              "name": "A. Carrasquilla",
+              "number": 8,
+              "position": "M"
+            },
+            {
+              "name": "I. Díaz",
+              "number": 10,
+              "position": "M"
+            },
+            {
+              "name": "K. Barria",
+              "number": 21,
+              "position": "F"
+            }
+          ],
+          "substitutes": [
+            {
+              "name": "Y. Bárcenas",
+              "number": 11,
+              "position": "M"
+            },
+            {
+              "name": "J. Y. Vergara Ortega",
+              "number": 18,
+              "position": "F"
+            },
+            {
+              "name": "C. Blackman",
+              "number": 2,
+              "position": "D"
+            },
+            {
+              "name": "M. De Leon",
+              "number": 1,
+              "position": "G"
+            },
+            {
+              "name": "J. Fajardo",
+              "number": 17,
+              "position": "F"
+            },
+            {
+              "name": "V. Griffith",
+              "number": 5,
+              "position": "M"
+            },
+            {
+              "name": "M. Krug",
+              "number": 4,
+              "position": "D"
+            },
+            {
+              "name": "A. Londoño",
+              "number": 9,
+              "position": "F"
+            },
+            {
+              "name": "M. Morán",
+              "number": 19,
+              "position": "F"
+            },
+            {
+              "name": "E. Roberts",
+              "number": 12,
+              "position": "G"
+            },
+            {
+              "name": "J. Rodríguez",
+              "number": 7,
+              "position": "M"
+            },
+            {
+              "name": "O. Valencia",
+              "number": 20,
+              "position": "D"
+            }
+          ]
+        },
+        "Curaçao": {
+          "formation": "4-2-3-1",
+          "coach": "D. Advocaat",
+          "starting_xi": [
+            {
+              "name": "E. Room",
+              "number": 1,
+              "position": "G"
+            },
+            {
+              "name": "S. Sambo",
+              "number": 2,
+              "position": "D"
+            },
+            {
+              "name": "J. Gaari",
+              "number": 3,
+              "position": "D"
+            },
+            {
+              "name": "J. Carolina",
+              "number": 19,
+              "position": "D"
+            },
+            {
+              "name": "J. Brenet",
+              "number": 20,
+              "position": "D"
+            },
+            {
+              "name": "L. Comenencia",
+              "number": 8,
+              "position": "M"
+            },
+            {
+              "name": "L. Bacuna",
+              "number": 10,
+              "position": "M"
+            },
+            {
+              "name": "T. Chong",
+              "number": 21,
+              "position": "M"
+            },
+            {
+              "name": "J. Bacuna",
+              "number": 7,
+              "position": "M"
+            },
+            {
+              "name": "K. Gorré",
+              "number": 14,
+              "position": "M"
+            },
+            {
+              "name": "Jerolldino Bergraaf",
+              "number": 9,
+              "position": "F"
+            }
+          ],
+          "substitutes": [
+            {
+              "name": "K. Zeggen",
+              "number": 23,
+              "position": "G"
+            },
+            {
+              "name": "R. van Eijma",
+              "number": 4,
+              "position": "D"
+            },
+            {
+              "name": "N. Thomas",
+              "number": 11,
+              "position": "F"
+            },
+            {
+              "name": "N. Souren",
+              "number": 12,
+              "position": "M"
+            },
+            {
+              "name": "G. Roemeratoe",
+              "number": 6,
+              "position": "M"
+            },
+            {
+              "name": "A. Obispo",
+              "number": 18,
+              "position": "D"
+            },
+            {
+              "name": "A. Martha",
+              "number": 15,
+              "position": "F"
+            },
+            {
+              "name": "J. Margaritha",
+              "number": 16,
+              "position": "F"
+            },
+            {
+              "name": "Deveron Fonville",
+              "number": 17,
+              "position": "D"
+            },
+            {
+              "name": "T. Bodak",
+              "number": 22,
+              "position": "G"
+            }
+          ]
+        }
+      },
+      "lineups_checked": true,
+      "lineups_available": true
+    },
+    "defensorsporting|penarol|2026-11-16": {
+      "fixture_id": "1649062",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T00:00:00+01:00",
+      "home": {
+        "id": 2350,
+        "name": "Defensor Sporting"
+      },
+      "away": {
+        "id": 2348,
+        "name": "Penarol"
+      },
+      "status": "Match Finished",
+      "status_short": "FT",
+      "injuries": [],
+      "lineups": {
+        "Defensor Sporting": {
+          "formation": "4-2-3-1",
+          "coach": "A. Rodríguez",
+          "starting_xi": [
+            {
+              "name": "K. Dawson",
+              "number": 12,
+              "position": "G"
+            },
+            {
+              "name": "G. Rodriguez",
+              "number": 4,
+              "position": "D"
+            },
+            {
+              "name": "G. de los Santos",
+              "number": 3,
+              "position": "D"
+            },
+            {
+              "name": "Mateo Caballero",
+              "number": 20,
+              "position": "D"
+            },
+            {
+              "name": "A. Frugone",
+              "number": 15,
+              "position": "D"
+            },
+            {
+              "name": "G. Barrios",
+              "number": 5,
+              "position": "M"
+            },
+            {
+              "name": "E. Cuello",
+              "number": 30,
+              "position": "M"
+            },
+            {
+              "name": "L. Agazzi",
+              "number": 11,
+              "position": "D"
+            },
+            {
+              "name": "Nicolás Andrés Wunsch Tomás",
+              "number": 8,
+              "position": "M"
+            },
+            {
+              "name": "A. Torterolo",
+              "number": 22,
+              "position": "F"
+            },
+            {
+              "name": "Lautaro Navarro",
+              "number": 99,
+              "position": "F"
+            }
+          ],
+          "substitutes": [
+            {
+              "name": "Diego Abella",
+              "number": 25,
+              "position": "M"
+            },
+            {
+              "name": "Xavier biscayzacu",
+              "number": 10,
+              "position": "M"
+            },
+            {
+              "name": "Lorenzo Cafaro",
+              "number": 18,
+              "position": "M"
+            },
+            {
+              "name": "L. de los Santos",
+              "number": 24,
+              "position": "M"
+            },
+            {
+              "name": "J. Diaz",
+              "number": 19,
+              "position": "F"
+            },
+            {
+              "name": "L. Machado",
+              "number": 1,
+              "position": "G"
+            },
+            {
+              "name": "B. Montenegro",
+              "number": 26,
+              "position": "F"
+            },
+            {
+              "name": "A. Perdomo",
+              "number": 16,
+              "position": "M"
+            },
+            {
+              "name": "Bruno Pereira",
+              "number": 6,
+              "position": "M"
+            },
+            {
+              "name": "T. Pozzo",
+              "number": 29,
+              "position": "M"
+            }
+          ]
+        },
+        "Penarol": {
+          "formation": "4-4-2",
+          "coach": "D. Aguirre",
+          "starting_xi": [
+            {
+              "name": "S. Britos",
+              "number": 1,
+              "position": "G"
+            },
+            {
+              "name": "I. Alegre",
+              "number": 28,
+              "position": "D"
+            },
+            {
+              "name": "G. Pezzella",
+              "number": 2,
+              "position": "D"
+            },
+            {
+              "name": "L. Ferreira",
+              "number": 6,
+              "position": "D"
+            },
+            {
+              "name": "M. Olivera",
+              "number": 15,
+              "position": "D"
+            },
+            {
+              "name": "J. Cabrera",
+              "number": 7,
+              "position": "F"
+            },
+            {
+              "name": "N. Fernández",
+              "number": 8,
+              "position": "M"
+            },
+            {
+              "name": "E. Darias",
+              "number": 13,
+              "position": "M"
+            },
+            {
+              "name": "L. Umpiérrez",
+              "number": 32,
+              "position": "F"
+            },
+            {
+              "name": "M. Arezo",
+              "number": 19,
+              "position": "F"
+            },
+            {
+              "name": "A. Hernández",
+              "number": 99,
+              "position": "F"
+            }
+          ],
+          "substitutes": [
+            {
+              "name": "B. Barboza",
+              "number": 36,
+              "position": "D"
+            },
+            {
+              "name": "S. Mülhethaler",
+              "number": 30,
+              "position": "F"
+            },
+            {
+              "name": "L. Hernández",
+              "number": 27,
+              "position": "D"
+            },
+            {
+              "name": "M. Lemos",
+              "number": 3,
+              "position": "D"
+            },
+            {
+              "name": "J. Trindade",
+              "number": 21,
+              "position": "M"
+            },
+            {
+              "name": "C. Jaime",
+              "number": 11,
+              "position": "F"
+            },
+            {
+              "name": "F. González",
+              "number": 80,
+              "position": "M"
+            },
+            {
+              "name": "Thiago Nahuel Espinosa Dovat",
+              "number": 26,
+              "position": "D"
+            },
+            {
+              "name": "F. Batista",
+              "number": 9,
+              "position": "F"
+            },
+            {
+              "name": "L. Diaz",
+              "number": 31,
+              "position": "G"
+            }
+          ]
+        }
+      },
+      "lineups_checked": true,
+      "lineups_available": true
+    },
+    "potterstigers|greencity|2026-11-16": {
+      "fixture_id": "1649701",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T00:00:00+01:00",
+      "home": {
+        "id": 25288,
+        "name": "Potters Tigers"
+      },
+      "away": {
+        "id": 22794,
+        "name": "Green City"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": true,
+      "lineups_available": false
+    },
+    "suchitepequez|antiguagfc|2026-11-16": {
+      "fixture_id": "1559707",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T00:05:00+01:00",
+      "home": {
+        "id": 3653,
+        "name": "Suchitepéquez"
+      },
+      "away": {
+        "id": 3656,
+        "name": "Antigua GFC"
+      },
+      "status": "Match Finished",
+      "status_short": "FT",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": true,
+      "lineups_available": false
+    },
+    "tigresfc|realcundinamarca|2026-11-16": {
+      "fixture_id": "1647452",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T00:05:00+01:00",
+      "home": {
+        "id": 1145,
+        "name": "Tigres FC"
+      },
+      "away": {
+        "id": 22099,
+        "name": "Real Cundinamarca"
+      },
+      "status": "Match Finished",
+      "status_short": "FT",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": true,
+      "lineups_available": false
+    },
+    "recoleta|deportesiquique|2026-11-16": {
+      "fixture_id": "1511725",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T00:30:00+01:00",
+      "home": {
+        "id": 5644,
+        "name": "Recoleta"
+      },
+      "away": {
+        "id": 2319,
+        "name": "Deportes Iquique"
+      },
+      "status": "Match Finished",
+      "status_short": "FT",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": true,
+      "lineups_available": false
+    },
+    "ferrocarriloeste|gimnasiaytiro|2026-11-16": {
+      "fixture_id": "1648404",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T00:30:00+01:00",
+      "home": {
+        "id": 470,
+        "name": "Ferro Carril Oeste"
+      },
+      "away": {
+        "id": 1928,
+        "name": "Gimnasia Y Tiro"
+      },
+      "status": "Match Finished",
+      "status_short": "FT",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": true,
+      "lineups_available": false
+    },
+    "oriental|colon|2026-11-16": {
+      "fixture_id": "1650155",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T00:30:00+01:00",
+      "home": {
+        "id": 2376,
+        "name": "Oriental"
+      },
+      "away": {
+        "id": 15628,
+        "name": "Colón"
+      },
+      "status": "Match Finished",
+      "status_short": "FT",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": true,
+      "lineups_available": false
+    },
+    "estrella|sporting|2026-11-16": {
+      "fixture_id": "1647126",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T01:00:00+01:00",
+      "home": {
+        "id": 8238,
+        "name": "Estrella"
+      },
+      "away": {
+        "id": 26895,
+        "name": "Sporting"
+      },
+      "status": "Match Postponed",
+      "status_short": "PST",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": true,
+      "lineups_available": false
+    },
+    "newmexicounited|sacramentorepublic|2026-11-16": {
+      "fixture_id": "1649528",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T01:00:00+01:00",
+      "home": {
+        "id": 4003,
+        "name": "New Mexico United"
+      },
+      "away": {
+        "id": 4015,
+        "name": "Sacramento Republic"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": true,
+      "lineups_available": false
+    },
+    "pigottsbullets|freemansville|2026-11-16": {
+      "fixture_id": "1650010",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T01:00:00+01:00",
+      "home": {
+        "id": 22800,
+        "name": "Pigotts Bullets"
+      },
+      "away": {
+        "id": 28472,
+        "name": "Freemansville"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": true,
+      "lineups_available": false
+    },
+    "monterreyw|pachucaw|2026-11-16": {
+      "fixture_id": "1649469",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T02:00:00+01:00",
+      "home": {
+        "id": 14879,
+        "name": "Monterrey W"
+      },
+      "away": {
+        "id": 14881,
+        "name": "Pachuca W"
+      },
+      "status": "Match Finished",
+      "status_short": "FT",
+      "injuries": [],
+      "lineups": {
+        "Monterrey W": {
+          "formation": null,
+          "coach": "Amandine Miquel",
+          "starting_xi": [
+            {
+              "name": "P. Manrique",
+              "number": 28,
+              "position": null
+            },
+            {
+              "name": "A. Godinez",
+              "number": 5,
+              "position": null
+            },
+            {
+              "name": "V. del Campo",
+              "number": 23,
+              "position": null
+            },
+            {
+              "name": "Daiane",
+              "number": 3,
+              "position": null
+            },
+            {
+              "name": "A. Lua",
+              "number": 14,
+              "position": null
+            },
+            {
+              "name": "M. Restrepo",
+              "number": 24,
+              "position": null
+            },
+            {
+              "name": "D. Garcia",
+              "number": 22,
+              "position": null
+            },
+            {
+              "name": "L. Bosch",
+              "number": 9,
+              "position": null
+            },
+            {
+              "name": "A. Soto",
+              "number": 30,
+              "position": null
+            },
+            {
+              "name": "L. Garcia",
+              "number": 17,
+              "position": null
+            },
+            {
+              "name": "V. Vargas",
+              "number": 11,
+              "position": null
+            }
+          ],
+          "substitutes": [
+            {
+              "name": "A. Godinez",
+              "number": 13,
+              "position": null
+            },
+            {
+              "name": "D. Monroy",
+              "number": 2,
+              "position": null
+            },
+            {
+              "name": "A. Fernandez",
+              "number": 21,
+              "position": null
+            },
+            {
+              "name": "N. Perez",
+              "number": 10,
+              "position": null
+            },
+            {
+              "name": "C. Cazares",
+              "number": 33,
+              "position": null
+            },
+            {
+              "name": "J. Seoposenwe",
+              "number": 12,
+              "position": null
+            },
+            {
+              "name": "L. Thomas",
+              "number": 19,
+              "position": null
+            },
+            {
+              "name": "S. Simental",
+              "number": 15,
+              "position": null
+            },
+            {
+              "name": "S. Martinez",
+              "number": 6,
+              "position": null
+            },
+            {
+              "name": "S. Ortiz",
+              "number": 31,
+              "position": null
+            }
+          ]
+        },
+        "Pachuca W": {
+          "formation": null,
+          "coach": "Tome Montserrat",
+          "starting_xi": [
+            {
+              "name": "E. Barreras",
+              "number": 1,
+              "position": null
+            },
+            {
+              "name": "K. Robles",
+              "number": 2,
+              "position": null
+            },
+            {
+              "name": "Y. Minota",
+              "number": 8,
+              "position": null
+            },
+            {
+              "name": "J. Orejel",
+              "number": 7,
+              "position": null
+            },
+            {
+              "name": "B. Ibarra",
+              "number": 5,
+              "position": null
+            },
+            {
+              "name": "K. Nieto",
+              "number": 6,
+              "position": null
+            },
+            {
+              "name": "A. Veloz",
+              "number": 11,
+              "position": null
+            },
+            {
+              "name": "E. R. Sanchez Stickel",
+              "number": 16,
+              "position": null
+            },
+            {
+              "name": "Eudimilla",
+              "number": 13,
+              "position": null
+            },
+            {
+              "name": "Aline Gomes",
+              "number": 25,
+              "position": null
+            },
+            {
+              "name": "P. Garcia",
+              "number": 26,
+              "position": null
+            }
+          ],
+          "substitutes": [
+            {
+              "name": "C. Lopes",
+              "number": 22,
+              "position": null
+            },
+            {
+              "name": "M. Vance",
+              "number": 21,
+              "position": null
+            },
+            {
+              "name": "J. Valdez Hernandez",
+              "number": 35,
+              "position": null
+            },
+            {
+              "name": "K. Caicedo",
+              "number": 17,
+              "position": null
+            },
+            {
+              "name": "A. A. Fragoso Garcia",
+              "number": 19,
+              "position": null
+            },
+            {
+              "name": "C. Ihezuo",
+              "number": 30,
+              "position": null
+            },
+            {
+              "name": "D. Flores",
+              "number": 23,
+              "position": null
+            },
+            {
+              "name": "V. Corral",
+              "number": 9,
+              "position": null
+            },
+            {
+              "name": "N. Nicosia",
+              "number": 10,
+              "position": null
+            },
+            {
+              "name": "A. Gomez",
+              "number": 79,
+              "position": null
+            }
+          ]
+        }
+      },
+      "lineups_checked": true,
+      "lineups_available": true
+    },
+    "quindio|realcartagena|2026-11-16": {
+      "fixture_id": "1647451",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T02:10:00+01:00",
+      "home": {
+        "id": 1461,
+        "name": "Quindio"
+      },
+      "away": {
+        "id": 1459,
+        "name": "Real Cartagena"
+      },
+      "status": "Match Finished",
+      "status_short": "FT",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": true,
+      "lineups_available": false
+    },
+    "tolucaw|americaw|2026-11-16": {
+      "fixture_id": "1649470",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T04:10:00+01:00",
+      "home": {
+        "id": 14885,
+        "name": "Toluca W"
+      },
+      "away": {
+        "id": 14868,
+        "name": "América W"
+      },
+      "status": "Match Finished",
+      "status_short": "FT",
+      "injuries": [],
+      "lineups": {
+        "Toluca W": {
+          "formation": "4-2-3-1",
+          "coach": "Edgar Duenas",
+          "starting_xi": [
+            {
+              "name": "V. Martinez",
+              "number": 12,
+              "position": "G"
+            },
+            {
+              "name": "K. Martinez",
+              "number": 2,
+              "position": "D"
+            },
+            {
+              "name": "M. Ramirez",
+              "number": 15,
+              "position": "D"
+            },
+            {
+              "name": "L. Fernandez",
+              "number": 16,
+              "position": "D"
+            },
+            {
+              "name": "V. Lopez",
+              "number": 13,
+              "position": "D"
+            },
+            {
+              "name": "S. Vazquez",
+              "number": 22,
+              "position": "M"
+            },
+            {
+              "name": "I. Munoz",
+              "number": 26,
+              "position": "M"
+            },
+            {
+              "name": "F. Robert",
+              "number": 25,
+              "position": "M"
+            },
+            {
+              "name": "B. Cuevas",
+              "number": 10,
+              "position": "M"
+            },
+            {
+              "name": "S. Gonzalez Diaz Barreiro",
+              "number": 28,
+              "position": "M"
+            },
+            {
+              "name": "E. Le Sommer",
+              "number": 9,
+              "position": "F"
+            }
+          ],
+          "substitutes": [
+            {
+              "name": "C. Lozoya",
+              "number": 1,
+              "position": "G"
+            },
+            {
+              "name": "Y. Rodriguez Perez",
+              "number": 4,
+              "position": "D"
+            },
+            {
+              "name": "A. Henry",
+              "number": 6,
+              "position": "M"
+            },
+            {
+              "name": "Y. Franco",
+              "number": 5,
+              "position": "M"
+            },
+            {
+              "name": "E. Garcia",
+              "number": 18,
+              "position": "M"
+            },
+            {
+              "name": "S. Jakobsson",
+              "number": 17,
+              "position": "F"
+            },
+            {
+              "name": "D. Espinosa",
+              "number": 7,
+              "position": "F"
+            },
+            {
+              "name": "D. Guatemala",
+              "number": 11,
+              "position": "D"
+            },
+            {
+              "name": "F. Monroy",
+              "number": 59,
+              "position": "D"
+            }
+          ]
+        },
+        "América W": {
+          "formation": "4-1-4-1",
+          "coach": "Angel Villacampa Carrasco",
+          "starting_xi": [
+            {
+              "name": "I. Velasco",
+              "number": 12,
+              "position": "G"
+            },
+            {
+              "name": "K. Rodriguez",
+              "number": 15,
+              "position": "D"
+            },
+            {
+              "name": "Isa Haas",
+              "number": 2,
+              "position": "D"
+            },
+            {
+              "name": "K. Rodriguez",
+              "number": 3,
+              "position": "D"
+            },
+            {
+              "name": "J. Gutierrez",
+              "number": 25,
+              "position": "D"
+            },
+            {
+              "name": "G. Garcia",
+              "number": 5,
+              "position": "M"
+            },
+            {
+              "name": "M. Saldivar",
+              "number": 19,
+              "position": "M"
+            },
+            {
+              "name": "N. Antonio",
+              "number": 18,
+              "position": "M"
+            },
+            {
+              "name": "I. Guerrero",
+              "number": 8,
+              "position": "M"
+            },
+            {
+              "name": "S. Camberos",
+              "number": 10,
+              "position": "M"
+            },
+            {
+              "name": "Geyse",
+              "number": 17,
+              "position": "F"
+            }
+          ],
+          "substitutes": [
+            {
+              "name": "C. Espino",
+              "number": 1,
+              "position": "G"
+            },
+            {
+              "name": "A. Avilez",
+              "number": 11,
+              "position": "F"
+            },
+            {
+              "name": "A. Cabanillas Soto",
+              "number": 24,
+              "position": "F"
+            },
+            {
+              "name": "S. Luebbert",
+              "number": 22,
+              "position": "M"
+            },
+            {
+              "name": "A. Soto",
+              "number": 14,
+              "position": "M"
+            },
+            {
+              "name": "M. Ramos",
+              "number": 28,
+              "position": "D"
+            },
+            {
+              "name": "X. Pineda",
+              "number": 13,
+              "position": "M"
+            },
+            {
+              "name": "Priscila",
+              "number": 9,
+              "position": "F"
+            },
+            {
+              "name": "G. Riley",
+              "number": 30,
+              "position": "F"
+            }
+          ]
+        }
+      },
+      "lineups_checked": true,
+      "lineups_available": true
+    },
+    "inhulets|probiyhorodenka|2026-11-16": {
+      "fixture_id": "1581970",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T10:00:00+01:00",
+      "home": {
+        "id": 3625,
+        "name": "Inhulets"
+      },
+      "away": {
+        "id": 24568,
+        "name": "Probiy Horodenka"
+      },
+      "status": "Second Half",
+      "status_short": "2H",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": true,
+      "lineups_available": false
+    },
+    "dinazvyshhorod|bratslavvinnytsia|2026-11-16": {
+      "fixture_id": "1593074",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T10:00:00+01:00",
+      "home": {
+        "id": 6487,
+        "name": "Dinaz Vyshhorod"
+      },
+      "away": {
+        "id": 28006,
+        "name": "Bratslav Vinnytsia"
+      },
+      "status": "Match Postponed",
+      "status_short": "PST",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": true,
+      "lineups_available": false
+    },
+    "ucsa|polissyaii|2026-11-16": {
+      "fixture_id": "1581975",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T11:00:00+01:00",
+      "home": {
+        "id": 21957,
+        "name": "UCSA"
+      },
+      "away": {
+        "id": 24589,
+        "name": "Polissya II"
+      },
+      "status": "Match Postponed",
+      "status_short": "PST",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": true,
+      "lineups_available": false
+    },
+    "chernihiv|lokomotivkyiv|2026-11-16": {
+      "fixture_id": "1581969",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T11:30:00+01:00",
+      "home": {
+        "id": 14433,
+        "name": "Chernihiv"
+      },
+      "away": {
+        "id": 21954,
+        "name": "Lokomotiv Kyiv"
+      },
+      "status": "Match Postponed",
+      "status_short": "PST",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": true,
+      "lineups_available": false
+    },
+    "polandu18|czechiau18|2026-11-16": {
+      "fixture_id": "1649021",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T12:00:00+01:00",
+      "home": {
+        "id": 21476,
+        "name": "Poland U18"
+      },
+      "away": {
+        "id": 21465,
+        "name": "Czechia U18"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": true,
+      "lineups_available": false
+    },
+    "arioeslamshahr|saipa|2026-11-16": {
+      "fixture_id": "1647885",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T12:30:00+01:00",
+      "home": {
+        "id": 20801,
+        "name": "Ario Eslamshahr"
+      },
+      "away": {
+        "id": 2736,
+        "name": "Saipa"
+      },
+      "status": "First Half",
+      "status_short": "1H",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "besatkermanshah|messoongoun|2026-11-16": {
+      "fixture_id": "1647886",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T12:30:00+01:00",
+      "home": {
+        "id": 20802,
+        "name": "Be'sat Kermanshah"
+      },
+      "away": {
+        "id": 22236,
+        "name": "Mes Soongoun"
+      },
+      "status": "First Half",
+      "status_short": "1H",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "havadar|meskerman|2026-11-16": {
+      "fixture_id": "1647887",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T12:30:00+01:00",
+      "home": {
+        "id": 15541,
+        "name": "Havadar"
+      },
+      "away": {
+        "id": 2718,
+        "name": "Mes Kerman"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "mesrafsanjan|shahinbandarameri|2026-11-16": {
+      "fixture_id": "1647888",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T12:30:00+01:00",
+      "home": {
+        "id": 2706,
+        "name": "Mes Rafsanjan"
+      },
+      "away": {
+        "id": 16468,
+        "name": "Shahin Bandar Ameri"
+      },
+      "status": "First Half",
+      "status_short": "1H",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "graficar|fkvozdovac|2026-11-16": {
+      "fixture_id": "1554220",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T13:00:00+01:00",
+      "home": {
+        "id": 4252,
+        "name": "Grafičar"
+      },
+      "away": {
+        "id": 2658,
+        "name": "FK Vozdovac"
+      },
+      "status": "First Half",
+      "status_short": "1H",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": true,
+      "lineups_available": false
+    },
+    "ofkbor1919|semendrija1924|2026-11-16": {
+      "fixture_id": "1554326",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T13:00:00+01:00",
+      "home": {
+        "id": 26409,
+        "name": "OFK Bor 1919"
+      },
+      "away": {
+        "id": 4254,
+        "name": "Semendrija 1924"
+      },
+      "status": "First Half",
+      "status_short": "1H",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "marko|zakynthos|2026-11-16": {
+      "fixture_id": "1636985",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T13:00:00+01:00",
+      "home": {
+        "id": 12403,
+        "name": "Marko"
+      },
+      "away": {
+        "id": 6326,
+        "name": "Zakynthos"
+      },
+      "status": "First Half",
+      "status_short": "1H",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "trepcamitrovice|2korriku|2026-11-16": {
+      "fixture_id": "1650044",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T13:00:00+01:00",
+      "home": {
+        "id": 14403,
+        "name": "Trepça Mitrovicë"
+      },
+      "away": {
+        "id": 14398,
+        "name": "2 Korriku"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "naftgachsaran|niroyezamini|2026-11-16": {
+      "fixture_id": "1647889",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T13:15:00+01:00",
+      "home": {
+        "id": 10399,
+        "name": "Naft Gachsaran"
+      },
+      "away": {
+        "id": 7502,
+        "name": "Niroye Zamini"
+      },
+      "status": "First Half",
+      "status_short": "1H",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": true,
+      "lineups_available": false
+    },
+    "paysandupau20|pontenovau20|2026-11-16": {
+      "fixture_id": "1648762",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T13:30:00+01:00",
+      "home": {
+        "id": 25212,
+        "name": "Paysandu PA U20"
+      },
+      "away": {
+        "id": 25213,
+        "name": "Ponte Nova U20"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "vilaricascu20|atleticojm9u20|2026-11-16": {
+      "fixture_id": "1648772",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T13:30:00+01:00",
+      "home": {
+        "id": 25221,
+        "name": "Vila Rica SC U20"
+      },
+      "away": {
+        "id": 25197,
+        "name": "Atletico JM9 U20"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "comercialpau20|esmacu20|2026-11-16": {
+      "fixture_id": "1648773",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T13:30:00+01:00",
+      "home": {
+        "id": 25202,
+        "name": "Comercial PA U20"
+      },
+      "away": {
+        "id": 25206,
+        "name": "ESMAC U20"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "tapajosu20|remou20|2026-11-16": {
+      "fixture_id": "1648774",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T13:30:00+01:00",
+      "home": {
+        "id": 26563,
+        "name": "Tapajos U20"
+      },
+      "away": {
+        "id": 20390,
+        "name": "Remo U20"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "panionios|olympiakospiraeusii|2026-11-16": {
+      "fixture_id": "1636987",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T13:45:00+01:00",
+      "home": {
+        "id": 622,
+        "name": "Panionios"
+      },
+      "away": {
+        "id": 18017,
+        "name": "Olympiakos Piraeus II"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "namibia|cameroon|2026-11-16": {
+      "fixture_id": "1545900",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T14:00:00+01:00",
+      "home": {
+        "id": 1493,
+        "name": "Namibia"
+      },
+      "away": {
+        "id": 1530,
+        "name": "Cameroon"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "sudan|senegal|2026-11-16": {
+      "fixture_id": "1545906",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T14:00:00+01:00",
+      "home": {
+        "id": 1510,
+        "name": "Sudan"
+      },
+      "away": {
+        "id": 13,
+        "name": "Senegal"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "zimbabwe|equatorialguinea|2026-11-16": {
+      "fixture_id": "1545909",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T14:00:00+01:00",
+      "home": {
+        "id": 1522,
+        "name": "Zimbabwe"
+      },
+      "away": {
+        "id": 1521,
+        "name": "Equatorial Guinea"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "nikivolos|pyrgos1968|2026-11-16": {
+      "fixture_id": "1636986",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T14:00:00+01:00",
+      "home": {
+        "id": 5056,
+        "name": "Niki Volos"
+      },
+      "away": {
+        "id": 26587,
+        "name": "Pyrgos 1968"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "maniemaunion|dauphinsnoirs|2026-11-16": {
+      "fixture_id": "1644901",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T14:00:00+01:00",
+      "home": {
+        "id": 8064,
+        "name": "Maniema Union"
+      },
+      "away": {
+        "id": 8574,
+        "name": "Dauphins Noirs"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "saintluc|sangabalende|2026-11-16": {
+      "fixture_id": "1644903",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T14:00:00+01:00",
+      "home": {
+        "id": 27053,
+        "name": "Saint-Luc"
+      },
+      "away": {
+        "id": 8112,
+        "name": "Sanga Balende"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "parsjonoubijam|novinahvaz|2026-11-16": {
+      "fixture_id": "1647890",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T14:00:00+01:00",
+      "home": {
+        "id": 2702,
+        "name": "Pars Jonoubi JAM"
+      },
+      "away": {
+        "id": 28321,
+        "name": "Novin Ahvaz"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "naftmasjedsoleyman|shenavarsaziqeshm|2026-11-16": {
+      "fixture_id": "1647891",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T14:30:00+01:00",
+      "home": {
+        "id": 2707,
+        "name": "Naft Masjed Soleyman"
+      },
+      "away": {
+        "id": 22890,
+        "name": "Shenavarsazi Qeshm"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "naftbandarabbas|fardalborz|2026-11-16": {
+      "fixture_id": "1647892",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T14:45:00+01:00",
+      "home": {
+        "id": 24800,
+        "name": "Naft Bandar Abbas"
+      },
+      "away": {
+        "id": 25364,
+        "name": "Fard Alborz"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "italyu20|switzerlandu20|2026-11-16": {
+      "fixture_id": "1632094",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T15:00:00+01:00",
+      "home": {
+        "id": 10289,
+        "name": "Italy U20"
+      },
+      "away": {
+        "id": 25281,
+        "name": "Switzerland U20"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "czechiau20|germanyu20|2026-11-16": {
+      "fixture_id": "1632096",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T15:00:00+01:00",
+      "home": {
+        "id": 18047,
+        "name": "Czechia U20"
+      },
+      "away": {
+        "id": 10310,
+        "name": "Germany U20"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "chileu20|mexicou20|2026-11-16": {
+      "fixture_id": "1649022",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T15:00:00+01:00",
+      "home": {
+        "id": 16201,
+        "name": "Chile U20"
+      },
+      "away": {
+        "id": 10293,
+        "name": "Mexico U20"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "kazakhstan|slovakia|2026-11-16": {
+      "fixture_id": "1528986",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T16:00:00+01:00",
+      "home": {
+        "id": 1095,
+        "name": "Kazakhstan"
+      },
+      "away": {
+        "id": 773,
+        "name": "Slovakia"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "faroeislands|moldova|2026-11-16": {
+      "fixture_id": "1528987",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T16:00:00+01:00",
+      "home": {
+        "id": 1098,
+        "name": "Faroe Islands"
+      },
+      "away": {
+        "id": 1114,
+        "name": "Moldova"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "somalia|ghana|2026-11-16": {
+      "fixture_id": "1545904",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T16:00:00+01:00",
+      "home": {
+        "id": 8050,
+        "name": "Somalia"
+      },
+      "away": {
+        "id": 1504,
+        "name": "Ghana"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "felgueirasu23|leixoesu23|2026-11-16": {
+      "fixture_id": "1598726",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T16:00:00+01:00",
+      "home": {
+        "id": 28013,
+        "name": "Felgueiras U23"
+      },
+      "away": {
+        "id": 15465,
+        "name": "Leixões U23"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "switzerlandu18|englandu18|2026-11-16": {
+      "fixture_id": "1647642",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T16:00:00+01:00",
+      "home": {
+        "id": 22341,
+        "name": "Switzerland U18"
+      },
+      "away": {
+        "id": 21466,
+        "name": "England U18"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "kosovou21|luxembourgu21|2026-11-16": {
+      "fixture_id": "1649547",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T16:00:00+01:00",
+      "home": {
+        "id": 8203,
+        "name": "Kosovo U21"
+      },
+      "away": {
+        "id": 8207,
+        "name": "Luxembourg U21"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "centralafricanrepublic|benin|2026-11-16": {
+      "fixture_id": "1545888",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T17:00:00+01:00",
+      "home": {
+        "id": 1527,
+        "name": "Central African Republic"
+      },
+      "away": {
+        "id": 1516,
+        "name": "Benin"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "eritrea|guinea|2026-11-16": {
+      "fixture_id": "1545890",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T17:00:00+01:00",
+      "home": {
+        "id": 1498,
+        "name": "Eritrea"
+      },
+      "away": {
+        "id": 1509,
+        "name": "Guinea"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "tatranpresov|lokomotivazvolen|2026-11-16": {
+      "fixture_id": "1561202",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T17:00:00+01:00",
+      "home": {
+        "id": 10550,
+        "name": "Tatran Prešov"
+      },
+      "away": {
+        "id": 10552,
+        "name": "Lokomotíva Zvolen"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "portugalu20|englandu20|2026-11-16": {
+      "fixture_id": "1632095",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T17:00:00+01:00",
+      "home": {
+        "id": 10299,
+        "name": "Portugal U20"
+      },
+      "away": {
+        "id": 10309,
+        "name": "England U20"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "diarra|asko|2026-11-16": {
+      "fixture_id": "1649669",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T17:00:00+01:00",
+      "home": {
+        "id": 25371,
+        "name": "Diarra"
+      },
+      "away": {
+        "id": 12686,
+        "name": "ASKO"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "estonia|bulgaria|2026-11-16": {
+      "fixture_id": "1528988",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T18:00:00+01:00",
+      "home": {
+        "id": 1101,
+        "name": "Estonia"
+      },
+      "away": {
+        "id": 1103,
+        "name": "Bulgaria"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "lithuania|liechtenstein|2026-11-16": {
+      "fixture_id": "1528989",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T18:00:00+01:00",
+      "home": {
+        "id": 1097,
+        "name": "Lithuania"
+      },
+      "away": {
+        "id": 1107,
+        "name": "Liechtenstein"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "iceland|luxembourg|2026-11-16": {
+      "fixture_id": "1545617",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T18:00:00+01:00",
+      "home": {
+        "id": 18,
+        "name": "Iceland"
+      },
+      "away": {
+        "id": 1102,
+        "name": "Luxembourg"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "stuttgartw|bayerleverkusenw|2026-11-16": {
+      "fixture_id": "1593174",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T18:00:00+01:00",
+      "home": {
+        "id": 24130,
+        "name": "Stuttgart W"
+      },
+      "away": {
+        "id": 1859,
+        "name": "Bayer Leverkusen W"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "algeriau23|eswatiniu23|2026-11-16": {
+      "fixture_id": "1644769",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T18:00:00+01:00",
+      "home": {
+        "id": 10186,
+        "name": "Algeria U23"
+      },
+      "away": {
+        "id": 20544,
+        "name": "Eswatini U23"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "greeceu21|icelandu21|2026-11-16": {
+      "fixture_id": "1645403",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T18:00:00+01:00",
+      "home": {
+        "id": 8198,
+        "name": "Greece U21"
+      },
+      "away": {
+        "id": 8199,
+        "name": "Iceland U21"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "italyu21|belgiumu21|2026-11-16": {
+      "fixture_id": "1649548",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T18:15:00+01:00",
+      "home": {
+        "id": 8201,
+        "name": "Italy U21"
+      },
+      "away": {
+        "id": 8183,
+        "name": "Belgium U21"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "utccajamarca|clubdeportivoloschankas|2026-11-16": {
+      "fixture_id": "1549556",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T19:00:00+01:00",
+      "home": {
+        "id": 2539,
+        "name": "UTC Cajamarca"
+      },
+      "away": {
+        "id": 2572,
+        "name": "Club Deportivo Los Chankas"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "andorra|azerbaijan|2026-11-16": {
+      "fixture_id": "1638605",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T19:00:00+01:00",
+      "home": {
+        "id": 1110,
+        "name": "Andorra"
+      },
+      "away": {
+        "id": 1096,
+        "name": "Azerbaijan"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "leonesderosario|sportivobarracas|2026-11-16": {
+      "fixture_id": "1647670",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T19:00:00+01:00",
+      "home": {
+        "id": 27282,
+        "name": "Leones de Rosario"
+      },
+      "away": {
+        "id": 1931,
+        "name": "Sportivo Barracas"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "bakaridjan|derbyacademie|2026-11-16": {
+      "fixture_id": "1649670",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T19:30:00+01:00",
+      "home": {
+        "id": 12668,
+        "name": "Bakaridjan"
+      },
+      "away": {
+        "id": 27223,
+        "name": "Derby Academie"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "norwichcityu21|exeteru21|2026-11-16": {
+      "fixture_id": "1627106",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T20:00:00+01:00",
+      "home": {
+        "id": 7200,
+        "name": "Norwich City U21"
+      },
+      "away": {
+        "id": 24847,
+        "name": "Exeter U21"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "plymouthu21|leicestercityu21|2026-11-16": {
+      "fixture_id": "1627165",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T20:00:00+01:00",
+      "home": {
+        "id": 28226,
+        "name": "Plymouth U21"
+      },
+      "away": {
+        "id": 7195,
+        "name": "Leicester City U21"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "cuba|grenada|2026-11-16": {
+      "fixture_id": "1640009",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T20:00:00+01:00",
+      "home": {
+        "id": 2388,
+        "name": "Cuba"
+      },
+      "away": {
+        "id": 5533,
+        "name": "Grenada"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "guadeloupe|bermuda|2026-11-16": {
+      "fixture_id": "1640013",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T20:00:00+01:00",
+      "home": {
+        "id": 10983,
+        "name": "Guadeloupe"
+      },
+      "away": {
+        "id": 5158,
+        "name": "Bermuda"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "guyana|puertorico|2026-11-16": {
+      "fixture_id": "1640014",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T20:00:00+01:00",
+      "home": {
+        "id": 5162,
+        "name": "Guyana"
+      },
+      "away": {
+        "id": 5539,
+        "name": "Puerto Rico"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "albacete|celtadevigoii|2026-11-16": {
+      "fixture_id": "1570014",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T20:30:00+01:00",
+      "home": {
+        "id": 722,
+        "name": "Albacete"
+      },
+      "away": {
+        "id": 9571,
+        "name": "Celta de Vigo II"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "sorrento|ssmonopoli|2026-11-16": {
+      "fixture_id": "1609130",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T20:30:00+01:00",
+      "home": {
+        "id": 9537,
+        "name": "Sorrento"
+      },
+      "away": {
+        "id": 10138,
+        "name": "SS Monopoli"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "englandu21|franceu21|2026-11-16": {
+      "fixture_id": "1646121",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T20:30:00+01:00",
+      "home": {
+        "id": 8190,
+        "name": "England U21"
+      },
+      "away": {
+        "id": 8194,
+        "name": "France U21"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "araguafc|deportivolara|2026-11-16": {
+      "fixture_id": "1650171",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T20:30:00+01:00",
+      "home": {
+        "id": 2817,
+        "name": "Aragua FC"
+      },
+      "away": {
+        "id": 2812,
+        "name": "Deportivo Lara"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "germany|netherlands|2026-11-16": {
+      "fixture_id": "1528990",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T20:45:00+01:00",
+      "home": {
+        "id": 25,
+        "name": "Germany"
+      },
+      "away": {
+        "id": 1118,
+        "name": "Netherlands"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "greece|serbia|2026-11-16": {
+      "fixture_id": "1528991",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T20:45:00+01:00",
+      "home": {
+        "id": 1117,
+        "name": "Greece"
+      },
+      "away": {
+        "id": 14,
+        "name": "Serbia"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "gibraltar|malta|2026-11-16": {
+      "fixture_id": "1545618",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T20:45:00+01:00",
+      "home": {
+        "id": 1093,
+        "name": "Gibraltar"
+      },
+      "away": {
+        "id": 1112,
+        "name": "Malta"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "switzerland|scotland|2026-11-16": {
+      "fixture_id": "1545652",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T20:45:00+01:00",
+      "home": {
+        "id": 15,
+        "name": "Switzerland"
+      },
+      "away": {
+        "id": 1108,
+        "name": "Scotland"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "fyrmacedonia|slovenia|2026-11-16": {
+      "fixture_id": "1545662",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T20:45:00+01:00",
+      "home": {
+        "id": 1105,
+        "name": "FYR Macedonia"
+      },
+      "away": {
+        "id": 1091,
+        "name": "Slovenia"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "perugia|torres|2026-11-16": {
+      "fixture_id": "1608745",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T20:45:00+01:00",
+      "home": {
+        "id": 524,
+        "name": "Perugia"
+      },
+      "away": {
+        "id": 9534,
+        "name": "Torres"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "desimpedidosgoti|nyvelados|2026-11-16": {
+      "fixture_id": "1646439",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T21:00:00+01:00",
+      "home": {
+        "id": 26898,
+        "name": "Desimpedidos Goti"
+      },
+      "away": {
+        "id": 26904,
+        "name": "Nyvelados"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "cusco|adt|2026-11-16": {
+      "fixture_id": "1549558",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T21:15:00+01:00",
+      "home": {
+        "id": 10013,
+        "name": "Cusco"
+      },
+      "away": {
+        "id": 10492,
+        "name": "ADT"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "ucvmoquegua|atleticograu|2026-11-16": {
+      "fixture_id": "1549560",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T21:15:00+01:00",
+      "home": {
+        "id": 22489,
+        "name": "UCV Moquegua"
+      },
+      "away": {
+        "id": 2564,
+        "name": "Atletico Grau"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "santiagomorning|deportesrengo|2026-11-16": {
+      "fixture_id": "1600697",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T21:30:00+01:00",
+      "home": {
+        "id": 2335,
+        "name": "Santiago Morning"
+      },
+      "away": {
+        "id": 5636,
+        "name": "Deportes Rengo"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "dibradosfc|fluxo|2026-11-16": {
+      "fixture_id": "1646438",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T22:00:00+01:00",
+      "home": {
+        "id": 28555,
+        "name": "Dibrados FC"
+      },
+      "away": {
+        "id": 26899,
+        "name": "Fluxo"
+      },
+      "status": "Not Started",
+      "status_short": "NS",
+      "injuries": [],
+      "lineups": {},
+      "lineups_checked": false,
+      "lineups_available": false
+    },
+    "furia|funkbol|2026-11-16": {
+      "fixture_id": "1646440",
+      "date": "2026-11-16",
+      "kickoff": "2026-11-16T23:00:00+01:00",
+      "home": {
+        "id": 26901,
+        "name": "Furia"
+      },
+      "away": {
+        "id": 26900,
+        "name": "Funkbol"
       },
       "status": "Not Started",
       "status_short": "NS",
