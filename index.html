@@ -3,20 +3,21 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Foot Predict AI</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FOOT PREDICT AI V4</title>
 <style>
 :root{
- --bg:#09111f;--panel:#121e31;--panel2:#1a2a42;
- --line:#2b405e;--text:#edf4ff;--muted:#9bacc5;
- --green:#36d6a0;--blue:#70b5ff;--orange:#ffc36a;--red:#ff7580;
+--bg:#08111f;--panel:#111e31;--panel2:#1b2b43;
+--line:#2b405e;--text:#edf4ff;--muted:#9bacc5;
+--green:#36d6a0;--blue:#70b5ff;--orange:#ffc36a;
+--red:#ff7580
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif}
-header{padding:28px 15px;text-align:center;background:linear-gradient(130deg,#10213a,#105044)}
-header h1{margin:0;font-size:29px;letter-spacing:1px}
-header p{color:#c3d4e8;margin:9px 0 0;font-size:14px}
-main{max-width:1150px;margin:auto;padding:17px}
+header{padding:30px 15px;text-align:center;background:linear-gradient(130deg,#10213a,#105044)}
+header h1{font-size:30px;margin:0;letter-spacing:1px}
+header p{color:#c3d4e8;font-size:13px}
+main{max-width:1150px;margin:auto;padding:16px}
 .panel{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:17px;margin-bottom:15px}
 h2{font-size:18px;margin:0 0 14px}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
@@ -27,93 +28,98 @@ h2{font-size:18px;margin:0 0 14px}
 select,input,button{background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:9px;padding:12px;font-size:14px}
 select,input{flex:1;min-width:170px}
 button{background:#176b55;border:0;font-weight:bold;cursor:pointer}
-button:disabled{opacity:.5;cursor:wait}
-#status{color:var(--muted);font-size:13px;margin-top:12px;min-height:18px}
-.progress{height:6px;background:#263750;border-radius:10px;overflow:hidden;margin-top:9px}
-#bar{height:100%;width:0;background:var(--green);transition:width .2s}
-.match{border:1px solid var(--line);border-radius:12px;padding:15px;margin:12px 0;background:#101a2b}
+button:disabled{opacity:.5}
+#status{color:var(--muted);font-size:13px;margin-top:12px}
+.match{border:1px solid var(--line);border-radius:12px;padding:15px;margin:12px 0;background:#101a2b;cursor:pointer}
+.match:hover{border-color:var(--green)}
 .matchtop{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;color:var(--muted);font-size:12px}
 .teams{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;text-align:center;margin:17px 0}
 .team{font-weight:bold;font-size:16px}
 .vs{font-size:11px;color:var(--muted)}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.pred{background:var(--panel2);border-radius:9px;padding:10px;text-align:center}
-.pred small{color:var(--muted);font-size:11px}
-.pred b{display:block;font-size:20px;color:var(--green);margin-top:5px}
-.subhead{font-size:13px;font-weight:bold;color:#d7e5fa;margin:16px 0 9px}
-.marketlist{display:grid;grid-template-columns:repeat(2,1fr);gap:7px}
-.market{background:#1b2a40;border-radius:8px;padding:9px;display:flex;justify-content:space-between;gap:8px;font-size:12px}
-.market b{color:var(--green);white-space:nowrap}
-.formline{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:9px 0 13px;font-size:12px;color:var(--muted)}
-.formdots{display:flex;gap:4px}
-.dot{width:21px;height:21px;border-radius:6px;display:grid;place-items:center;font-size:11px;font-weight:bold}
+.formline{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:12px 0;font-size:12px;color:var(--muted)}
+.formdots{display:flex;gap:4px;margin-top:7px}
+.dot{width:22px;height:22px;border-radius:6px;display:grid;place-items:center;font-size:11px;font-weight:bold}
 .win{background:#176b50;color:#a8ffdb}
 .draw{background:#665323;color:#ffe4a1}
 .loss{background:#713540;color:#ffd1d5}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.pred{background:var(--panel2);border-radius:9px;padding:11px;text-align:center}
+.pred small{color:var(--muted);font-size:11px}
+.pred b{display:block;font-size:21px;color:var(--green);margin-top:5px}
+.subhead{font-size:13px;font-weight:bold;color:#d7e5fa;margin:16px 0 9px}
+.marketlist{display:grid;grid-template-columns:repeat(2,1fr);gap:7px}
+.market{background:#1b2a40;border-radius:8px;padding:10px;display:flex;justify-content:space-between;gap:8px;font-size:12px}
+.market b{color:var(--green)}
 .tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}
 .tag{font-size:11px;padding:6px 9px;border-radius:20px;background:#263750;color:#dceaff}
 .tag.good{background:#174b3c;color:#8cf0c5}
 .tag.warn{background:#5a4422;color:#ffe0a2}
 .small{font-size:12px;color:var(--muted);line-height:1.5}
+.warning{font-size:11px;color:var(--orange);margin-top:10px;line-height:1.5}
 .empty{text-align:center;color:var(--muted);padding:25px}
 .error{color:var(--red)}
 .sectionrow{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
-.warning{font-size:11px;color:var(--orange);margin-top:10px;line-height:1.5}
-.teamstats{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-.teamcard{background:var(--panel2);border-radius:9px;padding:12px}
-.teamcard h3{font-size:14px;margin:0 0 9px}
-.teamcard p{font-size:12px;color:var(--muted);margin:7px 0}
-.teamcard b{color:var(--text)}
+.progress{height:6px;background:#263750;border-radius:10px;overflow:hidden;margin-top:9px}
+#bar{height:100%;width:0;background:var(--green);transition:width .2s}
+.modalback{display:none;position:fixed;inset:0;background:#000d;z-index:1000;padding:15px;overflow-y:auto}
+.modalback.open{display:block}
+.modal{max-width:850px;margin:20px auto;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px}
+.modalhead{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding-bottom:12px}
+.modalhead h2{margin:0}
+.closebtn{background:#713540}
+.detailgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+.detailbox{background:var(--panel2);padding:12px;border-radius:9px}
+.detailbox span{display:block;color:var(--muted);font-size:11px;margin-bottom:6px}
+.detailbox b{font-size:17px;color:var(--green)}
+.teamdetail{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.teamcard{background:var(--panel2);border-radius:10px;padding:13px}
+.teamcard h3{font-size:14px;margin:0 0 10px}
+.teamcard p{font-size:12px;color:var(--muted);margin:8px 0}
+.historyrow{padding:9px;background:var(--panel2);border-radius:8px;margin:6px 0;font-size:12px}
 footer{text-align:center;color:var(--muted);font-size:11px;padding:20px}
 @media(max-width:650px){
- .stats{grid-template-columns:repeat(2,1fr)}
- .team{font-size:13px}
- .grid3{gap:5px}
- .pred{padding:8px 3px}
- .pred b{font-size:17px}
- .marketlist{grid-template-columns:1fr}
- .teamstats{grid-template-columns:1fr}
+.stats{grid-template-columns:repeat(2,1fr)}
+.team{font-size:13px}
+.marketlist{grid-template-columns:1fr}
+.modal{margin:0 auto;padding:13px}
+.detailgrid,.teamdetail{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
-
 <header>
 <h1>⚽ FOOT PREDICT AI</h1>
-<p>Analyse statistique des matchs et forme réelle des équipes</p>
+<p>Version 4 · Analyse des derniers matchs et statistiques des équipes</p>
 </header>
-
 <main>
 <section class="panel">
 <div class="sectionrow">
 <h2>📊 Tableau de bord</h2>
-<span class="tag">Analyse automatique</span>
+<span class="tag">API-Football</span>
 </div>
 <div class="stats">
 <div class="stat"><strong id="matchCount">—</strong><span>Matchs à venir</span></div>
-<div class="stat"><strong id="teamCount">—</strong><span>Équipes en historique</span></div>
-<div class="stat"><strong id="resultCount">—</strong><span>Résultats historiques</span></div>
-<div class="stat"><strong id="apiCalls">—</strong><span>Appels API du jour</span></div>
+<div class="stat"><strong id="teamCount">—</strong><span>Équipes suivies</span></div>
+<div class="stat"><strong id="formCount">—</strong><span>Historiques disponibles</span></div>
+<div class="stat"><strong id="lineupCount">—</strong><span>Compositions disponibles</span></div>
 </div>
 <div id="status">Chargement…</div>
 <div class="progress"><div id="bar"></div></div>
+<p class="small" id="updated"></p>
 </section>
 
 <section class="panel">
 <h2>🔎 Recherche et filtres</h2>
 <div class="controls">
-<select id="league">
-<option value="ALL">Toutes les compétitions</option>
-</select>
+<select id="league"><option value="ALL">Toutes les compétitions</option></select>
 <input id="search" type="search" placeholder="Rechercher une équipe ou compétition">
 <select id="sort">
 <option value="date">Trier par date</option>
 <option value="confidence">Meilleures données disponibles</option>
-<option value="home">Probabilité domicile</option>
+<option value="probability">Scénario le plus probable</option>
 </select>
 <button id="reload">Actualiser</button>
 </div>
-<p class="small">Les historiques sont récupérés équipe par équipe et conservés en cache.</p>
 </section>
 
 <section class="panel">
@@ -121,577 +127,349 @@ footer{text-align:center;color:var(--muted);font-size:11px;padding:20px}
 <h2>🎯 Analyses des matchs</h2>
 <span class="tag" id="shownCount">0 match</span>
 </div>
-<div id="matches"><div class="empty">Récupération des données…</div></div>
+<div id="matches"><div class="empty">Chargement des matchs…</div></div>
 </section>
 
 <section class="panel">
-<h2>🧠 Comment fonctionne le moteur ?</h2>
+<h2>🧠 Méthode d'analyse</h2>
 <p class="small">
-Le moteur utilise les huit derniers matchs disponibles de chaque équipe.
-Il distingue les performances à domicile et à l'extérieur, les buts marqués,
-les buts encaissés et les résultats récents. Les probabilités sont estimées
-avec une distribution de Poisson. Si l'historique est insuffisant, le site
-l'indique au lieu de fabriquer des statistiques.
-</p>
-<p class="warning">
-Les probabilités sont des estimations statistiques. Elles ne garantissent
-pas le résultat d'un match ni un gain.
+Le moteur utilise les derniers résultats des équipes pour calculer leur forme,
+leurs buts marqués et encaissés, puis estimer les probabilités lorsque
+l'échantillon est suffisant. Les historiques absents ne sont jamais remplacés
+par des statistiques inventées. Les pourcentages restent des estimations
+et ne garantissent aucun résultat.
 </p>
 </section>
 </main>
+<footer>FOOT PREDICT AI · Outil statistique expérimental · Pas de garantie de résultat</footer>
 
-<footer>FOOT PREDICT AI · Données API-Football · Modèle statistique expérimental</footer>
+<div class="modalback" id="matchModal">
+<div class="modal">
+<div class="modalhead">
+<h2>🔍 Analyse complète du match</h2>
+<button class="closebtn" id="closeModal">✕ Fermer</button>
+</div>
+<div id="modalContent"></div>
+</div>
+</div>
 
 <script>
 "use strict";
 
-const DATA_URL =
- "https://raw.githubusercontent.com/zzzflow09/Foot-Predict-Ai/main/";
+const DATA_URL="https://raw.githubusercontent.com/zzzflow09/Foot-Predict-Ai/main/predictions.json";
+const $=id=>document.getElementById(id);
 
-const $ = id => document.getElementById(id);
+let data={};
+let fixtures=[];
+let teamForm={};
+let busy=false;
 
-let fixtures = [];
-let teamForm = {};
-let historyMatches = [];
-let busy = false;
-let generatedAt = null;
-
-function escapeHTML(value){
- return String(value ?? "").replace(/[&<>"']/g, char => ({
-  "&":"&amp;",
-  "<":"&lt;",
-  ">":"&gt;",
-  '"':"&quot;",
-  "'":"&#039;"
- })[char]);
+function esc(value){
+return String(value??"").replace(/[&<>"']/g,c=>({
+"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+})[c]);
 }
-
-function normalise(value){
- return String(value || "")
-  .toLowerCase()
-  .normalize("NFD")
-  .replace(/[\u0300-\u036f]/g,"")
-  .replace(/[^a-z0-9]/g,"");
+function pct(value){return Math.round(value*100)+"%";}
+function clamp(v,min,max){return Math.max(min,Math.min(max,v));}
+function status(message,progress){
+$("status").textContent=message;
+if(progress!==undefined)$("bar").style.width=progress+"%";
 }
-
-function status(message, progress){
- $("status").textContent = message;
- if(progress !== undefined){
-  $("bar").style.width = progress + "%";
- }
+function leagueName(match){
+const league=match.league;
+if(typeof league==="string")return league;
+return league?.name||"Compétition inconnue";
 }
-
-async function getJSON(file){
- const response = await fetch(
-  DATA_URL + file + "?t=" + Date.now(),
-  {cache:"no-store"}
- );
- if(!response.ok){
-  throw new Error(
-   "Impossible de charger " + file + " (HTTP " + response.status + ")"
-  );
- }
- return response.json();
+function teamId(match,side){
+return String(match[side]?.id??"");
 }
-
-function formatDate(value){
- const date = new Date(value);
- if(Number.isNaN(date.getTime())) return "Date inconnue";
- return date.toLocaleString("fr-FR",{
-  weekday:"short",
-  day:"2-digit",
-  month:"short",
-  hour:"2-digit",
-  minute:"2-digit"
- });
+function teamName(match,side){
+return match[side]?.name||"Équipe inconnue";
 }
-
-function average(values){
- const valid = values.filter(v => Number.isFinite(v));
- if(!valid.length) return null;
- return valid.reduce((a,b)=>a+b,0)/valid.length;
+function getTeam(id){
+return teamForm[String(id)]||null;
 }
-
-function weightedAverage(values){
- const valid = values.filter(v => Number.isFinite(v));
- if(!valid.length) return null;
-
- let total = 0;
- let weights = 0;
-
- valid.forEach((value,index)=>{
-  const weight = Math.pow(.88,index);
-  total += value * weight;
-  weights += weight;
- });
-
- return weights ? total/weights : null;
+function getRecent(id){
+const team=getTeam(id);
+return Array.isArray(team?.matches)?team.matches:[];
 }
-
-function getTeamMatches(teamId){
- const entry = teamForm[String(teamId)];
- if(!entry || !Array.isArray(entry.matches)) return [];
- return entry.matches.slice().sort((a,b)=>
-  String(b.date || "").localeCompare(String(a.date || ""))
- );
+function getProfile(id){
+const matches=getRecent(id);
+let wins=0,draws=0,losses=0,scored=0,conceded=0;
+const form=[];
+matches.forEach(m=>{
+const isHome=String(m.home_id)===String(id);
+const gf=Number(isHome?m.home_goals:m.away_goals);
+const ga=Number(isHome?m.away_goals:m.home_goals);
+if(!Number.isFinite(gf)||!Number.isFinite(ga))return;
+scored+=gf;conceded+=ga;
+let result;
+if(gf>ga){wins++;result="V";}
+else if(gf===ga){draws++;result="N";}
+else{losses++;result="D";}
+form.push({result,gf,ga,date:m.date,opponent:isHome?m.away_name:m.home_name});
+});
+return {
+matches:form,wins,draws,losses,scored,conceded,
+count:form.length,
+avgScored:form.length?scored/form.length:null,
+avgConceded:form.length?conceded/form.length:null,
+points:wins*3+draws
+};
 }
-
-function teamProfile(teamId){
- const matches = getTeamMatches(teamId);
- const id = Number(teamId);
-
- const ownMatches = matches.filter(match =>
-  Number(match.home_id) === id || Number(match.away_id) === id
- );
-
- const homeMatches = ownMatches.filter(match =>
-  Number(match.home_id) === id
- );
-
- const awayMatches = ownMatches.filter(match =>
-  Number(match.away_id) === id
- );
-
- function scored(match){
-  return Number(match.home_id) === id
-   ? Number(match.home_goals)
-   : Number(match.away_goals);
- }
-
- function conceded(match){
-  return Number(match.home_id) === id
-   ? Number(match.away_goals)
-   : Number(match.home_goals);
- }
-
- const form = ownMatches.slice(0,5).map(match=>{
-  const goalsFor = scored(match);
-  const goalsAgainst = conceded(match);
-  return goalsFor > goalsAgainst ? "V" :
-   goalsFor === goalsAgainst ? "N" : "D";
- });
-
- const points = form.reduce((total,result)=>
-  total + (result==="V" ? 3 : result==="N" ? 1 : 0),0
- );
-
- return {
-  matches:ownMatches,
-  homeMatches,
-  awayMatches,
-  form,
-  points,
-  scored:weightedAverage(ownMatches.map(scored)),
-  conceded:weightedAverage(ownMatches.map(conceded)),
-  homeScored:weightedAverage(homeMatches.map(m=>Number(m.home_goals))),
-  homeConceded:weightedAverage(homeMatches.map(m=>Number(m.away_goals))),
-  awayScored:weightedAverage(awayMatches.map(m=>Number(m.away_goals))),
-  awayConceded:weightedAverage(awayMatches.map(m=>Number(m.home_goals))),
-  count:ownMatches.length,
-  homeCount:homeMatches.length,
-  awayCount:awayMatches.length
- };
+function poisson(lambda,k){
+let p=Math.exp(-lambda);
+for(let i=1;i<=k;i++)p*=lambda/i;
+return p;
 }
-
-function poisson(lambda, goals){
- let probability = Math.exp(-lambda);
- for(let i=1;i<=goals;i++){
-  probability *= lambda/i;
- }
- return probability;
+function model(match){
+const home=getProfile(teamId(match,"home"));
+const away=getProfile(teamId(match,"away"));
+if(home.count<3||away.count<3)return {available:false,home,away};
+const lh=clamp((home.avgScored+away.avgConceded)/2,.15,4);
+const la=clamp((away.avgScored+home.avgConceded)/2,.15,4);
+let p1=0,pN=0,p2=0,over15=0,over25=0,btts=0;
+let best={score:"-",probability:0};
+for(let h=0;h<=9;h++){
+for(let a=0;a<=9;a++){
+const p=poisson(lh,h)*poisson(la,a);
+if(h>a)p1+=p;else if(h===a)pN+=p;else p2+=p;
+if(h+a>=2)over15+=p;
+if(h+a>=3)over25+=p;
+if(h>0&&a>0)btts+=p;
+if(p>best.probability)best={score:h+"-"+a,probability:p};
+}}
+const total=p1+pN+p2;
+return {
+available:true,home,away,lh,la,
+p1:p1/total,pN:pN/total,p2:p2/total,
+over15,over25,btts,best
+};
 }
-
-function clamp(value,min,max){
- return Math.max(min,Math.min(max,value));
+function formHTML(profile){
+if(!profile.matches.length)return '<span class="small">Historique indisponible</span>';
+return '<div class="formdots">'+profile.matches.slice(0,8).map(m=>
+'<span class="dot '+(m.result==="V"?"win":m.result==="N"?"draw":"loss")+'" title="'+esc(m.date)+' · '+esc(m.opponent)+' · '+m.gf+'-'+m.ga+'">'+m.result+'</span>'
+).join("")+'</div>';
 }
-
-function calculatePrediction(fixture){
- const home = teamProfile(fixture.home?.id);
- const away = teamProfile(fixture.away?.id);
-
- // Ne pas inventer de statistiques quand les historiques sont trop courts.
- if(home.count < 3 || away.count < 3){
-  return {
-   available:false,
-   home,
-   away,
-   reason:"Historique insuffisant : au moins 3 matchs récents sont nécessaires par équipe."
-  };
- }
-
- let homeAttack = home.homeCount >= 2
-  ? home.homeScored
-  : home.scored;
-
- let awayDefence = away.awayCount >= 2
-  ? away.awayConceded
-  : away.conceded;
-
- let awayAttack = away.awayCount >= 2
-  ? away.awayScored
-  : away.scored;
-
- let homeDefence = home.homeCount >= 2
-  ? home.homeConceded
-  : home.conceded;
-
- if(
-  homeAttack === null ||
-  awayDefence === null ||
-  awayAttack === null ||
-  homeDefence === null
- ){
-  return {
-   available:false,
-   home,
-   away,
-   reason:"Statistiques de buts incomplètes pour ce match."
-  };
- }
-
- // Moyenne des données réelles des deux équipes.
- const lambdaHome = clamp((homeAttack + awayDefence)/2,.15,4.5);
- const lambdaAway = clamp((awayAttack + homeDefence)/2,.15,4.5);
-
- let pHome = 0;
- let pDraw = 0;
- let pAway = 0;
- let over15 = 0;
- let over25 = 0;
- let over35 = 0;
- let btts = 0;
- let bestScore = {score:"-",probability:0};
-
- for(let h=0;h<=10;h++){
-  for(let a=0;a<=10;a++){
-   const probability =
-    poisson(lambdaHome,h) * poisson(lambdaAway,a);
-
-   if(h>a) pHome += probability;
-   else if(h===a) pDraw += probability;
-   else pAway += probability;
-
-   if(h+a>=2) over15 += probability;
-   if(h+a>=3) over25 += probability;
-   if(h+a>=4) over35 += probability;
-   if(h>0 && a>0) btts += probability;
-
-   if(probability>bestScore.probability){
-    bestScore = {
-     score:h+"-"+a,
-     probability
-    };
-   }
-  }
- }
-
- const total = pHome+pDraw+pAway;
- if(total>0){
-  pHome/=total;
-  pDraw/=total;
-  pAway/=total;
- }
-
- const confidence = Math.round(
-  Math.min(home.count,8)/8*50 +
-  Math.min(away.count,8)/8*50
- );
-
- return {
-  available:true,
-  home,
-  away,
-  lambdaHome,
-  lambdaAway,
-  pHome,
-  pDraw,
-  pAway,
-  over15,
-  over25,
-  over35,
-  btts,
-  bestScore,
-  confidence
- };
+function confidence(match){
+const h=getProfile(teamId(match,"home"));
+const a=getProfile(teamId(match,"away"));
+return Math.min(h.count,a.count);
 }
-
-function pct(value){
- return Math.round(value*100)+"%";
+function renderOne(match,index){
+const homeName=teamName(match,"home");
+const awayName=teamName(match,"away");
+const home=getProfile(teamId(match,"home"));
+const away=getProfile(teamId(match,"away"));
+const prediction=model(match);
+const date=new Date(match.kickoff||match.date);
+const dateText=Number.isNaN(date.getTime())?"Date inconnue":date.toLocaleString("fr-FR",{weekday:"short",day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit"});
+const league=leagueName(match);
+let predictionHTML;
+if(prediction.available){
+predictionHTML=`
+<div class="grid3">
+<div class="pred"><small>Victoire domicile</small><b>${pct(prediction.p1)}</b></div>
+<div class="pred"><small>Match nul</small><b>${pct(prediction.pN)}</b></div>
+<div class="pred"><small>Victoire extérieur</small><b>${pct(prediction.p2)}</b></div>
+</div>
+<div class="subhead">⭐ Autres estimations</div>
+<div class="marketlist">
+<div class="market"><span>Plus de 1,5 buts</span><b>${pct(prediction.over15)}</b></div>
+<div class="market"><span>Plus de 2,5 buts</span><b>${pct(prediction.over25)}</b></div>
+<div class="market"><span>Les deux équipes marquent</span><b>${pct(prediction.btts)}</b></div>
+<div class="market"><span>Score exact le plus probable</span><b>${prediction.best.score}</b></div>
+</div>`;
+}else{
+predictionHTML='<p class="warning">Historique insuffisant : au moins 3 matchs récents par équipe sont nécessaires pour calculer les probabilités.</p>';
 }
-
-function formHTML(form){
- if(!form.length){
-  return '<span class="small">Non disponible</span>';
- }
- return '<div class="formdots">'+form.map(result=>{
-  const cls = result==="V" ? "win" : result==="N" ? "draw" : "loss";
-  return '<span class="dot '+cls+'">'+result+'</span>';
- }).join("")+'</div>';
+return `
+<article class="match" data-index="${index}">
+<div class="matchtop"><span>${esc(league)} · API-Football</span><span>${esc(dateText)}</span></div>
+<div class="teams">
+<div class="team">${esc(homeName)}</div><div class="vs">CONTRE</div><div class="team">${esc(awayName)}</div>
+</div>
+<div class="formline">
+<div><b>Domicile</b>${formHTML(home)}</div>
+<div><b>Extérieur</b>${formHTML(away)}</div>
+</div>
+${predictionHTML}
+<div class="tags">
+<span class="tag ${Math.min(home.count,away.count)>=5?"good":"warn"}">Historique : ${home.count} / ${away.count} matchs</span>
+${prediction.available?'<span class="tag good">Analyse statistique disponible</span>':'<span class="tag warn">Données insuffisantes</span>'}
+${match.lineups_available?'<span class="tag good">Compositions disponibles</span>':''}
+${match.injuries?.length?'<span class="tag warn">'+match.injuries.length+' indisponibilité(s)</span>':''}
+</div>
+<p class="clickhint small">Cliquer pour ouvrir l'analyse détaillée</p>
+</article>`;
 }
-
-function stat(value){
- return value===null || !Number.isFinite(value)
-  ? "Indisponible"
-  : value.toFixed(2);
+function teamDetail(name,profile){
+return `<div class="teamcard">
+<h3>${esc(name)}</h3>
+<p>Forme récente : ${formHTML(profile)}</p>
+<p>Matchs analysés : <b>${profile.count}</b></p>
+<p>Victoires : <b>${profile.wins}</b> · Nuls : <b>${profile.draws}</b> · Défaites : <b>${profile.losses}</b></p>
+<p>Points : <b>${profile.points}</b></p>
+<p>Buts marqués : <b>${profile.scored}</b></p>
+<p>Buts encaissés : <b>${profile.conceded}</b></p>
+<p>Moyenne buts marqués : <b>${profile.avgScored===null?"Indisponible":profile.avgScored.toFixed(2)}</b></p>
+<p>Moyenne buts encaissés : <b>${profile.avgConceded===null?"Indisponible":profile.avgConceded.toFixed(2)}</b></p>
+</div>`;
 }
-
-function teamCard(name,profile){
- return `
- <div class="teamcard">
-  <h3>${escapeHTML(name)}</h3>
-  <p>Forme récente : ${formHTML(profile.form)}</p>
-  <p>Matchs analysés : <b>${profile.count}</b></p>
-  <p>Points sur les 5 derniers : <b>${profile.points}/15</b></p>
-  <p>Buts marqués / match : <b>${stat(profile.scored)}</b></p>
-  <p>Buts encaissés / match : <b>${stat(profile.conceded)}</b></p>
-  <p>Buts marqués à domicile : <b>${stat(profile.homeScored)}</b></p>
-  <p>Buts encaissés à domicile : <b>${stat(profile.homeConceded)}</b></p>
-  <p>Buts marqués à l'extérieur : <b>${stat(profile.awayScored)}</b></p>
-  <p>Buts encaissés à l'extérieur : <b>${stat(profile.awayConceded)}</b></p>
- </div>`;
+function openMatch(index){
+const match=fixtures[index];
+if(!match)return;
+const hId=teamId(match,"home"),aId=teamId(match,"away");
+const home=getProfile(hId),away=getProfile(aId);
+const p=model(match);
+const date=new Date(match.kickoff||match.date);
+const dateText=Number.isNaN(date.getTime())?"Date inconnue":date.toLocaleString("fr-FR",{dateStyle:"full",timeStyle:"short"});
+const injuries=Array.isArray(match.injuries)?match.injuries:[];
+const lineups=match.lineups||{};
+let historyHTML="";
+[["Domicile",home],["Extérieur",away]].forEach(([label,profile])=>{
+historyHTML+='<div class="subhead">'+label+' · derniers résultats</div>';
+if(!profile.matches.length){historyHTML+='<p class="small">Aucun historique disponible.</p>';return;}
+profile.matches.forEach(m=>{
+historyHTML+='<div class="historyrow">'+esc(m.date)+' · '+esc(m.opponent)+' · <b>'+m.gf+' - '+m.ga+'</b> · '+m.result+'</div>';
+});
+});
+let probabilityHTML=p.available?`
+<div class="subhead">🎯 Probabilités 1N2</div>
+<div class="grid3">
+<div class="pred"><small>Victoire domicile</small><b>${pct(p.p1)}</b></div>
+<div class="pred"><small>Nul</small><b>${pct(p.pN)}</b></div>
+<div class="pred"><small>Victoire extérieur</small><b>${pct(p.p2)}</b></div>
+</div>
+<div class="subhead">⚽ Projection de buts</div>
+<div class="detailgrid">
+<div class="detailbox"><span>Buts attendus domicile</span><b>${p.lh.toFixed(2)}</b></div>
+<div class="detailbox"><span>Buts attendus extérieur</span><b>${p.la.toFixed(2)}</b></div>
+<div class="detailbox"><span>Score exact le plus probable</span><b>${p.best.score}</b></div>
+<div class="detailbox"><span>Plus de 2,5 buts</span><b>${pct(p.over25)}</b></div>
+</div>`:'<p class="warning">Probabilités non calculées : historique insuffisant pour une estimation raisonnable.</p>';
+let injuryHTML='<p class="small">Aucune indisponibilité communiquée.</p>';
+if(injuries.length){
+injuryHTML=injuries.map(i=>'<div class="historyrow">'+esc(i.team)+' · '+esc(i.player)+' · '+esc(i.type)+' · '+esc(i.reason)+'</div>').join("");
 }
-
-function renderMatch(fixture,index){
- const prediction = calculatePrediction(fixture);
- const homeName = fixture.home?.name || "Équipe inconnue";
- const awayName = fixture.away?.name || "Équipe inconnue";
- const league = fixture.league?.name || "Compétition inconnue";
- const country = fixture.league?.country || "";
-
- let body = "";
-
- if(!prediction.available){
-  body = `
-   <div class="empty">
-    <b>Statistiques insuffisantes</b>
-    <p>${escapeHTML(prediction.reason)}</p>
-    <p class="small">Domicile : ${prediction.home.count} match(s) · Extérieur : ${prediction.away.count} match(s)</p>
-   </div>
-   <div class="teamstats">
-    ${teamCard(homeName,prediction.home)}
-    ${teamCard(awayName,prediction.away)}
-   </div>
-   <div class="warning">Aucune probabilité n'est affichée tant que les données ne sont pas suffisantes.</div>
-  `;
- }else{
-  const confidenceClass =
-   prediction.confidence >= 75 ? "good" :
-   prediction.confidence >= 50 ? "warn" : "";
-
-  body = `
-   <div class="formline">
-    <span>${escapeHTML(homeName)} : ${formHTML(prediction.home.form)}</span>
-    <span>${escapeHTML(awayName)} : ${formHTML(prediction.away.form)}</span>
-   </div>
-
-   <div class="subhead">🎯 Probabilités 1N2</div>
-   <div class="grid3">
-    <div class="pred"><small>Victoire domicile</small><b>${pct(prediction.pHome)}</b></div>
-    <div class="pred"><small>Match nul</small><b>${pct(prediction.pDraw)}</b></div>
-    <div class="pred"><small>Victoire extérieur</small><b>${pct(prediction.pAway)}</b></div>
-   </div>
-
-   <div class="subhead">⚽ Marchés de buts</div>
-   <div class="marketlist">
-    <div class="market"><span>Plus de 1,5 buts</span><b>${pct(prediction.over15)}</b></div>
-    <div class="market"><span>Plus de 2,5 buts</span><b>${pct(prediction.over25)}</b></div>
-    <div class="market"><span>Plus de 3,5 buts</span><b>${pct(prediction.over35)}</b></div>
-    <div class="market"><span>Les deux équipes marquent</span><b>${pct(prediction.btts)}</b></div>
-   </div>
-
-   <div class="subhead">📈 Statistiques individuelles</div>
-   <div class="teamstats">
-    ${teamCard(homeName,prediction.home)}
-    ${teamCard(awayName,prediction.away)}
-   </div>
-
-   <div class="tags">
-    <span class="tag ${confidenceClass}">Couverture des historiques : ${prediction.confidence}/100</span>
-    <span class="tag">Buts attendus : ${prediction.lambdaHome.toFixed(2)} - ${prediction.lambdaAway.toFixed(2)}</span>
-    <span class="tag">Score indicatif : ${prediction.bestScore.score}</span>
-   </div>
-   <div class="warning">La couverture indique la quantité d'historique disponible. Ce n'est pas une garantie de précision.</div>
-  `;
- }
-
- return `
- <article class="match">
-  <div class="matchtop">
-   <span>${escapeHTML(league)} ${country ? "· "+escapeHTML(country) : ""}</span>
-   <span>${escapeHTML(formatDate(fixture.kickoff))}</span>
-  </div>
-  <div class="teams">
-   <div class="team">${escapeHTML(homeName)}</div>
-   <div class="vs">CONTRE</div>
-   <div class="team">${escapeHTML(awayName)}</div>
-  </div>
-  ${body}
- </article>`;
+let lineupHTML='<p class="small">Compositions pas encore disponibles.</p>';
+const lineupNames=Object.keys(lineups);
+if(lineupNames.length){
+lineupHTML=lineupNames.map(name=>{
+const team=lineups[name]||{};
+const players=team.starting_xi||[];
+return '<div class="teamcard"><h3>'+esc(name)+'</h3><p>Formation : '+esc(team.formation||"Non précisée")+'</p><p>Entraîneur : '+esc(team.coach||"Non précisé")+'</p><p>'+players.map(p=>esc(p.number||"")+' '+esc(p.name||"")).join(" · ")+'</p></div>';
+}).join("");
 }
-
+$("modalContent").innerHTML=`
+<p class="small">${esc(leagueName(match))} · ${esc(dateText)}</p>
+<div class="teams"><div class="team">${esc(teamName(match,"home"))}</div><div class="vs">CONTRE</div><div class="team">${esc(teamName(match,"away"))}</div></div>
+${probabilityHTML}
+<div class="subhead">📈 Comparaison des équipes</div>
+<div class="teamdetail">${teamDetail(teamName(match,"home"),home)}${teamDetail(teamName(match,"away"),away)}</div>
+<div class="subhead">📚 Historique des équipes</div>${historyHTML}
+<div class="subhead">🚑 Blessures et indisponibilités</div>${injuryHTML}
+<div class="subhead">📋 Compositions</div>${lineupHTML}
+<p class="warning">Les estimations sont statistiques et ne garantissent aucun résultat. L'absence de données ne signifie pas qu'une équipe n'a aucun blessé ou aucun match récent.</p>
+`;
+$("matchModal").classList.add("open");
+document.body.style.overflow="hidden";
+}
+function closeMatch(){
+$("matchModal").classList.remove("open");
+document.body.style.overflow="";
+}
 function render(){
- const query = normalise($("search").value);
- const selected = $("league").value;
- const sort = $("sort").value;
-
- let filtered = fixtures.filter(fixture=>{
-  const leagueName = fixture.league?.name || "";
-  const country = fixture.league?.country || "";
-  const homeName = fixture.home?.name || "";
-  const awayName = fixture.away?.name || "";
-  const leagueId = String(fixture.league?.id || "");
-
-  const matchesSearch =
-   !query ||
-   normalise(homeName).includes(query) ||
-   normalise(awayName).includes(query) ||
-   normalise(leagueName).includes(query) ||
-   normalise(country).includes(query);
-
-  const matchesLeague =
-   selected==="ALL" || leagueId===selected;
-
-  return matchesSearch && matchesLeague;
- });
-
- if(sort==="confidence"){
-  filtered.sort((a,b)=>
-   calculatePrediction(b).confidence -
-   calculatePrediction(a).confidence
-  );
- }else if(sort==="home"){
-  filtered.sort((a,b)=>
-   (calculatePrediction(b).pHome || 0) -
-   (calculatePrediction(a).pHome || 0)
-  );
- }else{
-  filtered.sort((a,b)=>
-   new Date(a.kickoff)-new Date(b.kickoff)
-  );
- }
-
- $("shownCount").textContent=filtered.length+" match(s)";
-
- if(!filtered.length){
-  $("matches").innerHTML=
-   '<div class="empty">Aucun match trouvé pour ces filtres.</div>';
-  return;
- }
-
- $("matches").innerHTML=filtered.slice(0,100)
-  .map(renderMatch).join("");
-
- if(filtered.length>100){
-  $("matches").innerHTML+=
-   '<p class="small">Affichage limité aux 100 premiers matchs.</p>';
- }
+const search=$("search").value.toLowerCase().trim();
+const league=$("league").value;
+let list=fixtures.map((match,index)=>({match,index}));
+list=list.filter(x=>{
+const m=x.match;
+const text=(teamName(m,"home")+" "+teamName(m,"away")+" "+leagueName(m)).toLowerCase();
+return (!search||text.includes(search))&&(league==="ALL"||String(m.league?.id??leagueName(m))===league);
+});
+const sort=$("sort").value;
+if(sort==="confidence")list.sort((a,b)=>confidence(b.match)-confidence(a.match));
+else if(sort==="probability")list.sort((a,b)=>{
+const pa=model(a.match),pb=model(b.match);
+const ma=pa.available?Math.max(pa.p1,pa.pN,pa.p2):0;
+const mb=pb.available?Math.max(pb.p1,pb.pN,pb.p2):0;
+return mb-ma;
+});
+else list.sort((a,b)=>new Date(a.match.kickoff)-new Date(b.match.kickoff));
+$("shownCount").textContent=list.length+" match(s)";
+if(!list.length){
+$("matches").innerHTML='<div class="empty">Aucun match trouvé.</div>';
+return;
 }
-
-function populateLeagueFilter(){
- const select = $("league");
- const current = select.value;
-
- const competitions = new Map();
-
- fixtures.forEach(fixture=>{
-  const league = fixture.league || {};
-  if(league.id){
-   competitions.set(String(league.id),{
-    name:league.name || "Compétition inconnue",
-    country:league.country || ""
-   });
-  }
- });
-
- select.innerHTML='<option value="ALL">Toutes les compétitions</option>';
-
- [...competitions.entries()]
-  .sort((a,b)=>a[1].name.localeCompare(b[1].name,"fr"))
-  .forEach(([id,league])=>{
-   const label = league.country
-    ? league.name+" · "+league.country
-    : league.name;
-   select.add(new Option(label,id));
-  });
-
- if([...select.options].some(option=>option.value===current)){
-  select.value=current;
- }
+$("matches").innerHTML=list.slice(0,120).map(x=>renderOne(x.match,x.index)).join("");
+if(list.length>120)$("matches").innerHTML+='<p class="small">Affichage limité aux 120 premiers matchs.</p>';
 }
-
 async function loadData(){
- if(busy)return;
- busy=true;
- $("reload").disabled=true;
- $("matches").innerHTML='<div class="empty">Chargement des données…</div>';
-
- try{
-  status("Lecture des fichiers de données…",15);
-
-  const [predictionData,historyData] = await Promise.all([
-   getJSON("predictions.json"),
-   getJSON("predictions_history.json").catch(error=>{
-    console.warn("Historique indisponible :",error);
-    return {matches:{}};
-   })
-  ]);
-
-  teamForm = predictionData.team_form || {};
-  generatedAt = predictionData.generated_at || null;
-
-  const rawMatches = predictionData.matches || {};
-  const values = Array.isArray(rawMatches)
-   ? rawMatches
-   : Object.values(rawMatches);
-
-  const now = Date.now();
-
-  fixtures = values.filter(match=>{
-   if(!match || !match.kickoff)return false;
-   const kickoff = new Date(match.kickoff).getTime();
-   return Number.isFinite(kickoff) && kickoff > now-60*60*1000;
-  });
-
-  historyMatches = Object.values(historyData.matches || {});
-
-  const teamCount = Object.keys(teamForm).filter(id=>
-   Array.isArray(teamForm[id]?.matches) &&
-   teamForm[id].matches.length>0
-  ).length;
-
-  $("matchCount").textContent=fixtures.length;
-  $("teamCount").textContent=teamCount;
-  $("resultCount").textContent=historyMatches.length;
-  $("apiCalls").textContent=
-   predictionData.api_usage?.calls ?? "—";
-
-  populateLeagueFilter();
-
-  status(
-   fixtures.length+" matchs · "+teamCount+
-   " historiques d'équipe disponibles"+
-   (generatedAt ? " · Données du "+formatDate(generatedAt) : ""),
-   100
-  );
-
-  render();
-
- }catch(error){
-  console.error(error);
-  $("matches").innerHTML=
-   '<div class="empty error">'+escapeHTML(error.message)+'</div>';
-  status("Erreur : "+error.message,0);
- }finally{
-  busy=false;
-  $("reload").disabled=false;
- }
+if(busy)return;
+busy=true;
+$("reload").disabled=true;
+$("matches").innerHTML='<div class="empty">Chargement des données API-Football…</div>';
+status("Lecture de predictions.json…",20);
+try{
+const response=await fetch(DATA_URL+"?t="+Date.now(),{cache:"no-store"});
+if(!response.ok)throw new Error("Impossible de lire predictions.json (HTTP "+response.status+")");
+data=await response.json();
+teamForm=data.team_form&&typeof data.team_form==="object"?data.team_form:{};
+fixtures=Object.values(data.matches||{}).filter(m=>m&&m.home&&m.away);
+fixtures=fixtures.filter(m=>{
+const d=new Date(m.kickoff||m.date);
+return !Number.isNaN(d.getTime())&&d.getTime()>Date.now()-60*60*1000;
+});
+fixtures.sort((a,b)=>new Date(a.kickoff)-new Date(b.kickoff));
+const teams=new Set();
+fixtures.forEach(m=>{teams.add(teamId(m,"home"));teams.add(teamId(m,"away"));});
+const forms=Object.values(teamForm).filter(t=>(t.matches||[]).length>=3).length;
+$("matchCount").textContent=fixtures.length;
+$("teamCount").textContent=teams.size;
+$("formCount").textContent=forms;
+$("lineupCount").textContent=fixtures.filter(m=>m.lineups_available).length;
+$("updated").textContent="Dernière mise à jour : "+(data.generated_at?new Date(data.generated_at).toLocaleString("fr-FR"):"non renseignée");
+const select=$("league");
+const selected=select.value;
+select.innerHTML='<option value="ALL">Toutes les compétitions</option>';
+const leagues=new Map();
+fixtures.forEach(m=>{
+const l=m.league;
+const id=typeof l==="object"&&l?.id?String(l.id):leagueName(m);
+leagues.set(id,leagueName(m));
+});
+[...leagues.entries()].sort((a,b)=>a[1].localeCompare(b[1],"fr")).forEach(([id,name])=>select.add(new Option(name,id)));
+if([...select.options].some(o=>o.value===selected))select.value=selected;
+status(fixtures.length+" matchs chargés · "+forms+" historiques d'équipes disponibles.",100);
+if(!Object.keys(teamForm).length){
+status("Matchs chargés, mais aucun historique d'équipe dans predictions.json. Lance le workflow d'analyse.",100);
 }
-
+render();
+}catch(error){
+$("matches").innerHTML='<div class="empty error">'+esc(error.message)+'</div>';
+status("Erreur : "+error.message,0);
+}finally{
+busy=false;
+$("reload").disabled=false;
+}
+}
 $("reload").addEventListener("click",loadData);
-$("league").addEventListener("change",render);
 $("search").addEventListener("input",render);
+$("league").addEventListener("change",render);
 $("sort").addEventListener("change",render);
-
+$("matches").addEventListener("click",event=>{
+const card=event.target.closest(".match");
+if(card)openMatch(Number(card.dataset.index));
+});
+$("closeModal").addEventListener("click",closeMatch);
+$("matchModal").addEventListener("click",event=>{
+if(event.target===$("matchModal"))closeMatch();
+});
+document.addEventListener("keydown",event=>{
+if(event.key==="Escape")closeMatch();
+});
 loadData();
 </script>
 </body>
