@@ -1,16 +1,17 @@
 {
-  "generated_at": "2026-11-16T13:07:12.111692+01:00",
+  "generated_at": "2026-11-16T13:18:26.075235+01:00",
   "source": "API-Football",
   "period_days": 2,
   "fixtures_count": 282,
-  "lineups_checked_count": 22,
+  "lineups_checked_count": 23,
   "lineups_available_count": 4,
   "lineups_checked_this_run": 1,
   "injuries_updated_at": "2026-11-16T12:52:03.439992+01:00",
   "tomorrow_updated_at": "2026-11-16T12:52:03.439992+01:00",
   "lineup_check_times": {
     "1554220": "2026-11-16T12:52:03.439992+01:00",
-    "1647889": "2026-11-16T13:07:12.111692+01:00"
+    "1647889": "2026-11-16T13:07:12.111692+01:00",
+    "1648762": "2026-11-16T13:18:26.075235+01:00"
   },
   "matches": {
     "g3x|capim|2026-11-17": {
@@ -5155,7 +5156,7 @@
       "status_short": "NS",
       "injuries": [],
       "lineups": {},
-      "lineups_checked": false,
+      "lineups_checked": true,
       "lineups_available": false
     },
     "vilaricascu20|atleticojm9u20|2026-11-16": {
