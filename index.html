@@ -121,7 +121,7 @@ footer{text-align:center;color:var(--muted);font-size:11px;padding:20px}
 </select>
 <button id="reload">Actualiser</button>
 </div>
-<p class="small">Les données sont chargées depuis Open-Matchday. Le chargement de toutes les compétitions peut prendre un peu plus de temps.</p>
+<p class="small">Données issues d'Open-Matchday et de notre collecte API-Football. Le chargement peut prendre un peu de temps.</p>
 </section>
 
 <section class="panel">
@@ -299,33 +299,139 @@ if(busy)return;
 busy=true;
 $("reload").disabled=true;
 $("matches").innerHTML='<div class="empty">Chargement des données…</div>';
-allFixtures=[];allResults=[];resultsByFolder={};
+allFixtures=[];
+allResults=[];
+resultsByFolder={};
 
 try{
 const selected=$("league").value;
 const selectedLeagues=selected==="ALL"?leagues:leagues.filter(x=>x.folder===selected);
-if(!selectedLeagues.length)throw new Error("Aucune compétition sélectionnée.");
-status("Téléchargement des données…",5);
+
+if(selectedLeagues.length){
+status("Téléchargement des compétitions…",5);
 const loaded=await loadWithLimit(selectedLeagues,5,async(league,index)=>{
 const data=await loadCompetition(league);
-status("Chargement "+league.name+" ("+(index+1)+"/"+selectedLeagues.length+")",5+Math.round((index+1)/selectedLeagues.length*85));
+status("Chargement "+league.name+" ("+(index+1)+"/"+selectedLeagues.length+")",5+Math.round((index+1)/selectedLeagues.length*65));
 return data;
 });
-let failures=0;
+
 loaded.forEach(item=>{
-if(!item||item.error){failures++;return;}
+if(!item||item.error)return;
 resultsByFolder[item.league.folder]=item.results;
 allResults.push(...item.results.map(m=>({...m,competition:item.league.name,folder:item.league.folder})));
 allFixtures.push(...item.fixtures);
 });
+}
+
+// Récupération des matchs et résultats collectés par notre propre API.
+status("Chargement des matchs API-Football…",75);
+
+const [predictionsResponse,historyResponse]=await Promise.all([
+fetch(API_BASE+"predictions.json?"+Date.now(),{cache:"no-store"}),
+fetch(API_BASE+"predictions_history.json?"+Date.now(),{cache:"no-store"})
+]);
+
+if(!predictionsResponse.ok)throw new Error("Impossible de lire predictions.json (HTTP "+predictionsResponse.status+").");
+
+const predictionData=await predictionsResponse.json();
+let historyData={matches:{}};
+
+if(historyResponse.ok){
+try{historyData=await historyResponse.json();}catch(e){console.warn("Historique JSON illisible",e);}
+}
+
+const historyMatches=Object.values(historyData.matches||{});
+const apiResultsByLeague={};
+
+historyMatches.forEach(match=>{
+const league=match.league||"Autres compétitions";
+const folder="API_"+normalise(league);
+if(!apiResultsByLeague[folder])apiResultsByLeague[folder]=[];
+apiResultsByLeague[folder].push({
+date:match.date||"",
+home:match.home?.name||"Équipe inconnue",
+away:match.away?.name||"Équipe inconnue",
+ft_home:num(match.score?.home),
+ft_away:num(match.score?.away),
+home_shots:null,away_shots:null,home_target:null,away_target:null,
+home_corners:null,away_corners:null,home_yellow:null,away_yellow:null,
+home_red:null,away_red:null
+});
+});
+
+Object.entries(apiResultsByLeague).forEach(([folder,results])=>{
+resultsByFolder[folder]=results;
+allResults.push(...results.map(match=>({...match,folder,competition:folder.replace("API_","")})));
+});
+
+const apiMatches=Object.values(predictionData.matches||{});
+
+apiMatches.forEach(match=>{
+const kickoff=new Date(match.kickoff||match.date);
+if(Number.isNaN(kickoff.getTime()))return;
+if(kickoff.getTime()<Date.now()-60*60*1000)return;
+
+const competition=match.league||"Autres compétitions";
+const folder="API_"+normalise(competition);
+if(!resultsByFolder[folder])resultsByFolder[folder]=[];
+
+const fixture={
+fixture_id:String(match.fixture_id||""),
+home:match.home?.name||"Équipe inconnue",
+away:match.away?.name||"Équipe inconnue",
+competition,folder,
+date:match.date||"",
+time:kickoff.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"}),
+kickoff,
+injuries:match.injuries||[],
+lineups:match.lineups||{},
+source:"API-Football"
+};
+
+const alreadyExists=allFixtures.some(existing=>
+normalise(existing.home)===normalise(fixture.home)&&
+normalise(existing.away)===normalise(fixture.away)&&
+existing.kickoff.toDateString()===fixture.kickoff.toDateString()
+);
+
+if(!alreadyExists)allFixtures.push(fixture);
+});
+
+// Ajouter les compétitions API au menu.
+const select=$("league");
+const apiCompetitions={};
+allFixtures.filter(f=>f.source==="API-Football").forEach(f=>{
+apiCompetitions[f.folder]=f.competition;
+});
+
+Object.entries(apiCompetitions).forEach(([folder,name])=>{
+if(!Array.from(select.options).some(option=>option.value===folder)){
+select.add(new Option(name+" · API-Football",folder));
+}
+});
+
+// Appliquer le filtre sélectionné aux matchs API également.
+if(selected!=="ALL"&&selected.startsWith("API_")){
+allFixtures=allFixtures.filter(f=>f.folder===selected);
+allResults=allResults.filter(m=>m.folder===selected);
+}
+
 allFixtures.sort((a,b)=>a.kickoff-b.kickoff);
+$("leagueCount").textContent=select.options.length-1;
 $("matchCount").textContent=allFixtures.length;
 $("resultCount").textContent=allResults.length;
-const withStats=allResults.filter(m=>m.home_target!==null||m.away_target!==null||m.home_corners!==null||m.away_corners!==null).length;
+
+const withStats=allResults.filter(m=>
+m.home_target!==null||m.away_target!==null||
+m.home_corners!==null||m.away_corners!==null
+).length;
+
 $("dataCount").textContent=withStats;
-status(Object.keys(resultsByFolder).length+" compétition(s) chargée(s) · "+failures+" erreur(s).",100);
+status(allFixtures.length+" matchs chargés · Open-Matchday et API-Football.",100);
 renderMatches();
+
 }catch(error){
+console.error(error);
 $("matches").innerHTML='<div class="empty error">'+escapeHTML(error.message)+'</div>';
 status("Erreur : "+error.message,0);
 }finally{
@@ -457,15 +563,9 @@ const markets=[
 {name:"Les deux équipes marquent : oui",value:btts},
 {name:"Les deux équipes marquent : non",value:1-btts}
 ];
-if(home.shots!==null&&away.shots!==null){
-markets.push({name:"Plus de 7,5 tirs cadrés",value:poissonOver(home.shots+away.shots,7),extra:true});
-}
-if(home.corners!==null&&away.corners!==null){
-markets.push({name:"Plus de 8,5 corners",value:poissonOver(home.corners+away.corners,8),extra:true});
-}
-if(home.yellow!==null&&away.yellow!==null){
-markets.push({name:"Plus de 3,5 cartons jaunes",value:poissonOver(home.yellow+away.yellow,3),extra:true});
-}
+if(home.shots!==null&&away.shots!==null)markets.push({name:"Plus de 7,5 tirs cadrés",value:poissonOver(home.shots+away.shots,7),extra:true});
+if(home.corners!==null&&away.corners!==null)markets.push({name:"Plus de 8,5 corners",value:poissonOver(home.corners+away.corners,8),extra:true});
+if(home.yellow!==null&&away.yellow!==null)markets.push({name:"Plus de 3,5 cartons jaunes",value:poissonOver(home.yellow+away.yellow,3),extra:true});
 const h2h=headToHead(results,fixture.home,fixture.away);
 const statCoverage=[home.shots,away.shots,home.corners,away.corners,home.yellow,away.yellow].filter(v=>v!==null).length/6;
 const dataScore=Math.round(Math.min(1,goals.sample/8)*70+statCoverage*15+Math.min(1,h2h.length/3)*5+Math.min(1,results.length/50)*10);
@@ -492,7 +592,6 @@ const p=probabilityModel(fixture,results);
 const date=fixture.kickoff.toLocaleString("fr-FR",{weekday:"short",day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit"});
 const best=p.markets.filter(m=>!m.extra).slice(0,4);
 const confidence=confidenceLabel(p.dataScore);
-const h2hText=p.h2h.length?p.h2h.slice(0,3).map(m=>escapeHTML(m.home)+" "+m.ft_home+"-"+m.ft_away+" "+escapeHTML(m.away)).join(" · "):"Pas de confrontation récente trouvée";
 const extraMarkets=p.markets.filter(m=>m.extra);
 return `
 <article class="match" data-fixture-index="${index}" data-confidence="${p.dataScore}" data-probability="${best[0]?.value||0}">
@@ -605,12 +704,13 @@ $("matches").innerHTML='<div class="empty">Aucun match trouvé.</div>';
 return;
 }
 const shown=decorated.slice(0,120);
-$("matches").innerHTML=shown.map((x,index)=>renderOne(x.fixture,allFixtures.indexOf(x.fixture))).join("");
+$("matches").innerHTML=shown.map(x=>renderOne(x.fixture,allFixtures.indexOf(x.fixture))).join("");
 if(decorated.length>120){
 $("matches").innerHTML+='<p class="small">Affichage limité aux 120 premiers matchs. Utilise les filtres pour affiner la recherche.</p>';
 }
 }
 
+// Événements de l'interface.
 $("matches").addEventListener("click",event=>{
 const card=event.target.closest(".match");
 if(card)openMatch(Number(card.dataset.fixtureIndex));
@@ -627,199 +727,17 @@ document.addEventListener("keydown",event=>{
 if(event.key==="Escape")closeMatch();
 });
 
+// Démarrage unique de l'application.
 async function start(){
 try{
 await loadLeagueIndex();
 await loadSelected();
-
-async function loadSelected(){
-if(busy)return;
-busy=true;
-$("reload").disabled=true;
-$("matches").innerHTML='<div class="empty">Chargement des données…</div>';
-allFixtures=[];
-allResults=[];
-resultsByFolder={};
-
-try{
-const selected=$("league").value;
-const selectedLeagues=selected==="ALL"?leagues:leagues.filter(x=>x.folder===selected);
-
-if(selectedLeagues.length){
-status("Téléchargement des compétitions…",5);
-
-const loaded=await loadWithLimit(selectedLeagues,5,async(league,index)=>{
-const data=await loadCompetition(league);
-status("Chargement "+league.name+" ("+(index+1)+"/"+selectedLeagues.length+")",5+Math.round((index+1)/selectedLeagues.length*65));
-return data;
-});
-
-loaded.forEach(item=>{
-if(!item||item.error)return;
-
-resultsByFolder[item.league.folder]=item.results;
-
-allResults.push(...item.results.map(m=>({
-...m,
-competition:item.league.name,
-folder:item.league.folder
-})));
-
-allFixtures.push(...item.fixtures);
-});
-}
-
-// Chargement des données de notre propre API-Football.
-status("Chargement des matchs supplémentaires…",75);
-
-const [predictionsResponse,historyResponse]=await Promise.all([
-fetch(API_BASE+"predictions.json?"+Date.now()),
-fetch(API_BASE+"predictions_history.json?"+Date.now())
-]);
-
-if(!predictionsResponse.ok){
-throw new Error("Impossible de lire predictions.json");
-}
-
-const predictionData=await predictionsResponse.json();
-
-let historyData={matches:{}};
-
-if(historyResponse.ok){
-historyData=await historyResponse.json();
-}
-
-const historyMatches=Object.values(historyData.matches||{});
-const apiResultsByLeague={};
-
-historyMatches.forEach(match=>{
-const league=match.league||"Autres compétitions";
-const folder="API_"+normalise(league);
-
-if(!apiResultsByLeague[folder]){
-apiResultsByLeague[folder]=[];
-}
-
-apiResultsByLeague[folder].push({
-date:match.date||"",
-home:match.home?.name||"Équipe inconnue",
-away:match.away?.name||"Équipe inconnue",
-ft_home:num(match.score?.home),
-ft_away:num(match.score?.away),
-home_shots:null,
-away_shots:null,
-home_target:null,
-away_target:null,
-home_corners:null,
-away_corners:null,
-home_yellow:null,
-away_yellow:null,
-home_red:null,
-away_red:null
-});
-});
-
-Object.entries(apiResultsByLeague).forEach(([folder,results])=>{
-resultsByFolder[folder]=results;
-allResults.push(...results.map(match=>({
-...match,
-folder,
-competition:folder.replace("API_","")
-})));
-});
-
-const apiMatches=Object.values(predictionData.matches||{});
-
-apiMatches.forEach(match=>{
-const kickoff=new Date(match.kickoff||match.date);
-
-if(Number.isNaN(kickoff.getTime()))return;
-
-if(kickoff.getTime()<Date.now()-60*60*1000)return;
-
-const competition=match.league||"Autres compétitions";
-const folder="API_"+normalise(competition);
-
-if(!resultsByFolder[folder]){
-resultsByFolder[folder]=[];
-}
-
-const fixture={
-fixture_id:String(match.fixture_id||""),
-home:match.home?.name||"Équipe inconnue",
-away:match.away?.name||"Équipe inconnue",
-competition,
-folder,
-date:match.date||"",
-time:kickoff.toLocaleTimeString("fr-FR",{
-hour:"2-digit",
-minute:"2-digit"
-}),
-kickoff,
-injuries:match.injuries||[],
-lineups:match.lineups||{},
-source:"API-Football"
-};
-
-const alreadyExists=allFixtures.some(existing=>
-normalise(existing.home)===normalise(fixture.home)&&
-normalise(existing.away)===normalise(fixture.away)&&
-existing.kickoff.toDateString()===fixture.kickoff.toDateString()
-);
-
-if(!alreadyExists){
-allFixtures.push(fixture);
-}
-});
-
-// Ajouter les compétitions API au filtre.
-const select=$("league");
-Object.entries(
-Object.fromEntries(
-allFixtures
-.filter(f=>f.source==="API-Football")
-.map(f=>[f.folder,f.competition])
-)
-).forEach(([folder,name])=>{
-if(!Array.from(select.options).some(option=>option.value===folder)){
-select.add(new Option(name+" · API-Football",folder));
-}
-});
-
-allFixtures.sort((a,b)=>a.kickoff-b.kickoff);
-
-$("leagueCount").textContent=select.options.length-1;
-$("matchCount").textContent=allFixtures.length;
-$("resultCount").textContent=allResults.length;
-
-const withStats=allResults.filter(m=>
-m.home_target!==null||
-m.away_target!==null||
-m.home_corners!==null||
-m.away_corners!==null
-).length;
-
-$("dataCount").textContent=withStats;
-
-status(
-allFixtures.length+" matchs chargés · Open-Matchday et API-Football.",
-100
-);
-
-renderMatches();
-
 }catch(error){
-$("matches").innerHTML=
-'<div class="empty error">'+escapeHTML(error.message)+'</div>';
-
+console.error(error);
+$("matches").innerHTML='<div class="empty error">'+escapeHTML(error.message)+'</div>';
 status("Erreur : "+error.message,0);
-
-}finally{
-busy=false;
-$("reload").disabled=false;
 }
 }
-
 
 start();
 </script>
