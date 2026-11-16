@@ -195,7 +195,7 @@ def is_refresh_due(previous_time, hours):
 
 def update_results_history(history):
     """
-    Récupère les résultats des deux derniers jours.
+    Récupère les résultats de la veille.
     Met à jour les matchs déjà connus sans supprimer l'ancien historique.
     """
 
@@ -210,17 +210,18 @@ def update_results_history(history):
 
     for match_date in dates_to_check:
         print("Résultats recherchés pour :", match_date.isoformat())
-try:
-    result_data = api_get(
-        "fixtures",
-        {
-            "date": match_date.isoformat(),
-            "timezone": "Europe/Paris"
-        }
-    )
-except RuntimeError as error:
-    print("Date ignorée par la limite API :", error)
-    continue
+
+        try:
+            result_data = api_get(
+                "fixtures",
+                {
+                    "date": match_date.isoformat(),
+                    "timezone": "Europe/Paris"
+                }
+            )
+        except RuntimeError as error:
+            print("Date ignorée par la limite API :", error)
+            continue
 
         for item in result_data.get("response", []):
             fixture = item.get("fixture") or {}
