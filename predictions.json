@@ -1,10 +1,16 @@
 {
-  "generated_at": "2026-11-16T12:36:06.545715+01:00",
+  "generated_at": "2026-11-16T12:52:03.439992+01:00",
   "source": "API-Football",
   "period_days": 2,
   "fixtures_count": 282,
-  "lineups_checked_count": 20,
+  "lineups_checked_count": 21,
   "lineups_available_count": 4,
+  "lineups_checked_this_run": 1,
+  "injuries_updated_at": "2026-11-16T12:52:03.439992+01:00",
+  "tomorrow_updated_at": "2026-11-16T12:52:03.439992+01:00",
+  "lineup_check_times": {
+    "1554220": "2026-11-16T12:52:03.439992+01:00"
+  },
   "matches": {
     "incaaruba|aguila|2026-11-16": {
       "fixture_id": "1600664",
@@ -1361,7 +1367,7 @@
       "status": "Not Started",
       "injuries": [],
       "lineups": {},
-      "lineups_checked": false,
+      "lineups_checked": true,
       "lineups_available": false
     },
     "ofkbor1919|semendrija1924|2026-11-16": {
@@ -2529,6 +2535,7 @@
         "name": "Capim"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -2547,6 +2554,7 @@
         "name": "Juventud"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -2565,6 +2573,7 @@
         "name": "Peru U20"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -2583,6 +2592,7 @@
         "name": "Loud"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -2601,6 +2611,7 @@
         "name": "Aruba"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -2619,6 +2630,7 @@
         "name": "Antigua and Barbuda"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -2637,6 +2649,7 @@
         "name": "La Fama"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -2655,6 +2668,7 @@
         "name": "Guatemala"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -2673,6 +2687,7 @@
         "name": "Rosario"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -2691,6 +2706,7 @@
         "name": "Mount Pleasant Academy"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -2709,6 +2725,7 @@
         "name": "Celaya"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -2727,6 +2744,7 @@
         "name": "Malaysia"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -2745,6 +2763,7 @@
         "name": "India U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -2763,6 +2782,7 @@
         "name": "Maldives U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -2781,6 +2801,7 @@
         "name": "N. Mariana Islands U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -2799,6 +2820,7 @@
         "name": "Indonesia U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -2817,6 +2839,7 @@
         "name": "Cambodia U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -2835,6 +2858,7 @@
         "name": "IR Iran U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -2853,6 +2877,7 @@
         "name": "Horní Ředice"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -2871,6 +2896,7 @@
         "name": "Luxembourg U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -2889,6 +2915,7 @@
         "name": "Lithuania U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -2907,6 +2934,7 @@
         "name": "Belgium U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -2925,6 +2953,7 @@
         "name": "France U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -2943,6 +2972,7 @@
         "name": "Latvia U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -2961,6 +2991,7 @@
         "name": "Germany U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -2979,6 +3010,7 @@
         "name": "Bosnia-Herzegovina U19"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -2997,6 +3029,7 @@
         "name": "Estonia U19"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3015,6 +3048,7 @@
         "name": "Turkey U19"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3033,6 +3067,7 @@
         "name": "Brazil"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3051,6 +3086,7 @@
         "name": "Mexico U23"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3069,6 +3105,7 @@
         "name": "Bulgaria U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3087,6 +3124,7 @@
         "name": "Turkey U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3105,6 +3143,7 @@
         "name": "Hungary U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3123,6 +3162,7 @@
         "name": "Portugal U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3141,6 +3181,7 @@
         "name": "Santa Clara U23"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3159,6 +3200,7 @@
         "name": "Croatia U19"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3177,6 +3219,7 @@
         "name": "Czechia U19"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3195,6 +3238,7 @@
         "name": "Luxembourg U19"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3213,6 +3257,7 @@
         "name": "Tanganyika"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3231,6 +3276,7 @@
         "name": "Netherlands U18"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3249,6 +3295,7 @@
         "name": "Macau U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3267,6 +3314,7 @@
         "name": "Kazakhstan U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3285,6 +3333,7 @@
         "name": "Italy U19"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3303,6 +3352,7 @@
         "name": "North Macedonia U19"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3321,6 +3371,7 @@
         "name": "Spain U19"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3339,6 +3390,7 @@
         "name": "Switzerland U19"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3357,6 +3409,7 @@
         "name": "Ukraine U19"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3375,6 +3428,7 @@
         "name": "Wales U19"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3393,6 +3447,7 @@
         "name": "Thailand U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3411,6 +3466,7 @@
         "name": "Yemen U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3429,6 +3485,7 @@
         "name": "Sri Lanka U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3447,6 +3504,7 @@
         "name": "Shiroka"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3465,6 +3523,7 @@
         "name": "Apolonia Fier"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3483,6 +3542,7 @@
         "name": "Bahrain"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3501,6 +3561,7 @@
         "name": "Bulgaria U19"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3519,6 +3580,7 @@
         "name": "Armenia U19"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3537,6 +3599,7 @@
         "name": "Latvia U19"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3555,6 +3618,7 @@
         "name": "Craques do Futuro U20"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3573,6 +3637,7 @@
         "name": "Zambia"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3591,6 +3656,7 @@
         "name": "Mozambique"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3609,6 +3675,7 @@
         "name": "Gabon"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3627,6 +3694,7 @@
         "name": "Egypt"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3645,6 +3713,7 @@
         "name": "Angola"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3663,6 +3732,7 @@
         "name": "Nigeria"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3681,6 +3751,7 @@
         "name": "Finland U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3699,6 +3770,7 @@
         "name": "Netherlands U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3717,6 +3789,7 @@
         "name": "Slovakia U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3735,6 +3808,7 @@
         "name": "Sweden U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3753,6 +3827,7 @@
         "name": "Wigan Athletic U21"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3771,6 +3846,7 @@
         "name": "Hull City U21"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3789,6 +3865,7 @@
         "name": "Blacks Power"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3807,6 +3884,7 @@
         "name": "Austria U19"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3825,6 +3903,7 @@
         "name": "Slovenia U19"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3843,6 +3922,7 @@
         "name": "Oman U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3861,6 +3941,7 @@
         "name": "Guam U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3879,6 +3960,7 @@
         "name": "Lubumbashi Sport"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3897,6 +3979,7 @@
         "name": "USA U21"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3915,6 +3998,7 @@
         "name": "Paraguay"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3933,6 +4017,7 @@
         "name": "Republic of Ireland U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3951,6 +4036,7 @@
         "name": "Wales U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3969,6 +4055,7 @@
         "name": "Huddersfield Town U21"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -3987,6 +4074,7 @@
         "name": "France U19"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4005,6 +4093,7 @@
         "name": "Republic of Ireland U19"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4023,6 +4112,7 @@
         "name": "South Korea"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4041,6 +4131,7 @@
         "name": "Germany U18"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4059,6 +4150,7 @@
         "name": "Pakistan"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4077,6 +4169,7 @@
         "name": "Syria"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4095,6 +4188,7 @@
         "name": "Tunisia U23"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4113,6 +4207,7 @@
         "name": "Kun Khalifat FC"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4131,6 +4226,7 @@
         "name": "Azerbaijan U19"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4149,6 +4245,7 @@
         "name": "Belgium U19"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4167,6 +4264,7 @@
         "name": "Germany U19"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4185,6 +4283,7 @@
         "name": "Kazakhstan U19"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4203,6 +4302,7 @@
         "name": "Portugal U19"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4221,6 +4321,7 @@
         "name": "Serbia U19"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4239,6 +4340,7 @@
         "name": "Libya U23"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4257,6 +4359,7 @@
         "name": "Congo DR U23"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4275,6 +4378,7 @@
         "name": "United Arab Emirates U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4293,6 +4397,7 @@
         "name": "Georgia U19"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4311,6 +4416,7 @@
         "name": "Ethiopia U23"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4329,6 +4435,7 @@
         "name": "Uzbekistan"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4347,6 +4454,7 @@
         "name": "Ivory Coast"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4365,6 +4473,7 @@
         "name": "Madagascar"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4383,6 +4492,7 @@
         "name": "South Africa"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4401,6 +4511,7 @@
         "name": "Tunisia"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4419,6 +4530,7 @@
         "name": "Congo DR"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4437,6 +4549,7 @@
         "name": "Algeria"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4455,6 +4568,7 @@
         "name": "Brunei U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4473,6 +4587,7 @@
         "name": "Australia"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4491,6 +4606,7 @@
         "name": "Equatorial Guinea U23"
       },
       "status": "Technical loss",
+      "status_short": "AWD",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4509,6 +4625,7 @@
         "name": "Botswana U23"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4527,6 +4644,7 @@
         "name": "Turkey U21"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4545,6 +4663,7 @@
         "name": "Venezuela"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4563,6 +4682,7 @@
         "name": "Japan U21"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4581,6 +4701,7 @@
         "name": "Iran"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4599,6 +4720,7 @@
         "name": "Solin"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4617,6 +4739,7 @@
         "name": "Honduras"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4635,6 +4758,7 @@
         "name": "Poland U20"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4653,6 +4777,7 @@
         "name": "Germany U21"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4671,6 +4796,7 @@
         "name": "Czechia U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4689,6 +4815,7 @@
         "name": "Serbia U21"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4707,6 +4834,7 @@
         "name": "Denmark U21"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4725,6 +4853,7 @@
         "name": "Norway U21"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4743,6 +4872,7 @@
         "name": "Finland U21"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4761,6 +4891,7 @@
         "name": "Huracán Res."
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4779,6 +4910,7 @@
         "name": "Colón Res."
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4797,6 +4929,7 @@
         "name": "Atlético Tucumán Res."
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4815,6 +4948,7 @@
         "name": "Platense Res."
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4833,6 +4967,7 @@
         "name": "Tigre Res."
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4851,6 +4986,7 @@
         "name": "Instituto Res."
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4869,6 +5005,7 @@
         "name": "Fortaleza B"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4887,6 +5024,7 @@
         "name": "Madagascar U23"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4905,6 +5043,7 @@
         "name": "Zimbabwe U23"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4923,6 +5062,7 @@
         "name": "Spain U21"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4941,6 +5081,7 @@
         "name": "Ukraine U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4959,6 +5100,7 @@
         "name": "Montenegro U17"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4977,6 +5119,7 @@
         "name": "Santa Cruz U20"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -4995,6 +5138,7 @@
         "name": "Uganda"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5013,6 +5157,7 @@
         "name": "Comoros"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5031,6 +5176,7 @@
         "name": "Cape Verde Islands"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5049,6 +5195,7 @@
         "name": "Burkina Faso"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5067,6 +5214,7 @@
         "name": "Mali"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5085,6 +5233,7 @@
         "name": "Peterborough"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5103,6 +5252,7 @@
         "name": "Gillingham FC U21"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5121,6 +5271,7 @@
         "name": "Sint Maarten"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5139,6 +5290,7 @@
         "name": "Cayman Islands"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5157,6 +5309,7 @@
         "name": "Bonaire"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5175,6 +5328,7 @@
         "name": "Barbados"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5193,6 +5347,7 @@
         "name": "South Sudan U23"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5211,6 +5366,7 @@
         "name": "Rwanda U23"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5229,6 +5385,7 @@
         "name": "Kenya U23"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5247,6 +5404,7 @@
         "name": "Portugal"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5265,6 +5423,7 @@
         "name": "Norway"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5283,6 +5442,7 @@
         "name": "Georgia"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5301,6 +5461,7 @@
         "name": "Northern Ireland"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5319,6 +5480,7 @@
         "name": "Austria"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5337,6 +5499,7 @@
         "name": "Kosovo"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5355,6 +5518,7 @@
         "name": "Sweden"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5373,6 +5537,7 @@
         "name": "Romania"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5391,6 +5556,7 @@
         "name": "Moyola Park"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5409,6 +5575,7 @@
         "name": "Glenavon FC"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5427,6 +5594,7 @@
         "name": "Civil Service Strollers"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5445,6 +5613,7 @@
         "name": "Gala Fairydean Rovers"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5463,6 +5632,7 @@
         "name": "Stirling University"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5481,6 +5651,7 @@
         "name": "Albion Rovers"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5499,6 +5670,7 @@
         "name": "Pollok"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5517,6 +5689,7 @@
         "name": "Caledonian Braves"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5535,6 +5708,7 @@
         "name": "Hill Of Beath Hawthorn"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5553,6 +5727,7 @@
         "name": "Celtic II"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5571,6 +5746,7 @@
         "name": "Chorley"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5589,6 +5765,7 @@
         "name": "Macclesfield"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5607,6 +5784,7 @@
         "name": "Harborough Town"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5625,6 +5803,7 @@
         "name": "Hebburn Town"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5643,6 +5822,7 @@
         "name": "Chester"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5661,6 +5841,7 @@
         "name": "Chesham United"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5679,6 +5860,7 @@
         "name": "Billericay Town"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5697,6 +5879,7 @@
         "name": "Wingate & Finchley"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5715,6 +5898,7 @@
         "name": "Cray Wanderers"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5733,6 +5917,7 @@
         "name": "Brentwood Town"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5751,6 +5936,7 @@
         "name": "Three Bridges"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5769,6 +5955,7 @@
         "name": "Bury"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5787,6 +5974,7 @@
         "name": "United of Manchester"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5805,6 +5993,7 @@
         "name": "Ashton United"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5823,6 +6012,7 @@
         "name": "Rylands"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5841,6 +6031,7 @@
         "name": "Halesowen Town"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5859,6 +6050,7 @@
         "name": "Stratford Town"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5877,6 +6069,7 @@
         "name": "Kettering Town"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5895,6 +6088,7 @@
         "name": "Sholing"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5913,6 +6107,7 @@
         "name": "Wimborne Town"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5931,6 +6126,7 @@
         "name": "Bracknell Town"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5949,6 +6145,7 @@
         "name": "Morocco"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5967,6 +6164,7 @@
         "name": "Quilmes 2"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
@@ -5985,6 +6183,7 @@
         "name": "São Paulo U20"
       },
       "status": "Not Started",
+      "status_short": "NS",
       "injuries": [],
       "lineups": {},
       "lineups_checked": false,
