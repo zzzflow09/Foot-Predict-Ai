@@ -3,7 +3,7 @@ name: Daily Football Analysis
 
 on:
   schedule:
-    - cron: "0 5 * * *"
+    - cron: "0 */6 * * *"
   workflow_dispatch:
 
 permissions:
@@ -42,8 +42,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No new changes to save."
           else
-            git commit -m "Update daily football data"
+            git commit -m "Update football data"
             git push
           fi
-
-          
