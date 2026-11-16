@@ -12,11 +12,14 @@ API_URL = "https://v3.football.api-sports.io"
 API_KEY = os.environ.get("API_FOOTBALL_KEY")
 
 PARIS = ZoneInfo("Europe/Paris")
-TODAY = datetime.now(PARIS).date()
+NOW = datetime.now(PARIS)
+TODAY = NOW.date()
+TOMORROW = TODAY + timedelta(days=1)
 
-DAYS_TO_FETCH = 2
-MAX_LINEUP_FIXTURES = 20
 OUTPUT_FILE = "predictions.json"
+LINEUP_WINDOW_MINUTES = 75
+LINEUP_RECHECK_MINUTES = 25
+REFRESH_INTERVAL_HOURS = 6
 
 
 def normalize(value):
@@ -26,6 +29,36 @@ def normalize(value):
         if unicodedata.category(c) != "Mn"
     )
     return "".join(c.lower() for c in value if c.isalnum())
+
+
+def parse_datetime(value):
+    if not value:
+        return None
+
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+
+        if parsed.tzinfo is None:
+            parsed = parsed.replace(tzinfo=PARIS)
+
+        return parsed.astimezone(PARIS)
+
+    except (ValueError, TypeError):
+        return None
+
+
+def read_previous_data():
+    if not os.path.exists(OUTPUT_FILE):
+        return {}
+
+    try:
+        with open(OUTPUT_FILE, "r", encoding="utf-8") as file:
+            data = json.load(file)
+
+        return data if isinstance(data, dict) else {}
+
+    except (json.JSONDecodeError, OSError):
+        return {}
 
 
 def api_get(endpoint, params=None):
@@ -43,7 +76,7 @@ def api_get(endpoint, params=None):
         }
     )
 
-    # Respect de la limite de 10 requêtes par minute.
+    # Limite volontaire : maximum environ 9 requêtes par minute.
     time.sleep(6.2)
 
     with urllib.request.urlopen(request, timeout=30) as response:
@@ -77,9 +110,7 @@ def extract_injuries(records):
         if not fixture_id:
             continue
 
-        entry = output.setdefault(str(fixture_id), [])
-
-        entry.append({
+        output.setdefault(str(fixture_id), []).append({
             "team": team.get("name", "Équipe inconnue"),
             "player": player.get("name", "Joueur inconnu"),
             "type": player.get("type") or "Indisponibilité",
@@ -120,136 +151,301 @@ def extract_lineups(records):
     return teams
 
 
+def is_refresh_due(previous_time, hours):
+    parsed = parse_datetime(previous_time)
+
+    if not parsed:
+        return True
+
+    return NOW - parsed >= timedelta(hours=hours)
+
+
+def build_match(item, previous, injuries_by_id, refresh_injuries):
+    fixture = item.get("fixture") or {}
+    teams = item.get("teams") or {}
+
+    home = teams.get("home") or {}
+    away = teams.get("away") or {}
+
+    fixture_id = str(fixture.get("id"))
+    status = fixture.get("status") or {}
+    kickoff = fixture.get("date", "")
+
+    if refresh_injuries:
+        injuries = injuries_by_id.get(fixture_id, [])
+    else:
+        injuries = (previous or {}).get("injuries", [])
+
+    previous = previous or {}
+
+    return {
+        "fixture_id": fixture_id,
+        "date": kickoff[:10],
+        "kickoff": kickoff,
+        "home": team_info(home),
+        "away": team_info(away),
+        "status": status.get("long", "Inconnu"),
+        "status_short": status.get("short", ""),
+        "injuries": injuries,
+        "lineups": previous.get("lineups", {}),
+        "lineups_checked": previous.get("lineups_checked", False),
+        "lineups_available": previous.get("lineups_available", False)
+    }
+
+
+def make_match_key(match):
+    return (
+        normalize(match["home"]["name"]) + "|" +
+        normalize(match["away"]["name"]) + "|" +
+        match["date"]
+    )
+
+
 def main():
-    print("FOOT PREDICT AI - Collecte des données")
-    print("Période : aujourd'hui et demain")
+    print("FOOT PREDICT AI - Collecte intelligente")
+    print("Heure locale :", NOW.isoformat())
 
     if not API_KEY:
         raise RuntimeError("Secret API_FOOTBALL_KEY introuvable.")
 
+    previous_data = read_previous_data()
+    previous_matches = previous_data.get("matches", {})
+
+    previous_by_id = {
+        str(match.get("fixture_id")): match
+        for match in previous_matches.values()
+        if match.get("fixture_id")
+    }
+
+    # Historique des dernières vérifications de compositions.
+    lineup_check_times = previous_data.get("lineup_check_times", {})
+
+    # 1. Actualisation des matchs du jour toutes les heures.
+    refresh_today = NOW.minute < 30 or not any(
+        match.get("date") == TODAY.isoformat()
+        for match in previous_matches.values()
+    )
+
     fixtures_by_id = {}
-    injuries_by_id = {}
-    lineups_by_id = {}
-    lineups_checked_ids = set()
 
-    # 1. Matchs et blessures.
-    for offset in range(DAYS_TO_FETCH):
-        match_date = TODAY + timedelta(days=offset)
-        date_string = match_date.isoformat()
+    if refresh_today:
+        print("Actualisation des matchs du jour...")
 
-        print(f"Récupération du {date_string}...")
-
-        fixture_data = api_get(
+        today_data = api_get(
             "fixtures",
             {
-                "date": date_string,
+                "date": TODAY.isoformat(),
                 "timezone": "Europe/Paris"
             }
         )
 
-        injury_data = api_get(
-            "injuries",
-            {
-                "date": date_string,
-                "timezone": "Europe/Paris"
-            }
-        )
-
-        for item in fixture_data.get("response", []):
+        for item in today_data.get("response", []):
             fixture_id = (item.get("fixture") or {}).get("id")
 
             if fixture_id:
                 fixtures_by_id[str(fixture_id)] = item
 
-        injuries_by_id.update(
-            extract_injuries(
-                injury_data.get("response", [])
-            )
+    else:
+        print("Matchs du jour conservés depuis la dernière collecte.")
+
+    # 2. Matchs de demain : actualisation toutes les 6 heures.
+    refresh_tomorrow = (
+        is_refresh_due(
+            previous_data.get("tomorrow_updated_at"),
+            REFRESH_INTERVAL_HOURS
         )
-
-    print(f"{len(fixtures_by_id)} matchs récupérés.")
-
-    # 2. Compositions : une requête par match.
-    upcoming = sorted(
-        fixtures_by_id.values(),
-        key=lambda x: (
-            (x.get("fixture") or {}).get("timestamp", 0)
+        or not any(
+            match.get("date") == TOMORROW.isoformat()
+            for match in previous_matches.values()
         )
     )
 
-    selected = upcoming[:MAX_LINEUP_FIXTURES]
+    if refresh_tomorrow:
+        print("Actualisation des matchs de demain...")
 
-    for item in selected:
-        fixture_id = (item.get("fixture") or {}).get("id")
+        tomorrow_data = api_get(
+            "fixtures",
+            {
+                "date": TOMORROW.isoformat(),
+                "timezone": "Europe/Paris"
+            }
+        )
 
-        if not fixture_id:
+        for item in tomorrow_data.get("response", []):
+            fixture_id = (item.get("fixture") or {}).get("id")
+
+            if fixture_id:
+                fixtures_by_id[str(fixture_id)] = item
+
+        tomorrow_updated_at = NOW.isoformat()
+
+    else:
+        tomorrow_updated_at = previous_data.get("tomorrow_updated_at")
+
+    # 3. Blessures : actualisation toutes les 6 heures.
+    refresh_injuries = is_refresh_due(
+        previous_data.get("injuries_updated_at"),
+        REFRESH_INTERVAL_HOURS
+    )
+
+    injuries_by_id = {}
+
+    if refresh_injuries:
+        print("Actualisation des blessures...")
+
+        for match_date in (TODAY, TOMORROW):
+            injury_data = api_get(
+                "injuries",
+                {
+                    "date": match_date.isoformat(),
+                    "timezone": "Europe/Paris"
+                }
+            )
+
+            injuries_by_id.update(
+                extract_injuries(injury_data.get("response", []))
+            )
+
+        injuries_updated_at = NOW.isoformat()
+
+    else:
+        print("Blessures conservées depuis la dernière collecte.")
+        injuries_updated_at = previous_data.get("injuries_updated_at")
+
+    # 4. Construire les matchs en conservant les données précédentes.
+    matches = {}
+
+    # Les matchs déjà enregistrés servent de cache quand aucune
+    # actualisation de leur journée n'est nécessaire.
+    for old_match in previous_matches.values():
+        match_date = old_match.get("date")
+
+        if match_date == TODAY.isoformat() and not refresh_today:
+            matches[make_match_key(old_match)] = old_match
+
+        if match_date == TOMORROW.isoformat() and not refresh_tomorrow:
+            matches[make_match_key(old_match)] = old_match
+
+    # Les réponses API remplacent les anciennes données correspondantes.
+    for fixture_id, item in fixtures_by_id.items():
+        old_match = previous_by_id.get(fixture_id)
+
+        match = build_match(
+            item,
+            old_match,
+            injuries_by_id,
+            refresh_injuries
+        )
+
+        matches[make_match_key(match)] = match
+
+    # 5. Une vérification de composition par exécution.
+    candidates = []
+
+    for match in matches.values():
+        if match.get("lineups_available"):
             continue
 
-        fixture_id = str(fixture_id)
+        kickoff = parse_datetime(match.get("kickoff"))
 
-        print(f"Recherche des compositions du match {fixture_id}...")
+        if not kickoff:
+            continue
 
-        detail_data = api_get(
+        minutes_until_kickoff = (
+            kickoff - NOW
+        ).total_seconds() / 60
+
+        if not (
+            -5 <= minutes_until_kickoff <= LINEUP_WINDOW_MINUTES
+        ):
+            continue
+
+        fixture_id = str(match["fixture_id"])
+        last_check = parse_datetime(
+            lineup_check_times.get(fixture_id)
+        )
+
+        if last_check and (
+            NOW - last_check
+        ) < timedelta(minutes=LINEUP_RECHECK_MINUTES):
+            continue
+
+        candidates.append((kickoff, fixture_id, match))
+
+    candidates.sort(key=lambda entry: entry[0])
+
+    lineups_checked_this_run = 0
+
+    if candidates:
+        kickoff, fixture_id, match = candidates[0]
+
+        print(
+            "Vérification des compositions :",
+            match["home"]["name"],
+            "contre",
+            match["away"]["name"]
+        )
+
+        lineup_data = api_get(
             "fixtures/lineups",
             {"fixture": fixture_id}
         )
 
         lineups = extract_lineups(
-            detail_data.get("response", [])
+            lineup_data.get("response", [])
         )
 
-        lineups_checked_ids.add(fixture_id)
+        lineup_check_times[fixture_id] = NOW.isoformat()
+        match["lineups_checked"] = True
+        match["lineups_available"] = bool(lineups)
+        match["lineups"] = lineups
+
+        lineups_checked_this_run = 1
 
         if lineups:
-            lineups_by_id[fixture_id] = lineups
+            print("Compositions récupérées.")
+        else:
+            print("Compositions pas encore publiées.")
 
-    # 3. Construction des données.
-    matches = {}
+    else:
+        print("Aucun match imminent à vérifier pour les compositions.")
 
-    for fixture_id, item in fixtures_by_id.items():
-        fixture = item.get("fixture") or {}
-        teams = item.get("teams") or {}
+    # Ne garder que l'historique des matchs encore suivis.
+    active_ids = {
+        str(match["fixture_id"])
+        for match in matches.values()
+    }
 
-        home = teams.get("home") or {}
-        away = teams.get("away") or {}
+    lineup_check_times = {
+        fixture_id: checked_at
+        for fixture_id, checked_at in lineup_check_times.items()
+        if fixture_id in active_ids
+    }
 
-        home_name = home.get("name", "")
-        away_name = away.get("name", "")
+    lineups_available_count = sum(
+        1 for match in matches.values()
+        if match.get("lineups_available")
+    )
 
-        match_date = (fixture.get("date", "") or "")[:10]
-
-        key = (
-            normalize(home_name) + "|" +
-            normalize(away_name) + "|" +
-            match_date
-        )
-
-        status = fixture.get("status") or {}
-
-        matches[key] = {
-            "fixture_id": fixture_id,
-            "date": match_date,
-            "kickoff": fixture.get("date", ""),
-            "home": team_info(home),
-            "away": team_info(away),
-            "status": status.get("long", "Inconnu"),
-            "injuries": injuries_by_id.get(fixture_id, []),
-            "lineups": lineups_by_id.get(fixture_id, {}),
-            "lineups_checked": fixture_id in lineups_checked_ids,
-            "lineups_available": fixture_id in lineups_by_id
-        }
+    lineups_checked_count = sum(
+        1 for match in matches.values()
+        if match.get("lineups_checked")
+    )
 
     result = {
-        "generated_at": datetime.now(PARIS).isoformat(),
+        "generated_at": NOW.isoformat(),
         "source": "API-Football",
-        "period_days": DAYS_TO_FETCH,
+        "period_days": 2,
         "fixtures_count": len(matches),
-        "lineups_checked_count": len(lineups_checked_ids),
-        "lineups_available_count": len(lineups_by_id),
+        "lineups_checked_count": lineups_checked_count,
+        "lineups_available_count": lineups_available_count,
+        "lineups_checked_this_run": lineups_checked_this_run,
+        "injuries_updated_at": injuries_updated_at,
+        "tomorrow_updated_at": tomorrow_updated_at,
+        "lineup_check_times": lineup_check_times,
         "matches": matches
     }
 
-    # Écriture sécurisée du fichier.
     temporary_file = OUTPUT_FILE + ".tmp"
 
     with open(temporary_file, "w", encoding="utf-8") as file:
@@ -262,14 +458,14 @@ def main():
 
     os.replace(temporary_file, OUTPUT_FILE)
 
-    print(f"{len(matches)} matchs enregistrés.")
-    print(
-        f"{len(lineups_checked_ids)} matchs vérifiés pour les compositions."
-    )
-    print(
-        f"{len(lineups_by_id)} matchs avec compositions disponibles."
-    )
-    print(f"Fichier créé : {OUTPUT_FILE}")
+    print("-----------------------------------")
+    print("Matchs enregistrés :", len(matches))
+    print("Compositions vérifiées :", lineups_checked_count)
+    print("Compositions disponibles :", lineups_available_count)
+    print("Vérifications de compositions durant cette exécution :",
+          lineups_checked_this_run)
+    print("Fichier créé :", OUTPUT_FILE)
+    print("-----------------------------------")
 
 
 if __name__ == "__main__":
