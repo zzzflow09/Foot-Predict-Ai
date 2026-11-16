@@ -14,10 +14,8 @@ API_KEY = os.environ.get("API_FOOTBALL_KEY")
 PARIS = ZoneInfo("Europe/Paris")
 TODAY = datetime.now(PARIS).date()
 
-# Le forfait gratuit limite les dates accessibles.
 DAYS_TO_FETCH = 2
-
-MAX_LINEUP_FIXTURES = 40
+MAX_LINEUP_FIXTURES = 20
 OUTPUT_FILE = "predictions.json"
 
 
@@ -32,9 +30,7 @@ def normalize(value):
 
 def api_get(endpoint, params=None):
     if not API_KEY:
-        raise RuntimeError(
-            "Le secret API_FOOTBALL_KEY est absent."
-        )
+        raise RuntimeError("Secret API_FOOTBALL_KEY absent.")
 
     query = urllib.parse.urlencode(params or {})
     url = f"{API_URL}/{endpoint}?{query}"
@@ -47,13 +43,11 @@ def api_get(endpoint, params=None):
         }
     )
 
-    # Respecte la limite gratuite de 10 requêtes par minute.
+    # Respect de la limite de 10 requêtes par minute.
     time.sleep(6.2)
 
     with urllib.request.urlopen(request, timeout=30) as response:
-        data = json.loads(
-            response.read().decode("utf-8")
-        )
+        data = json.loads(response.read().decode("utf-8"))
 
     if data.get("errors"):
         raise RuntimeError(
@@ -95,46 +89,35 @@ def extract_injuries(records):
     return output
 
 
-def extract_lineups(fixtures):
-    output = {}
+def extract_lineups(records):
+    teams = {}
 
-    for item in fixtures:
-        fixture = item.get("fixture") or {}
-        fixture_id = fixture.get("id")
+    for lineup in records:
+        team = lineup.get("team") or {}
+        team_name = team.get("name", "Équipe inconnue")
 
-        if not fixture_id:
-            continue
+        teams[team_name] = {
+            "formation": lineup.get("formation"),
+            "coach": (lineup.get("coach") or {}).get("name"),
+            "starting_xi": [
+                {
+                    "name": (p.get("player") or {}).get("name"),
+                    "number": (p.get("player") or {}).get("number"),
+                    "position": (p.get("player") or {}).get("pos")
+                }
+                for p in lineup.get("startXI") or []
+            ],
+            "substitutes": [
+                {
+                    "name": (p.get("player") or {}).get("name"),
+                    "number": (p.get("player") or {}).get("number"),
+                    "position": (p.get("player") or {}).get("pos")
+                }
+                for p in lineup.get("substitutes") or []
+            ]
+        }
 
-        teams = {}
-
-        for lineup in item.get("lineups") or []:
-            team = lineup.get("team") or {}
-            team_name = team.get("name", "Équipe inconnue")
-
-            teams[team_name] = {
-                "formation": lineup.get("formation"),
-                "coach": (lineup.get("coach") or {}).get("name"),
-                "starting_xi": [
-                    {
-                        "name": (p.get("player") or {}).get("name"),
-                        "number": (p.get("player") or {}).get("number"),
-                        "position": (p.get("player") or {}).get("pos")
-                    }
-                    for p in lineup.get("startXI") or []
-                ],
-                "substitutes": [
-                    {
-                        "name": (p.get("player") or {}).get("name"),
-                        "number": (p.get("player") or {}).get("number"),
-                        "position": (p.get("player") or {}).get("pos")
-                    }
-                    for p in lineup.get("substitutes") or []
-                ]
-            }
-
-        output[str(fixture_id)] = teams
-
-    return output
+    return teams
 
 
 def main():
@@ -142,15 +125,14 @@ def main():
     print("Période : aujourd'hui et demain")
 
     if not API_KEY:
-        raise RuntimeError(
-            "Secret API_FOOTBALL_KEY introuvable."
-        )
+        raise RuntimeError("Secret API_FOOTBALL_KEY introuvable.")
 
     fixtures_by_id = {}
     injuries_by_id = {}
     lineups_by_id = {}
+    lineups_checked_ids = set()
 
-    # 1. Récupération des matchs et blessures.
+    # 1. Matchs et blessures.
     for offset in range(DAYS_TO_FETCH):
         match_date = TODAY + timedelta(days=offset)
         date_string = match_date.isoformat()
@@ -185,7 +167,9 @@ def main():
             )
         )
 
-    # 2. Récupération des compositions disponibles.
+    print(f"{len(fixtures_by_id)} matchs récupérés.")
+
+    # 2. Compositions : une requête par match.
     upcoming = sorted(
         fixtures_by_id.values(),
         key=lambda x: (
@@ -195,27 +179,31 @@ def main():
 
     selected = upcoming[:MAX_LINEUP_FIXTURES]
 
-    fixture_ids = [
-        str((item.get("fixture") or {}).get("id"))
-        for item in selected
-        if (item.get("fixture") or {}).get("id")
-    ]
+    for item in selected:
+        fixture_id = (item.get("fixture") or {}).get("id")
 
-    for start in range(0, len(fixture_ids), 20):
-        batch = fixture_ids[start:start + 20]
+        if not fixture_id:
+            continue
+
+        fixture_id = str(fixture_id)
+
+        print(f"Recherche des compositions du match {fixture_id}...")
 
         detail_data = api_get(
-            "fixtures",
-            {"ids": "-".join(batch)}
+            "fixtures/lineups",
+            {"fixture": fixture_id}
         )
 
-        lineups_by_id.update(
-            extract_lineups(
-                detail_data.get("response", [])
-            )
+        lineups = extract_lineups(
+            detail_data.get("response", [])
         )
 
-    # 3. Création du fichier JSON.
+        lineups_checked_ids.add(fixture_id)
+
+        if lineups:
+            lineups_by_id[fixture_id] = lineups
+
+    # 3. Construction des données.
     matches = {}
 
     for fixture_id, item in fixtures_by_id.items():
@@ -247,7 +235,8 @@ def main():
             "status": status.get("long", "Inconnu"),
             "injuries": injuries_by_id.get(fixture_id, []),
             "lineups": lineups_by_id.get(fixture_id, {}),
-            "lineups_checked": fixture_id in lineups_by_id
+            "lineups_checked": fixture_id in lineups_checked_ids,
+            "lineups_available": fixture_id in lineups_by_id
         }
 
     result = {
@@ -255,10 +244,12 @@ def main():
         "source": "API-Football",
         "period_days": DAYS_TO_FETCH,
         "fixtures_count": len(matches),
-        "lineups_checked_count": len(lineups_by_id),
+        "lineups_checked_count": len(lineups_checked_ids),
+        "lineups_available_count": len(lineups_by_id),
         "matches": matches
     }
 
+    # Écriture sécurisée du fichier.
     temporary_file = OUTPUT_FILE + ".tmp"
 
     with open(temporary_file, "w", encoding="utf-8") as file:
@@ -273,7 +264,10 @@ def main():
 
     print(f"{len(matches)} matchs enregistrés.")
     print(
-        f"{len(lineups_by_id)} matchs vérifiés pour les compositions."
+        f"{len(lineups_checked_ids)} matchs vérifiés pour les compositions."
+    )
+    print(
+        f"{len(lineups_by_id)} matchs avec compositions disponibles."
     )
     print(f"Fichier créé : {OUTPUT_FILE}")
 
