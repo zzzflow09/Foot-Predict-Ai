@@ -154,6 +154,7 @@ footer{text-align:center;color:var(--muted);font-size:11px;padding:20px}
 "use strict";
 
 const BASE="https://raw.githubusercontent.com/oladeeayo/open-matchday/master/";
+const API_BASE="https://raw.githubusercontent.com/zzzflow09/Foot-Predict-Ai/main/";
 const SEASON="2627";
 const $=id=>document.getElementById(id);
 
@@ -495,7 +496,7 @@ const h2hText=p.h2h.length?p.h2h.slice(0,3).map(m=>escapeHTML(m.home)+" "+m.ft_h
 const extraMarkets=p.markets.filter(m=>m.extra);
 return `
 <article class="match" data-fixture-index="${index}" data-confidence="${p.dataScore}" data-probability="${best[0]?.value||0}">
-<div class="matchtop"><span>${escapeHTML(fixture.competition)}</span><span>${escapeHTML(date)}</span></div>
+<div class="matchtop"><span>${escapeHTML(fixture.competition)} ${fixture.source==="API-Football"?"· API-Football":""}</span><span>${escapeHTML(date)}</span></div>
 <div class="teams">
 <div class="team">${escapeHTML(fixture.home)}</div><div class="vs">CONTRE</div><div class="team">${escapeHTML(fixture.away)}</div>
 </div>
@@ -630,11 +631,195 @@ async function start(){
 try{
 await loadLeagueIndex();
 await loadSelected();
+
+async function loadSelected(){
+if(busy)return;
+busy=true;
+$("reload").disabled=true;
+$("matches").innerHTML='<div class="empty">Chargement des données…</div>';
+allFixtures=[];
+allResults=[];
+resultsByFolder={};
+
+try{
+const selected=$("league").value;
+const selectedLeagues=selected==="ALL"?leagues:leagues.filter(x=>x.folder===selected);
+
+if(selectedLeagues.length){
+status("Téléchargement des compétitions…",5);
+
+const loaded=await loadWithLimit(selectedLeagues,5,async(league,index)=>{
+const data=await loadCompetition(league);
+status("Chargement "+league.name+" ("+(index+1)+"/"+selectedLeagues.length+")",5+Math.round((index+1)/selectedLeagues.length*65));
+return data;
+});
+
+loaded.forEach(item=>{
+if(!item||item.error)return;
+
+resultsByFolder[item.league.folder]=item.results;
+
+allResults.push(...item.results.map(m=>({
+...m,
+competition:item.league.name,
+folder:item.league.folder
+})));
+
+allFixtures.push(...item.fixtures);
+});
+}
+
+// Chargement des données de notre propre API-Football.
+status("Chargement des matchs supplémentaires…",75);
+
+const [predictionsResponse,historyResponse]=await Promise.all([
+fetch(API_BASE+"predictions.json?"+Date.now()),
+fetch(API_BASE+"predictions_history.json?"+Date.now())
+]);
+
+if(!predictionsResponse.ok){
+throw new Error("Impossible de lire predictions.json");
+}
+
+const predictionData=await predictionsResponse.json();
+
+let historyData={matches:{}};
+
+if(historyResponse.ok){
+historyData=await historyResponse.json();
+}
+
+const historyMatches=Object.values(historyData.matches||{});
+const apiResultsByLeague={};
+
+historyMatches.forEach(match=>{
+const league=match.league||"Autres compétitions";
+const folder="API_"+normalise(league);
+
+if(!apiResultsByLeague[folder]){
+apiResultsByLeague[folder]=[];
+}
+
+apiResultsByLeague[folder].push({
+date:match.date||"",
+home:match.home?.name||"Équipe inconnue",
+away:match.away?.name||"Équipe inconnue",
+ft_home:num(match.score?.home),
+ft_away:num(match.score?.away),
+home_shots:null,
+away_shots:null,
+home_target:null,
+away_target:null,
+home_corners:null,
+away_corners:null,
+home_yellow:null,
+away_yellow:null,
+home_red:null,
+away_red:null
+});
+});
+
+Object.entries(apiResultsByLeague).forEach(([folder,results])=>{
+resultsByFolder[folder]=results;
+allResults.push(...results.map(match=>({
+...match,
+folder,
+competition:folder.replace("API_","")
+})));
+});
+
+const apiMatches=Object.values(predictionData.matches||{});
+
+apiMatches.forEach(match=>{
+const kickoff=new Date(match.kickoff||match.date);
+
+if(Number.isNaN(kickoff.getTime()))return;
+
+if(kickoff.getTime()<Date.now()-60*60*1000)return;
+
+const competition=match.league||"Autres compétitions";
+const folder="API_"+normalise(competition);
+
+if(!resultsByFolder[folder]){
+resultsByFolder[folder]=[];
+}
+
+const fixture={
+fixture_id:String(match.fixture_id||""),
+home:match.home?.name||"Équipe inconnue",
+away:match.away?.name||"Équipe inconnue",
+competition,
+folder,
+date:match.date||"",
+time:kickoff.toLocaleTimeString("fr-FR",{
+hour:"2-digit",
+minute:"2-digit"
+}),
+kickoff,
+injuries:match.injuries||[],
+lineups:match.lineups||{},
+source:"API-Football"
+};
+
+const alreadyExists=allFixtures.some(existing=>
+normalise(existing.home)===normalise(fixture.home)&&
+normalise(existing.away)===normalise(fixture.away)&&
+existing.kickoff.toDateString()===fixture.kickoff.toDateString()
+);
+
+if(!alreadyExists){
+allFixtures.push(fixture);
+}
+});
+
+// Ajouter les compétitions API au filtre.
+const select=$("league");
+Object.entries(
+Object.fromEntries(
+allFixtures
+.filter(f=>f.source==="API-Football")
+.map(f=>[f.folder,f.competition])
+)
+).forEach(([folder,name])=>{
+if(!Array.from(select.options).some(option=>option.value===folder)){
+select.add(new Option(name+" · API-Football",folder));
+}
+});
+
+allFixtures.sort((a,b)=>a.kickoff-b.kickoff);
+
+$("leagueCount").textContent=select.options.length-1;
+$("matchCount").textContent=allFixtures.length;
+$("resultCount").textContent=allResults.length;
+
+const withStats=allResults.filter(m=>
+m.home_target!==null||
+m.away_target!==null||
+m.home_corners!==null||
+m.away_corners!==null
+).length;
+
+$("dataCount").textContent=withStats;
+
+status(
+allFixtures.length+" matchs chargés · Open-Matchday et API-Football.",
+100
+);
+
+renderMatches();
+
 }catch(error){
-status("Impossible de démarrer : "+error.message,0);
-$("matches").innerHTML='<div class="empty error">'+escapeHTML(error.message)+'</div>';
+$("matches").innerHTML=
+'<div class="empty error">'+escapeHTML(error.message)+'</div>';
+
+status("Erreur : "+error.message,0);
+
+}finally{
+busy=false;
+$("reload").disabled=false;
 }
 }
+
 
 start();
 </script>
